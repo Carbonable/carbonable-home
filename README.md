@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# General
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the front end of the Carbonable project
+
+# Installation
+Clone the repository
+
+````
+git clone https://github.com/Carbonable/carbonable-react.git
+cd carbonable-react
+git fetch
+````
+
+Install the dependencies
+````
+npm install
+````
 
 ## Available Scripts
 
