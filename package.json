@@ -1,46 +1,31 @@
 {
-  "name": "carbonable-react",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@starknet-react/core": "^0.13.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.49",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "get-starknet": "^1.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "starknet": "^4.3.0",
-    "typescript": "^4.7.4",
-    "web-vitals": "^2.1.4"
-  },
+  "sideEffects": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "remix build",
+    "dev": "remix dev"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@remix-run/node": "^1.7.0",
+    "@remix-run/react": "^1.7.0",
+    "@remix-run/vercel": "^1.7.0",
+    "@vercel/node": "^2.4.4",
+    "@starknet-react/core": "^0.13.2",
+    "get-starknet": "^1.5.0",
+    "starknet": "^3.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@remix-run/dev": "^1.7.0",
+    "@remix-run/eslint-config": "^1.7.0",
+    "@remix-run/serve": "^1.7.0",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.20.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
