@@ -2,19 +2,21 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev"
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css"
   },
   "dependencies": {
     "@remix-run/node": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "@remix-run/vercel": "^1.7.0",
-    "@vercel/node": "^2.4.4",
     "@starknet-react/core": "^0.13.2",
+    "@vercel/node": "^2.4.4",
     "get-starknet": "^1.5.0",
-    "starknet": "^3.18.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "starknet": "^3.18.2"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
@@ -22,7 +24,11 @@
     "@remix-run/serve": "^1.7.0",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.3.0",
     "eslint": "^8.20.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.7.4"
   },
   "engines": {
