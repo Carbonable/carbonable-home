@@ -582,11 +582,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-beaige {
-  --tw-text-opacity: 1;
-  color: rgb(239 236 234 / var(--tw-text-opacity));
-}
-
 @font-face {
   font-family: "americana";
 
