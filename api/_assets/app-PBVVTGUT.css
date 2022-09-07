@@ -551,17 +551,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
 .font-americana {
   font-family: americana, sans-serif;
-}
-
-.font-inter {
-  font-family: Inter, sans-serif;
 }
 
 .font-trash {
@@ -577,16 +568,6 @@ video {
   font-weight: 700;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-beaige {
-  --tw-text-opacity: 1;
-  color: rgb(239 236 234 / var(--tw-text-opacity));
-}
-
 @font-face {
   font-family: "americana";
 
@@ -600,7 +581,7 @@ video {
 }
 
 @font-face {
-  font-family: "americana";
+  font-family: "americanaStd";
 
   src: url("/public/assets/fonts/americana/AmericanaStd-Italic.otf") format("otf");
 

@@ -1,10 +1,19 @@
 /** @type {import('tailwindcss').Config} */ 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        americana: [ "americana", "sans-serif" ],
+        trash: [ "trash", "sans-serif"],
+        inter: [ "Inter", "sans-serif"]
+      },
+      colors: {
+        beaige: '#EFECEA',
+      }
+    }
   },
   plugins: [],
 }

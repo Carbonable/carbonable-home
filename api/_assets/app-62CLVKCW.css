@@ -551,23 +551,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.font-americana {
-  font-family: americana, sans-serif;
-}
-
-.font-inter {
-  font-family: Inter, sans-serif;
-}
-
-.font-trash {
-  font-family: trash, sans-serif;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -577,20 +560,19 @@ video {
   font-weight: 700;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.italic {
+  font-style: italic;
 }
 
-.text-beaige {
-  --tw-text-opacity: 1;
-  color: rgb(239 236 234 / var(--tw-text-opacity));
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 @font-face {
   font-family: "americana";
 
-  src: url("/public/assets/fonts/americana/Americana-Regular.ttf") format("ttf");
+  src: url("/assets/fonts/americana/Americana-Regular.ttf") format("ttf");
 
   font-weight: 500;
 
@@ -602,35 +584,11 @@ video {
 @font-face {
   font-family: "americana";
 
-  src: url("/public/assets/fonts/americana/AmericanaStd-Italic.otf") format("otf");
+  src: url("/assets/fonts/americana/AmericanaStd-Italic.otf") format("otf");
 
   font-weight: 500;
 
   font-style: italic;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "trash";
-
-  src: url("/public/assets/fonts/trashplus/trashplusbold_italic.otf") format("otf");
-
-  font-weight: 700;
-
-  font-style: italic;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "trash";
-
-  src: url("/public/assets/fonts/trashplus/trashplusbold.ttf") format("ttf");
-
-  font-weight: 700;
-
-  font-style: normal;
 
   font-display: swap;
 }
