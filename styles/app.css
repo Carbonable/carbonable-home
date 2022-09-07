@@ -33,3 +33,14 @@
     font-style: normal;
     font-display: swap;
 }
+
+@layer components {
+    /* This won't be included in your compiled CSS unless you actually use it */
+    .menu-bg {
+        box-sizing: border-box;
+        background: linear-gradient(90.2deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 0.01%, rgba(255, 255, 255, 0.2) 0.02%, rgba(255, 255, 255, 0.1) 43.23%, rgba(255, 255, 255, 0) 70.83%, rgba(255, 255, 255, 0.24) 100%);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(22.78px);
+        border-radius: 40px;
+    }
+}

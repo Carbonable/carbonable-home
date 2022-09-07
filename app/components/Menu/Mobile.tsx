@@ -1,0 +1,23 @@
+import LinkButton, { LinkOutsideButton } from "../Button";
+
+export default function Mobile() {
+    return (
+        <div className="flex lg:hidden items-center">
+            <div className="w-5/12">Carbonable</div>
+            <div className="w-7/12 flex justify-end space-x-2">
+                <LinkOutsideButton
+                    href="https://carbonable.notion.site/CarbonABLE-Lite-Paper-82bda161f3594964931b2be7d84429ff"
+                    className="bg-white"
+                >
+                    Litepaper
+                </LinkOutsideButton>
+                <LinkButton
+                    href="/launchapp"
+                    className="bg-green"
+                >
+                    Invest
+                </LinkButton>
+            </div>
+        </div>
+    )
+}
