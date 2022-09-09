@@ -1,4 +1,4 @@
-import LinkButton, { LinkOutsideButton } from "../Button";
+import LinkButton, { LinkOutsideButton } from "../../Button";
 
 export default function Mobile() {
     return (
@@ -12,7 +12,7 @@ export default function Mobile() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchapp"
+                    href="/launchpad"
                     className="bg-green"
                 >
                     Invest
