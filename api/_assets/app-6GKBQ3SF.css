@@ -566,6 +566,18 @@ video {
   position: fixed;
 }
 
+.top-8 {
+  top: 2rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .top-4 {
   top: 1rem;
 }
@@ -573,6 +585,18 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mt-48 {
+  margin-top: 12rem;
+}
+
+.mt-56 {
+  margin-top: 14rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mt-8 {
@@ -599,16 +623,12 @@ video {
   width: 100%;
 }
 
-.w-9\/12 {
-  width: 75%;
+.w-3\/12 {
+  width: 25%;
 }
 
 .w-6\/12 {
   width: 50%;
-}
-
-.w-3\/12 {
-  width: 25%;
 }
 
 .w-11\/12 {
@@ -621,6 +641,18 @@ video {
 
 .w-7\/12 {
   width: 58.333333%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
 }
 
 .max-w-screen-2xl {
@@ -677,7 +709,7 @@ video {
 }
 
 .bg-home-header {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0.6), rgba(0, 42, 45, 0.6)), url('/assets/images/home-header-bg.jpg');
 }
 
 .from-green {
@@ -692,6 +724,14 @@ video {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-top {
+  background-position: top;
 }
 
 .bg-no-repeat {
@@ -712,12 +752,24 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.pt-56 {
+  padding-top: 14rem;
+}
+
+.pt-52 {
+  padding-top: 13rem;
+}
+
 .pt-48 {
   padding-top: 12rem;
 }
 
 .text-center {
   text-align: center;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
 }
 
 .font-americana {
@@ -728,23 +780,39 @@ video {
   font-family: trash, sans-serif;
 }
 
-.font-inter {
-  font-family: Inter, sans-serif;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .uppercase {
@@ -754,11 +822,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(10 242 173 / var(--tw-text-opacity));
 }
 
 .text-black\/50 {
