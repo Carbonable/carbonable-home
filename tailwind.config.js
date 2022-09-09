@@ -17,8 +17,7 @@ module.exports = {
         grey: "#787675"
       },
       backgroundImage: {
-        bgWhite: "linear-gradient(270deg, #FFF 0%, #FFF 100%)",
-        bggradient: "linear-gradient(270deg, #A8C4EF 39.58%, #0AF2AD 100%)"
+        'home-header': "linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg')"
       }
     }
   },
