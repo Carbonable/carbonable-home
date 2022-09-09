@@ -566,8 +566,12 @@ video {
   position: fixed;
 }
 
-.top-4 {
-  top: 1rem;
+.top-8 {
+  top: 2rem;
+}
+
+.top-6 {
+  top: 1.5rem;
 }
 
 .mx-auto {
@@ -575,12 +579,12 @@ video {
   margin-right: auto;
 }
 
-.mt-8 {
-  margin-top: 2rem;
+.mt-48 {
+  margin-top: 12rem;
 }
 
-.block {
-  display: block;
+.mt-56 {
+  margin-top: 14rem;
 }
 
 .flex {
@@ -599,16 +603,12 @@ video {
   width: 100%;
 }
 
-.w-9\/12 {
-  width: 75%;
+.w-3\/12 {
+  width: 25%;
 }
 
 .w-6\/12 {
   width: 50%;
-}
-
-.w-3\/12 {
-  width: 25%;
 }
 
 .w-11\/12 {
@@ -621,6 +621,14 @@ video {
 
 .w-7\/12 {
   width: 58.333333%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-9\/12 {
+  width: 75%;
 }
 
 .max-w-screen-2xl {
@@ -677,7 +685,7 @@ video {
 }
 
 .bg-home-header {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0.6), rgba(0, 42, 45, 0.6)), url('/assets/images/home-header-bg.jpg');
 }
 
 .from-green {
@@ -692,6 +700,10 @@ video {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -712,39 +724,41 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pt-48 {
-  padding-top: 12rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.font-americana {
-  font-family: americana, sans-serif;
-}
-
-.font-trash {
-  font-family: trash, sans-serif;
 }
 
 .font-inter {
   font-family: Inter, sans-serif;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-americana {
+  font-family: americana, sans-serif;
 }
 
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .uppercase {
@@ -754,11 +768,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(10 242 173 / var(--tw-text-opacity));
 }
 
 .text-black\/50 {
