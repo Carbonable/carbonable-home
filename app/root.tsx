@@ -27,9 +27,9 @@ export default function App() {
       <head>
         <Meta />
         <Links />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
       </head>
       <body className="bg-black text-white max-w-screen-2xl mx-auto">
         <StarknetProvider connectors={connectors}>
