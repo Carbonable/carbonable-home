@@ -13,6 +13,6 @@ export default function LinkButton({ href, children, className }: LinkButtonProp
 }
 
 export function LinkOutsideButton({ href, children, className }: LinkButtonProps) {
-    return <a href={href} className={defaultCssClass + className}>{children}</a>;
+    return <a href={href} target="_blank" className={defaultCssClass + className} rel="noreferrer">{children}</a>;
 }
 

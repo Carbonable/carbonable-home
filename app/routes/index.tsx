@@ -1,4 +1,4 @@
-import { Menu } from "~/components/Menu";
+import { Menu } from "~/components/Home/Menu";
 
 
 export default function Index() {

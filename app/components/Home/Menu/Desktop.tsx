@@ -1,5 +1,5 @@
-import { LinkButton, LinkOutsideButton } from "../Button";
-import MenuLink from "../Link/MenuLink";
+import { LinkButton, LinkOutsideButton } from "../../Button";
+import MenuLink from "../../Link/MenuLink";
 
 export default function Desktop() {
     return (
@@ -19,7 +19,7 @@ export default function Desktop() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchapp"
+                    href="/launchpad"
                     className="bg-green"
                 >
                     Invest
