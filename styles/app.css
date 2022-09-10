@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "americana";
-    src: url("/assets/fonts/americana/Americana-Regular.ttf") format("ttf");
+    src: url("/assets/fonts/americana/Americana-Regular.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
   
 @font-face {
     font-family: "americana";
-    src: url("/assets/fonts/americana/AmericanaStd-Italic.otf") format("otf");
+    src: url("/assets/fonts/americana/AmericanaStd-Italic.woff2") format("woff2");
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: "trash";
-    src: url("/assets/fonts/trashplus/trashplusbold_italic.otf") format("otf");
+    src: url("/assets/fonts/trashplus/trashplusbold_italic.woff2") format("woff2");
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: "trash";
-    src: url("/assets/fonts/trashplus/trashplusbold.ttf") format("ttf");
+    src: url("/assets/fonts/trashplus/trashplusbold.woff2") format("woff2");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
