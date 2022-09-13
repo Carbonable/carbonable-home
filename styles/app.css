@@ -43,4 +43,10 @@
         backdrop-filter: blur(22.78px);
         border-radius: 40px;
     }
+
+    
 }
+    .full-screen-video {
+        width: 100vw;
+        height: 47vw;
+    }
