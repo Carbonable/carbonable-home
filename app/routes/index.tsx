@@ -1,5 +1,5 @@
 import { Menu } from "~/components/Home/Menu";
-import { Title, Video } from "~/components/Home/Section";
+import { Carousel, Title, Video } from "~/components/Home/Section";
 
 
 export default function Index() {
@@ -9,6 +9,7 @@ export default function Index() {
         <Menu />
         <Title />
         <Video />
+        <Carousel />
       </>
       
   );
