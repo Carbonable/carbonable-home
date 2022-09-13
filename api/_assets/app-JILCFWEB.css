@@ -590,6 +590,16 @@ video {
   margin-right: auto;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -668,10 +678,6 @@ video {
 
 .w-7\/12 {
   width: 58.333333%;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-10\/12 {
@@ -807,7 +813,7 @@ video {
 }
 
 .bg-home-video {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home/home-header-bg.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg');
 }
 
 .from-green {
@@ -1134,15 +1140,5 @@ video {
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:mt-24 {
-    margin-top: 6rem;
-  }
-
-  .xl\:mt-16 {
-    margin-top: 4rem;
   }
 }
