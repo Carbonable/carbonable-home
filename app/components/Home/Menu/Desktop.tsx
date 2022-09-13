@@ -14,13 +14,13 @@ export default function Desktop() {
             <div className="w-3/12 flex justify-end space-x-4">
                 <LinkOutsideButton
                     href="https://carbonable.notion.site/CarbonABLE-Lite-Paper-82bda161f3594964931b2be7d84429ff"
-                    className="bg-white"
+                    className="bg-white text-black/50"
                 >
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
                     href="/launchpad"
-                    className="bg-green"
+                    className="bg-green text-black/50"
                 >
                     Invest
                 </LinkButton>

@@ -598,16 +598,12 @@ video {
   margin-top: 2rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .block {
@@ -650,10 +646,6 @@ video {
   width: 75%;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-6 {
   width: 1.5rem;
 }
@@ -672,12 +664,6 @@ video {
 
 .w-10\/12 {
   width: 83.333333%;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .min-w-full {
@@ -756,12 +742,12 @@ video {
   overflow-y: auto;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-3xl {
   border-radius: 1.5rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-lg {
@@ -771,11 +757,6 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-lightblue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(170 198 253 / var(--tw-bg-opacity));
 }
 
 .bg-zinc-900 {
@@ -836,16 +817,6 @@ video {
   padding: 1rem;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -861,16 +832,17 @@ video {
   padding-right: 3rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pr-8 {
   padding-right: 2rem;
 }
 
 .pt-16 {
   padding-top: 4rem;
-}
-
-.pb-20 {
-  padding-bottom: 5rem;
 }
 
 .pt-12 {
@@ -926,10 +898,6 @@ video {
   line-height: 1.75rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -937,6 +905,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black\/50 {
+  color: rgb(0 0 0 / 0.5);
 }
 
 .text-beaige {
@@ -947,10 +919,6 @@ video {
 .text-green {
   --tw-text-opacity: 1;
   color: rgb(10 242 173 / var(--tw-text-opacity));
-}
-
-.text-black\/50 {
-  color: rgb(0 0 0 / 0.5);
 }
 
 .opacity-0 {
@@ -1057,11 +1025,6 @@ video {
   font-style: normal;
 
   font-display: swap;
-}
-
-.full-screen-video {
-  width: 100vw;
-  height: 47vw;
 }
 
 .hover\:bg-gradient-to-r:hover {

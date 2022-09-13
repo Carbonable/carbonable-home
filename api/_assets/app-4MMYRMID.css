@@ -1061,7 +1061,7 @@ video {
 
 .full-screen-video {
   width: 100vw;
-  height: 47vw;
+  height: calc(25vw * 16 /9);
 }
 
 .hover\:bg-gradient-to-r:hover {

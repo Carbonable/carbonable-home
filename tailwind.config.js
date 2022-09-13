@@ -17,7 +17,7 @@ module.exports = {
         grey: "#787675"
       },
       backgroundImage: {
-        'home-header': "linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg')"
+        'home-video': "linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home-header-bg.jpg')"
       }
     }
   },

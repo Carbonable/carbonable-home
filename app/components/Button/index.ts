@@ -1,5 +1,5 @@
-import LinkButton, { LinkOutsideButton }  from './LinkButton';
+import LinkButton, { LinkButtonBig,LinkOutsideButton }  from './LinkButton';
 
-export { LinkButton, LinkOutsideButton }
+export { LinkButton, LinkButtonBig, LinkOutsideButton }
 
 export default LinkButton;
