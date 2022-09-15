@@ -750,12 +750,6 @@ video {
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
