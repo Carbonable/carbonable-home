@@ -750,12 +750,6 @@ video {
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -869,6 +863,10 @@ video {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home/home-header-bg.jpg');
 }
 
+.bg-left {
+  background-image: linear-gradient(90deg, #000000 0%, transparent 100%);
+}
+
 .from-green {
   --tw-gradient-from: #0AF2AD;
   --tw-gradient-to: rgb(10 242 173 / 0);
@@ -881,6 +879,10 @@ video {
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-left {
+  background-position: left;
 }
 
 .bg-no-repeat {
@@ -1233,10 +1235,6 @@ video {
 
   .lg\:w-6\/12 {
     width: 50%;
-  }
-
-  .lg\:w-10\/12 {
-    width: 83.333333%;
   }
 
   .lg\:flex-wrap {

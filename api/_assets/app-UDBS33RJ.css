@@ -750,12 +750,6 @@ video {
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -1157,6 +1151,12 @@ video {
   height: 47vw;
 }
 
+.before\:bg-left::before {
+  background-image: linear-gradient(90deg, #000000 0%, transparent 100%) ;
+  content: var(--tw-content);
+  background-position: left;
+}
+
 .hover\:bg-gradient-to-r:hover {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -1233,10 +1233,6 @@ video {
 
   .lg\:w-6\/12 {
     width: 50%;
-  }
-
-  .lg\:w-10\/12 {
-    width: 83.333333%;
   }
 
   .lg\:flex-wrap {
