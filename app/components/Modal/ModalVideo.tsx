@@ -1,7 +1,7 @@
 import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { PlayCircleIcon, XMarkIcon } from '@heroicons/react/24/outline';
-import ModalButton from '../Button/ActionButton';
+import { ModalButton } from '../Button';
 
 export default function ModalVideo() {
   const [open, setOpen] = useState(false);

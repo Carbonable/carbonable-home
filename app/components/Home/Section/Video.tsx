@@ -1,5 +1,6 @@
 import { ModalVideo } from "~/components/Modal";
 
+
 export default function Video() {
     return (
         <div className="block bg-home-video w-full text-center bg-no-repeat bg-cover mt-12 xl:mt-20 pb-20">
