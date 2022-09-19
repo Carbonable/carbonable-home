@@ -638,6 +638,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -728,6 +732,12 @@ video {
   width: fit-content;
 }
 
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .w-min {
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -736,6 +746,18 @@ video {
 
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-fit {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.min-w-min {
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
 }
 
 .min-w-max {
@@ -760,23 +782,6 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .cursor-pointer {
@@ -843,15 +848,6 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.border-2 {
-  border-width: 2px;
-}
-
-.border-red-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(248 113 113 / var(--tw-border-opacity));
 }
 
 .bg-black {
@@ -1005,6 +1001,14 @@ video {
 
 .pl-6 {
   padding-left: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .text-left {
@@ -1268,6 +1272,16 @@ video {
   }
 }
 
+@media (min-width: 768px) {
+  .md\:w-8\/12 {
+    width: 66.666667%;
+  }
+
+  .md\:w-7\/12 {
+    width: 58.333333%;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:mx-auto {
     margin-left: auto;
@@ -1286,8 +1300,24 @@ video {
     margin-top: 6rem;
   }
 
+  .lg\:ml-14 {
+    margin-left: 3.5rem;
+  }
+
+  .lg\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .lg\:ml-32 {
+    margin-left: 8rem;
+  }
+
   .lg\:ml-28 {
     margin-left: 7rem;
+  }
+
+  .lg\:ml-4 {
+    margin-left: 1rem;
   }
 
   .lg\:block {
@@ -1318,6 +1348,10 @@ video {
     width: 50%;
   }
 
+  .lg\:w-8\/12 {
+    width: 66.666667%;
+  }
+
   .lg\:flex-wrap {
     flex-wrap: wrap;
   }
@@ -1342,10 +1376,6 @@ video {
 
   .lg\:pt-36 {
     padding-top: 9rem;
-  }
-
-  .lg\:pl-6 {
-    padding-left: 1.5rem;
   }
 
   .lg\:text-left {

@@ -91,14 +91,14 @@ export default function Carousel() {
         <div className="w-11/12 mx-auto mt-8 lg:mt-12 xl:mt-24">
             <div className="flex items-center justify-center">
                 <PlusIcon className="w-8"></PlusIcon>
-                <div className="w-10/12 items-center uppercase font-trash text-bold text-xl lg:text-2xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</div>
+                <div className="w-10/12 items-center uppercase font-trash text-bold text-xl lg:text-3xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</div>
                 <PlusIcon className="w-8"></PlusIcon>
             </div>
             <div className="text-center font-inter mb-8">Break free from old beliefs</div>
             <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto">
                 {slides.map((image, index) => (
-                    <div key={`image_${index}`} className="px-2">
-                        <img alt={`Carbonable project ${index}`} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-125 select-none" : "rounded-lg brightness-75 select-none"} />
+                    <div key={`image_${index}`} className="px-2  outline-0">
+                        <img alt={`Carbonable project ${index}`} onClick={() => handleClick(index)} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-125 cursor-pointer" : "rounded-lg brightness-75 cursor-pointer"} />
                     </div>
                 ))}
             </Slider>
@@ -114,7 +114,7 @@ export default function Carousel() {
                     </div>
                 </div>
                 
-                <div className="w-full font-inter text-3xl mt-4 lg:w-3/12 lg:text-right lg:text-4xl">
+                <div className="w-full font-inter text-2xl mt-4 lg:w-3/12 lg:text-right lg:text-4xl">
                     {slides[activeSlide].title}
                 </div>
                 <div className="w-full lg:hidden">
