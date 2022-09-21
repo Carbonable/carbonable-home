@@ -14,7 +14,8 @@ module.exports = {
         beaige: '#EFECEA',
         green: "#0AF2AD",
         lightblue: "#AAC6FD",
-        grey: "#787675"
+        grey: "#787675",
+        footerBg: "#272727"
       },
       backgroundImage: {
         'home-video': "linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home/home-header-bg.jpg')",
