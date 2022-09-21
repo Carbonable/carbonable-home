@@ -59,13 +59,14 @@ export default function WaitingList() {
       };
 
     function validateEmail(email: string) {
+        // eslint-disable-next-line no-useless-escape
         const mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         return email.match(mailformat) ? true : false;
     }
 
     return (
-        <div className="w-full text-center mt-12 px-2 mx-auto lg:mt-24">
-            <div className="font-inter uppercase text-2xl text-transparent bg-clip-text bg-home-title">Channel digital capital toward real-world change !</div>
+        <div className="w-full text-center mt-10 px-2 mx-auto lg:mt-16">
+            <div className="font-inter uppercase text-2xl text-transparent bg-clip-text bg-green-blue">Channel digital capital toward real-world change !</div>
             <div className={hasValidEmail ? 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-6/12' : 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-6/12 border-2 border-red-400'}>
                 <input type="email" className="text-sm text-slate-500 outline-0 w-full" defaultValue={email} name="email" onChange={handleInput} placeholder="Join our waiting list" />
                 <WhitelistButton className="bg-green flex items-center text-xs lg:ml-28 w-min text-right" onClick={handleClick}>
