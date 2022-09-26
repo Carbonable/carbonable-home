@@ -2,8 +2,8 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 
 export default function B2B() {
     return (
-        <div className="block relative bg-home-b2b w-full text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-32">
-            <div className="w-11/12 mx-auto bg-home-b2b-gradient rounded-2xl shadow-home backdrop-blur-md py-8 px-2 md:w-10/12 md:mx-auto lg:w-8/12 xl:w-7/12">
+        <div id="b2b" className="block scroll-mt-12 relative bg-home-b2b w-full text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-48">
+            <div className="w-11/12 max-w-screen-2xl mx-auto bg-home-b2b-gradient rounded-2xl shadow-home backdrop-blur-md py-8 px-2 md:w-10/12 md:mx-auto lg:w-8/12 xl:w-5/12">
                 <div className="flex items-start justify-center">
                     <PlusIcon className="w-8 md:w-12"></PlusIcon>
                     <div className="w-10/12 items-center uppercase font-trash font-bold text-2xl lg:text-3xl text-center md:text-4xl xl:text-5xl">

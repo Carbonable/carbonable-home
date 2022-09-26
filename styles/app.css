@@ -51,3 +51,7 @@
     width: 100vw;
     height: 47vw;
 }
+
+html {
+    scroll-behavior: smooth;
+  }

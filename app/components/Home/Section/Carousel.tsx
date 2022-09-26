@@ -1,6 +1,7 @@
 import { PlusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Slider from "react-slick";
+import LinkOutsideButton from "~/components/Button";
 
 export default function Carousel() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -14,7 +15,7 @@ export default function Carousel() {
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
@@ -27,7 +28,7 @@ export default function Carousel() {
             {
                 breakpoint: 1280,
                 settings: {
-                  slidesToShow: 5
+                  slidesToShow: 3
                 }
             },
             {
@@ -55,50 +56,45 @@ export default function Carousel() {
 
     const slides = [
         {
-            name: 'project1.jpeg',
+            name: 'project1.png',
             title: 'Speculative trading',
             subtitle: 'Invest in real-word backed assets'
         },
         {
-            name: 'project2.jpeg',
-            title: 'Speculative trading 1',
-            subtitle: 'Invest in real-word backed assets 1'
+            name: 'project2.png',
+            title: 'Greenwashing',
+            subtitle: 'Premium, transparent and traceable carbon removal'
         },
         {
-            name: 'project3.jpeg',
-            title: 'Speculative trading 2',
-            subtitle: 'Invest in real-word backed assets 2'
+            name: 'project3.png',
+            title: 'Short-term returns',
+            subtitle: 'Earn ongoing high, lasting and transparent yields'
         },
         {
-            name: 'project4.jpeg',
-            title: 'Speculative trading 3',
-            subtitle: 'Invest in real-word backed assets 3'
+            name: 'project4.png',
+            title: 'Volatile yields',
+            subtitle: 'Gain exposure to a booming market with ever-increasing asset values'
         },
         {
-            name: 'project3.jpeg',
-            title: 'Speculative trading 4',
-            subtitle: 'Invest in real-word backed assets 4'
-        },
-        {
-            name: 'project2.jpeg',
-            title: 'Speculative trading 5',
-            subtitle: 'Invest in real-word backed assets 5'
+            name: 'project5.png',
+            title: 'Illiquid investments',
+            subtitle: 'Resell your assets at your own discretion'
         },
 
     ];
     
     return (
-        <div className="w-11/12 mx-auto mt-8 lg:mt-12 xl:mt-24">
+        <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-12 xl:mt-24">
             <div className="flex items-start justify-center">
                 <PlusIcon className="w-8 md:w-12"></PlusIcon>
-                <div className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-2xl lg:text-3xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</div>
+                <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</h1>
                 <PlusIcon className="w-8 md:w-12"></PlusIcon>
             </div>
-            <div className="text-center font-inter mb-8">Break free from old beliefs</div>
-            <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto">
+            <h2 className="text-center font-inter mb-8">Break free from old beliefs</h2>
+            <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">
                 {slides.map((image, index) => (
                     <div key={`image_${index}`} className="px-2  outline-0">
-                        <img alt={`Carbonable project ${index}`} onClick={() => handleClick(index)} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-125 cursor-pointer" : "rounded-lg brightness-75 cursor-pointer"} />
+                        <img alt={`Carbonable project ${index}`} onClick={() => handleClick(index)} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-110 cursor-pointer" : "rounded-lg brightness-50 cursor-pointer"} />
                     </div>
                 ))}
             </Slider>
@@ -114,12 +110,16 @@ export default function Carousel() {
                     </div>
                 </div>
                 
-                <div className="w-full font-inter text-2xl mt-4 lg:w-3/12 lg:text-right lg:text-4xl">
+                <div className="w-full flex items-center justify-center font-inter text-3xl line-through mt-4 lg:w-4/12 lg:justify-end lg:text-right lg:min-h-[96px] md:text-4xl lg:text-5xl">
                     {slides[activeSlide].title}
                 </div>
                 <div className="w-full lg:hidden">
                     {slides[activeSlide].subtitle}
                 </div>
+            </div>
+            <div className="flex items-center justify-center md:justify-start lg:w-10/12 mx-auto mt-8">
+                <LinkOutsideButton href="#" className="bg-green text-xs md:text-sm">Estimate your yield</LinkOutsideButton>
+                <LinkOutsideButton href="#" className="bg-lightblue text-xs md:text-sm ml-2">Learn more</LinkOutsideButton>
             </div>
       </div>
     )
