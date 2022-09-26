@@ -4,23 +4,24 @@ import MenuLink from "../../Link/MenuLink";
 export default function Desktop() {
     return (
         <div className="hidden lg:flex items-center">
-            <div className="w-3/12">Carbonable</div>
-            <div className="font-inter w-6/12 text-beaige flex uppercase space-x-8 text-sm justify-center">
-                <MenuLink href="#projects">Projects</MenuLink>
-                <MenuLink href="#defiyield">Defi Yields</MenuLink>
+            <div className="w-3/12"><img className="w-8/12 xl:w-6/12" src="/assets/images/home/logo.svg" alt="Logo carbonable" /></div>
+            <div className="flex font-inter w-6/12 text-beaige flex uppercase space-x-8 text-sm justify-center items-center text-center">
+                <MenuLink href="#video">Explainer video</MenuLink>
+                <MenuLink href="#assets">Our assets</MenuLink>
                 <MenuLink href="#howitworks">How it works</MenuLink>
-                <MenuLink href="#blog">Blog</MenuLink>
+                <MenuLink href="#b2b">B2B</MenuLink>
+                <MenuLink href="#articles">Articles</MenuLink>
             </div>
             <div className="w-3/12 flex justify-end space-x-4">
                 <LinkOutsideButton
                     href="https://carbonable.notion.site/CarbonABLE-Lite-Paper-82bda161f3594964931b2be7d84429ff"
-                    className="bg-white text-black/50"
+                    className="bg-white"
                 >
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
                     href="/launchpad"
-                    className="bg-green text-black/50"
+                    className="bg-green"
                 >
                     Invest
                 </LinkButton>

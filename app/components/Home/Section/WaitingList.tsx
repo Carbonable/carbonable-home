@@ -13,7 +13,11 @@ export default function WaitingList() {
     const handleClick = async () => {
         if (email === "") { return; }
 
-        setHasValidEmail(validateEmail(email));
+        if (false === validateEmail(email)) { 
+            setHasValidEmail(false);
+            return; 
+        }
+
         setIsLoading(true);
 
         const base = new Airtable({ apiKey: (window as any).ENV.AIRTABLE_API_KEY }).base((window as any).ENV.AIRTABLE_USER_BASE);
@@ -65,9 +69,8 @@ export default function WaitingList() {
     }
 
     return (
-        <div className="w-11/12 text-center mt-10 px-2 mx-auto md:mt-16">
-            <div className="font-inter uppercase text-xl text-transparent bg-clip-text bg-green-blue md:text-2xl">Channel digital capital toward real-world change !</div>
-            <div className={hasValidEmail ? 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-6/12' : 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-6/12 border-2 border-red-400'}>
+        <div className="w-11/12 text-center mt-10 px-2 mx-auto md:mt-16 md:w-10/12">
+            <div className={hasValidEmail ? 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-10/12 xl:w-6/12' : 'bg-white mt-4 rounded-full w-11/12 pl-4 pr-2 py-2 mx-auto flex lg:w-10/12 xl:w-6/12 border-2 border-red-400'}>
                 <input type="email" className="text-sm text-slate-500 outline-0 w-full" defaultValue={email} name="email" onChange={handleInput} placeholder="Join our waiting list" />
                 <WhitelistButton className="bg-green flex items-center text-xs lg:ml-28 w-min text-right" onClick={handleClick}>
                     <PaperAirplaneIcon className={isLoading ? 'lg:hidden w-6 text-white animate-pulse' : 'lg:hidden w-6 text-white'} />
