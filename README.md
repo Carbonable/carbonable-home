@@ -1,34 +1,46 @@
-# Welcome to Remix!
+<div align="center">
+  <h1 align="center">Carbonable Homepage</h1>
+  <p align="center">
+    <a href="https://discord.gg/zUy9UvB7cd">
+        <img src="https://img.shields.io/badge/Discord-6666FF?style=for-the-badge&logo=discord&logoColor=white">
+    </a>
+    <a href="https://twitter.com/intent/follow?screen_name=Carbonable_io">
+        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white">
+    </a>       
+  </p>
+  <h3 align="center">Carbonable homepage written in React with Remix</h3>
+</div>
 
-- [Remix Docs](https://remix.run/docs)
+## Usage
 
-## Deployment
+### 🎉 Install
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
-
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
-
-```sh
-npm i -g vercel
-vercel
-```
-
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
-
-## Development
-
-To run your Remix app locally, make sure your project's local dependencies are installed:
-
-```sh
+```bash
 npm install
 ```
 
-Afterwards, start the Remix development server like so:
+### ⛏️ Run for dev
 
-```sh
+```bash
 npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+### 🌡️ Deploy for preview
 
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+```bash
+# Push changes on github
+git add .
+git commit -m ""
+git push
+
+# Your branch will be deployed automatically on Vercel
+```
+
+### 🚀 Deployment for prod
+
+Merge your branch into main, it will deploy automatically to production
+
+
+## 📄 License
+
+**carbonable-starknet-protocol** is released under the [MIT](LICENSE).
