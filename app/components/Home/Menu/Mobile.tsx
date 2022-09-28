@@ -12,7 +12,7 @@ export default function Mobile() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchpad"
+                    href="#"
                     className="bg-green text-xs md:text-sm"
                 >
                     Invest
