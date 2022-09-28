@@ -20,7 +20,7 @@ export default function Desktop() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchpad"
+                    href="#"
                     className="bg-green"
                 >
                     Invest

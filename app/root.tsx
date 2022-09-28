@@ -9,7 +9,6 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import { getInstalledInjectedConnectors, StarknetProvider } from "@starknet-react/core";
 import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => ({
@@ -32,7 +31,6 @@ export async function loader() {
 }
 
 export default function App() {
-  const connectors = getInstalledInjectedConnectors();
   const data = useLoaderData();
   return (
     <html lang="en">
@@ -46,19 +44,17 @@ export default function App() {
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </head>
         <body className="bg-black text-white">
-            <StarknetProvider connectors={connectors}>
-                <Outlet />
-                <script
-                  dangerouslySetInnerHTML={{
-                    __html: `window.ENV = ${JSON.stringify(
-                      data.ENV
-                    )}`,
-                  }}
-                />
-                <ScrollRestoration />
-                <Scripts />
-                <LiveReload />
-            </StarknetProvider>
+          <Outlet />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(
+                data.ENV
+              )}`,
+            }}
+          />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
         </body>
     </html>
   );
