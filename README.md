@@ -40,7 +40,3 @@ git push
 
 Merge your branch into main, it will deploy automatically to production
 
-
-## 📄 License
-
-**carbonable-starknet-protocol** is released under the [MIT](LICENSE).
