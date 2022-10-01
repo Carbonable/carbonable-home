@@ -13,6 +13,16 @@
 
 ## Usage
 
+### Set up the project
+
+#### 📦 Install the requirements
+
+- [Flyctl](https://fly.io/docs/hands-on/install-flyctl/)
+
+```bash
+fly auth signup
+```
+
 ### 🎉 Install
 
 ```bash
@@ -33,10 +43,36 @@ git add .
 git commit -m ""
 git push
 
-# Your branch will be deployed automatically on Vercel
+# Your branch will be deployed automatically on Fly.io
 ```
 
 ### 🚀 Deployment for prod
 
 Merge your branch into main, it will deploy automatically to production
+
+### 💾 Database
+
+#### Dev
+
+##### Installation
+Install [Postgres](https://www.postgresql.org/download/)
+
+Start Postgres
+
+Create a database named carbonable_dapp
+
+##### Connection
+
+Connection with pgAdmin: localhost:5432 postgres/[password]
+
+#### Prod
+
+##### Connection
+
+```bash
+flyctl proxy 15432:5432 carbonable-dapp-db.internal
+```
+
+Connection with pgAdmin: localhost:543154322 postgres/[password]
+
 
