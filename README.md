@@ -40,7 +40,7 @@ npm run dev
 ```bash
 # Push changes on github
 git add .
-git commit -m ""
+git commit -m "commit message"
 git push
 
 # Your branch will be deployed automatically on Fly.io
