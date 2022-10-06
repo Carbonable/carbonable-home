@@ -117,7 +117,7 @@ export default function Carousel() {
                     {slides[activeSlide].subtitle}
                 </div>
             </div>
-            <div className="flex items-center justify-center md:justify-start lg:w-10/12 mx-auto mt-8">
+            <div className="flex items-center justify-center lg:justify-start lg:w-10/12 mx-auto mt-8">
                 <LinkOutsideButton href="#" className="bg-green text-xs md:text-sm">Estimate your yield</LinkOutsideButton>
                 <LinkOutsideButton href="#" className="bg-lightblue text-xs md:text-sm ml-2">Learn more</LinkOutsideButton>
             </div>

@@ -1,9 +1,24 @@
+import type { LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { Menu } from "~/components/Home/Menu";
-import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer } from "~/components/Home/Section";
+import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators } from "~/components/Home/Section";
 import Separator from "~/components/Separator/Separator";
+import type { ConfigData } from "~/types/types";
 
+import { db } from "~/utils/db.server";
+
+type LoaderData = { simulators_config: Array<ConfigData> };
+
+export const loader: LoaderFunction = async () => {
+  const data: LoaderData = {
+    simulators_config: await db.simulatorConfig.findMany({ select: {type: true, config: true }, where: {type: {in: ["yield", "offset"]}}}),
+  };
+  return json(data);
+};
 
 export default function Index() {
+  const config = useLoaderData<LoaderData>();
 
   return (
       <>
@@ -11,6 +26,7 @@ export default function Index() {
         <Title />
         <Video />
         <Carousel />
+        <Simulators config={config.simulators_config} />
         <B2B />
         <Values />
         <Separator />
