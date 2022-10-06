@@ -65,6 +65,14 @@ Create a database named carbonable_dapp
 
 Connection with pgAdmin: localhost:5432 postgres/[password]
 
+##### Build database
+```bash
+npx prisma db push
+```
+
+If your database gets messed up, you can always delete the prisma/dev.db file and run npx prisma db push again. 
+Remember to also restart your dev server with npm run dev.
+
 #### Prod
 
 ##### Connection

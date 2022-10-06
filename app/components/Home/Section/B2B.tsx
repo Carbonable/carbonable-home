@@ -6,11 +6,11 @@ export default function B2B() {
             <div className="w-11/12 max-w-screen-2xl mx-auto bg-home-b2b-gradient rounded-2xl shadow-home backdrop-blur-md py-8 px-2 md:w-10/12 md:mx-auto lg:w-8/12 xl:w-5/12">
                 <div className="flex items-start justify-center">
                     <PlusIcon className="w-8 md:w-12"></PlusIcon>
-                    <div className="w-10/12 items-center uppercase font-trash font-bold text-2xl lg:text-3xl text-center md:text-4xl xl:text-5xl">
+                    <h1 className="w-10/12 items-center uppercase font-trash font-bold text-2xl lg:text-3xl text-center md:text-4xl xl:text-5xl">
                         The easiest 
-                        <div className="font-americana font-medium text-lg md:text-2xl md:text-3xl">and smartest way</div>
+                        <div className="font-americana font-medium text-lg md:text-2xl lg:text-3xl">and smartest way</div>
                         <div className="uppercase font-inter font-semibold text-sm mt-1 md:text-base">to offset your residual carbon emissions</div>
-                    </div>
+                    </h1>
                     <PlusIcon className="w-8 md:w-12"></PlusIcon>
                 </div>
                 <div className="h-[1px] w-11/12 mx-auto bg-green-blue mt-6"></div>

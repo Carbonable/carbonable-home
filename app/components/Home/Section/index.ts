@@ -6,5 +6,6 @@ import B2B from './B2B';
 import Values from './Values';
 import Partners from './Partners';
 import Footer from './Footer';
+import Simulators from './Simulators';
 
-export { Title, Video, Carousel, WaitingList, B2B, Values, Partners, Footer }
+export { Title, Video, Carousel, WaitingList, B2B, Values, Partners, Footer, Simulators }

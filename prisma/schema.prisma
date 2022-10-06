@@ -10,10 +10,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Joke {
-  id         String   @id @default(uuid())
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  name       String
-  content    String
+model SimulatorConfig {
+  id         String @id @default(uuid())
+  type       String @unique
+  config     Json
 }
