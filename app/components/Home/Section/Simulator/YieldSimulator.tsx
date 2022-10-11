@@ -46,7 +46,7 @@ export default function YieldSimulator(carbonPrices: any) {
           return (
             <div className="p-4 bg-black font-inter">
               <p className="text-center font-thin">{`Accrued yield in ${label} `}</p>
-              <p className="text-green text-left">{`Best: ${payload[2].value}$`}</p>
+              <p className="text-green text-left mt-1">{`Best: ${payload[2].value}$`}</p>
               <p className="text-lightblue text-left">{`Base: ${payload[1].value}$`}</p>
               <p className="text-grey text-left">{`Worst: ${payload[0].value}$`}</p>
             </div>
@@ -98,9 +98,9 @@ export default function YieldSimulator(carbonPrices: any) {
                     <YAxis />
                     <Tooltip content={<CustomTooltip />} />
                     <Legend />
-                    <Line type="monotone" dataKey="worst" stroke="#787675" />
-                    <Line type="monotone" dataKey="base" stroke="#AAC6FD" />
-                    <Line type="monotone" dataKey="best" stroke="#0AF2AD" />
+                    <Line name="Worst market forecast" type="monotone" dataKey="worst" stroke="#787675" />
+                    <Line name="Base market forecast" type="monotone" dataKey="base" stroke="#AAC6FD" />
+                    <Line name="Best market forecast" type="monotone" dataKey="best" stroke="#0AF2AD" />
                     </LineChart>
                 </ResponsiveContainer>
             </div>

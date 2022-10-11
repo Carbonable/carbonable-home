@@ -2,6 +2,9 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import Airtable from "airtable";
 import { useState } from "react";
 import { WhitelistButton } from "~/components/Button";
+import { validateEmail } from "~/utils/utils";
+
+
 
 export default function WaitingList() {
 
@@ -60,13 +63,7 @@ export default function WaitingList() {
         if (false === hasValidEmail) { setHasValidEmail(true); }
 
         setEmail(event.target.value);
-      };
-
-    function validateEmail(email: string) {
-        // eslint-disable-next-line no-useless-escape
-        const mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        return email.match(mailformat) ? true : false;
-    }
+    };
 
     return (
         <div className="w-11/12 text-center mt-10 px-2 mx-auto md:mt-16 md:w-10/12">

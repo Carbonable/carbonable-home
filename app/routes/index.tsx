@@ -1,4 +1,3 @@
-import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Menu } from "~/components/Home/Menu";
@@ -10,9 +9,9 @@ import { db } from "~/utils/db.server";
 
 type LoaderData = { simulators_config: Array<ConfigData> };
 
-export const loader: LoaderFunction = async () => {
+export async function loader() {
   const data: LoaderData = {
-    simulators_config: await db.simulatorConfig.findMany({ select: {type: true, config: true }, where: {type: {in: ["yield", "offset"]}}}),
+    simulators_config: await db.simulatorConfig.findMany({ select: {type: true, config: true }}),
   };
   return json(data);
 };
