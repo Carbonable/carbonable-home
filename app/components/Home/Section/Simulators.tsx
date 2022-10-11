@@ -7,6 +7,7 @@ export default function Simulators(config: any) {
     const [selectedSimulator, setSelectedSimulator] = useState("yield");
     const yieldConfig = config.config.filter((conf:any) => conf.type === "yield");
     const offsetConfig = config.config.filter((conf:any) => conf.type === "offset");
+    const globalConfig = config.config.filter((conf:any) => conf.type === "global");
 
     return (
         <div id="simulator" className="w-full scroll-mt-12 text-center mt-20 xl:mt-32 max-w-screen-2xl mx-auto">
@@ -21,7 +22,7 @@ export default function Simulators(config: any) {
                 </div>
                 <div className="">
                     { selectedSimulator === 'yield' && <YieldSimulator carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} /> }
-                    { selectedSimulator === 'offset' && <OffsetSimulator offset={offsetConfig[0].config.annual_growth[0].carbonable} /> }
+                    { selectedSimulator === 'offset' && <OffsetSimulator offset={offsetConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} /> }
                 </div>
             </div>
             

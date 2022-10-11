@@ -1211,6 +1211,11 @@ video {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+.text-\[\#ffd700\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 215 0 / var(--tw-text-opacity));
+}
+
 .text-grey {
   --tw-text-opacity: 1;
   color: rgb(120 118 117 / var(--tw-text-opacity));
@@ -1458,10 +1463,6 @@ html {
 
   .md\:min-h-\[400px\] {
     min-height: 400px;
-  }
-
-  .md\:min-h-\[600px\] {
-    min-height: 600px;
   }
 
   .md\:w-8\/12 {
