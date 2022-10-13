@@ -15,3 +15,15 @@ model SimulatorConfig {
   type       String @unique
   config     Json
 }
+
+enum AnalyticsType {
+  YIELD
+  OFFSET
+}
+
+model SimulatorAnalytics {
+  id         String @id @default(uuid())
+  createdAt  DateTime @default(now())
+  type       AnalyticsType
+  value      Int
+}
