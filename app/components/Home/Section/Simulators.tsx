@@ -3,11 +3,11 @@ import { useState } from "react"
 import OffsetSimulator from "./Simulator/OffsetSimulator";
 import YieldSimulator from "./Simulator/YieldSimulator";
 
-export default function Simulators(config: any) {
+export default function Simulators({config}: any) {
     const [selectedSimulator, setSelectedSimulator] = useState("yield");
-    const yieldConfig = config.config.filter((conf:any) => conf.type === "yield");
-    const offsetConfig = config.config.filter((conf:any) => conf.type === "offset");
-    const globalConfig = config.config.filter((conf:any) => conf.type === "global");
+    const yieldConfig = config.filter((conf:any) => conf.type === "yield");
+    const offsetConfig = config.filter((conf:any) => conf.type === "offset");
+    const globalConfig = config.filter((conf:any) => conf.type === "global");
 
     return (
         <div id="simulator" className="w-full scroll-mt-12 text-center mt-20 xl:mt-32 max-w-screen-2xl mx-auto">

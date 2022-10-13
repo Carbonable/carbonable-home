@@ -1,20 +1,37 @@
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { debounce } from "lodash"
 
-export default function YieldSimulator(carbonPrices: any) {
+import { Form, useSubmit } from '@remix-run/react';
+
+export default function YieldSimulator({carbonPrices}: any) {
 
     const [investment, setInvestment] = useState(100);
     const [duration, setDuration] = useState([20]);
     const [graphData, setGraphData] = useState([{}]);
+    const firstUpdate = useRef(true);
 
-    const worst = carbonPrices.carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "worst");
-    const base = carbonPrices.carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "base"); 
-    const best = carbonPrices.carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "best"); 
+    const worst = carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "worst");
+    const base = carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "base"); 
+    const best = carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "best"); 
 
-    const updateInvestment = (event: any) => {
-        setInvestment(event.target.value);
-    };
+    const submit = useSubmit();
+    function handleChange(event: any) {
+        debouncedSubmit(event.currentTarget)
+    }
+
+    const debouncedSubmit = useRef(
+        debounce(async (criteria) => {
+            submit(criteria);;
+        }, 1000)
+      ).current;
+
+    useEffect(() => {
+        return () => {
+            debouncedSubmit.cancel();
+        };
+    }, [debouncedSubmit]);
 
     useEffect(() => {
         let dataGraph = [];
@@ -38,6 +55,12 @@ export default function YieldSimulator(carbonPrices: any) {
             )
         }
         setGraphData(dataGraph);
+
+        // Return on first load to avoid saving initial values for analytics in database
+        if (firstUpdate.current) {
+            firstUpdate.current = false;
+            return;
+        }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [duration, investment]);
     
@@ -59,26 +82,30 @@ export default function YieldSimulator(carbonPrices: any) {
     return (
         <div className="w-full bg-footerBg mt-6 md:mt-20 flex flex-wrap">
             <div className="w-11/12 mx-auto md:w-1/3 justify-start text-left md:p-6">
-                <div className="text-white uppercase font-inter font-extralight">Investment ($)</div>
-                <input type="number" className="text-black/50 outline-0 w-full p-4 mt-1" defaultValue={investment} name="email" onChange={updateInvestment} placeholder="How much do you want to invest" />
-                <div className="text-white uppercase font-inter font-extralight mt-8">Duration (years)</div>
-                <div className="mt-2 mb-10">
-                    <SliderPrimitive.Root
-                        min={20}
-                        max={30}
-                        aria-label="value"
-                        className="relative flex h-5 w-full touch-none items-center"
-                        value={duration}
-                        onValueChange={(val) => setDuration(val)}
-                        >
-                        <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-black">
-                            <SliderPrimitive.Range className="absolute h-full rounded-full bg-green" />
-                        </SliderPrimitive.Track>
-                        <SliderPrimitive.Thumb className="relative block h-5 w-5 rounded-full bg-green focus:outline-none focus-visible:ring focus-visible:ring-green focus-visible:ring-opacity-75 cursor-pointer" >
-                            <div className="absolute top-6">{duration}</div>
-                        </SliderPrimitive.Thumb>
-                    </SliderPrimitive.Root>
-                </div>
+                <Form method="post" onChange={handleChange}>
+                    <div className="text-white uppercase font-inter font-extralight">Investment ($)</div>
+                    <input id="investment" type="number" className="text-black/50 outline-0 w-full p-4 mt-1" defaultValue={investment} name="investment" onChange={(e) => setInvestment(parseInt(e.target.value))} placeholder="How much do you want to invest" />
+                    <input hidden id="source" name="source" defaultValue="yield" />
+                    <div className="text-white uppercase font-inter font-extralight mt-8">Duration (years)</div>
+                    <div className="mt-2 mb-10">
+                        <SliderPrimitive.Root
+                            min={20}
+                            max={30}
+                            aria-label="value"
+                            className="relative flex h-5 w-full touch-none items-center"
+                            value={duration}
+                            onValueChange={(val) => setDuration(val)}
+                            id="duration"
+                            >
+                            <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-black">
+                                <SliderPrimitive.Range className="absolute h-full rounded-full bg-green" />
+                            </SliderPrimitive.Track>
+                            <SliderPrimitive.Thumb className="relative block h-5 w-5 rounded-full bg-green focus:outline-none focus-visible:ring focus-visible:ring-green focus-visible:ring-opacity-75 cursor-pointer" >
+                                <div className="absolute top-6">{duration}</div>
+                            </SliderPrimitive.Thumb>
+                        </SliderPrimitive.Root>
+                    </div>
+                </Form>
             </div>
             <div className="w-full md:w-2/3 px-0 md:px-4 mt-8 md:mt-0 min-h-[300px] md:min-h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">

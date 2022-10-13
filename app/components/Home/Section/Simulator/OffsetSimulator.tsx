@@ -1,6 +1,8 @@
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { useEffect, useState } from "react"
-import { Area, AreaChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Form, useSubmit } from '@remix-run/react';
+import { debounce } from 'lodash';
+import { useEffect, useRef, useState } from "react"
+import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 export default function OffsetSimulator({offset, globalConf}: any) {
 
@@ -14,9 +16,22 @@ export default function OffsetSimulator({offset, globalConf}: any) {
     const carbonCreditPrice = globalConf.config.carbon_credit_price_per_ton;
 
 
-    const updateCCNeed = (event: any) => {
-        setCcNeed(event.target.value);
-    };
+    const submit = useSubmit();
+    function handleChange(event: any) {
+        debouncedSubmit(event.currentTarget)
+    }
+
+    const debouncedSubmit = useRef(
+        debounce(async (criteria) => {
+            submit(criteria);;
+        }, 1000)
+      ).current;
+
+    useEffect(() => {
+        return () => {
+            debouncedSubmit.cancel();
+        };
+    }, [debouncedSubmit]);
 
     useEffect(() => {
         let dataGraph = [];
@@ -39,7 +54,7 @@ export default function OffsetSimulator({offset, globalConf}: any) {
                     base: parseInt(baseAccrued.toString()),
                     best: parseInt(bestAccrued.toString()),
                     base_cc_unit_price: carbonCreditPrice,
-                    carbonableInvestAccrued: parseInt(carbonableInvestAccrued.toString()),
+                    carbonableInvestAccrued: parseInt(carbonableInvestAccrued.toString())
                 }
             )
         }
@@ -67,26 +82,29 @@ export default function OffsetSimulator({offset, globalConf}: any) {
     return (
         <div className="w-full bg-footerBg mt-6 md:mt-20 flex flex-wrap">
             <div className="w-11/12 mx-auto md:w-1/3 justify-start text-left md:p-6">
-                <div className="text-white uppercase font-inter font-extralight">Carbon Credit to offset (T/YEAR)</div>
-                <input type="number" className="text-black/50 outline-0 w-full p-4 mt-1" defaultValue={ccNeed} name="email" onChange={updateCCNeed} placeholder="How much do you want to invest" />
-                <div className="text-white uppercase font-inter font-extralight mt-8">Duration (years)</div>
-                <div className="mt-2 mb-10">
-                    <SliderPrimitive.Root
-                        min={20}
-                        max={30}
-                        aria-label="value"
-                        className="relative flex h-5 w-full touch-none items-center"
-                        value={duration}
-                        onValueChange={(val) => setDuration(val)}
-                        >
-                        <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-black">
-                            <SliderPrimitive.Range className="absolute h-full rounded-full bg-green" />
-                        </SliderPrimitive.Track>
-                        <SliderPrimitive.Thumb className="relative block h-5 w-5 rounded-full bg-green focus:outline-none focus-visible:ring focus-visible:ring-green focus-visible:ring-opacity-75 cursor-pointer" >
-                            <div className="absolute top-6">{duration}</div>
-                        </SliderPrimitive.Thumb>
-                    </SliderPrimitive.Root>
-                </div>
+                <Form method="post" onChange={handleChange}>
+                    <div className="text-white uppercase font-inter font-extralight">Carbon Credit to offset (T/YEAR)</div>
+                    <input hidden id="source" name="source" defaultValue="offset" />
+                    <input type="number" className="text-black/50 outline-0 w-full p-4 mt-1" defaultValue={ccNeed} name="ccNeed" onChange={(e) => setCcNeed(parseInt(e.target.value))} placeholder="How much do you want to invest" />
+                    <div className="text-white uppercase font-inter font-extralight mt-8">Duration (years)</div>
+                    <div className="mt-2 mb-10">
+                        <SliderPrimitive.Root
+                            min={20}
+                            max={30}
+                            aria-label="value"
+                            className="relative flex h-5 w-full touch-none items-center"
+                            value={duration}
+                            onValueChange={(val) => setDuration(val)}
+                            >
+                            <SliderPrimitive.Track className="relative h-1 w-full grow rounded-full bg-black">
+                                <SliderPrimitive.Range className="absolute h-full rounded-full bg-green" />
+                            </SliderPrimitive.Track>
+                            <SliderPrimitive.Thumb className="relative block h-5 w-5 rounded-full bg-green focus:outline-none focus-visible:ring focus-visible:ring-green focus-visible:ring-opacity-75 cursor-pointer" >
+                                <div className="absolute top-6">{duration}</div>
+                            </SliderPrimitive.Thumb>
+                        </SliderPrimitive.Root>
+                    </div>
+                </Form>
             </div>
             <div className="w-full md:w-2/3 px-0 md:px-4 min-h-[300px] md:min-h-[400px] mt-8 md:mt-0">
                 <ResponsiveContainer width="100%" height="100%">
