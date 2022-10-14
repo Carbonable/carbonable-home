@@ -10,7 +10,6 @@ export default function YieldSimulator({carbonPrices}: any) {
     const [investment, setInvestment] = useState(100);
     const [duration, setDuration] = useState([20]);
     const [graphData, setGraphData] = useState([{}]);
-    const firstUpdate = useRef(true);
 
     const worst = carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "worst");
     const base = carbonPrices.filter((carbonPrice: any) => carbonPrice.type === "base"); 
@@ -55,12 +54,7 @@ export default function YieldSimulator({carbonPrices}: any) {
             )
         }
         setGraphData(dataGraph);
-
-        // Return on first load to avoid saving initial values for analytics in database
-        if (firstUpdate.current) {
-            firstUpdate.current = false;
-            return;
-        }
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [duration, investment]);
     
