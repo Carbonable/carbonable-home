@@ -6,6 +6,7 @@ type SaveAnalyticsType = {
     type: AnalyticsType;
     value: number;
 };
+
 /**
  * Save simulator analytics
  * 

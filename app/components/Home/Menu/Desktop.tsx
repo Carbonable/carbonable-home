@@ -5,7 +5,7 @@ export default function Desktop() {
     return (
         <div className="hidden lg:flex items-center">
             <div className="w-3/12"><img className="w-8/12 xl:w-6/12" src="/assets/images/home/logo.svg" alt="Logo carbonable" /></div>
-            <div className="flex font-inter w-6/12 text-beaige flex uppercase space-x-8 text-sm justify-center items-center text-center">
+            <div className="flex font-inter w-6/12 text-beaige uppercase space-x-8 text-sm justify-center items-center text-center">
                 <MenuLink href="#video">Explainer video</MenuLink>
                 <MenuLink href="#assets">Our assets</MenuLink>
                 <MenuLink href="#howitworks">How it works</MenuLink>
@@ -20,7 +20,7 @@ export default function Desktop() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="#"
+                    href="/launchpad"
                     className="bg-green"
                 >
                     Invest
