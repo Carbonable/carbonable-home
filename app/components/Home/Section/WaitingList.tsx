@@ -1,7 +1,8 @@
-import { PaperAirplaneIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import Airtable from "airtable";
 import { useState } from "react";
-import { LinkOutsideButtonBig, WhitelistButton } from "~/components/Button";
+import { WhitelistButton } from "~/components/Button";
+import { PlusIconBlack } from "~/components/Icons/PlusIcon";
 import { validateEmail } from "~/utils/utils";
 
 
@@ -69,14 +70,14 @@ export default function WaitingList() {
         <>
             <div className="bg-waiting-list bg-no-repeat bg-bottom bg-origin-padding rounded-2xl w-11/12 mx-auto py-2 px-2 mt-12 text-black md:w-10/12 md:px-12 xl:w-8/12">
                 <div className="flex items-center justify-center mt-10">
-                    <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                    <PlusIconBlack className="w-8 md:w-12"></PlusIconBlack>
                     <div className="w-10/12 mx-auto px-6 uppercase text-center">
                         <h1 className="uppercase font-trash font-bold text-2xl text-center md:text-3xl xl:text-5xl">
                             HELP NATURE
                             <div className="font-americana font-medium text-xl text-center md:text-2xl xl:text-4xl">HELP YOU</div>
                         </h1>
                     </div>
-                    <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                    <PlusIconBlack className="w-8 md:w-12"></PlusIconBlack>
                 </div>
                 <div className="my-10">
                     <img className="mx-auto" src="/assets/images/home/infinite-earth.svg" alt="Infinite earth" />

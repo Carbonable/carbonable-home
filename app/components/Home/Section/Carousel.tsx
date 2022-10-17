@@ -1,7 +1,7 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Slider from "react-slick";
 import LinkOutsideButton from "~/components/Button";
+import PlusIconWhite from "~/components/Icons/PlusIcon";
 
 export default function Carousel() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -86,9 +86,9 @@ export default function Carousel() {
     return (
         <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-12 xl:mt-24">
             <div className="flex items-start justify-center">
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</h1>
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
             <h2 className="text-center font-inter mb-8">Break free from old beliefs</h2>
             <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">

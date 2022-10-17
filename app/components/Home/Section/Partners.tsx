@@ -1,4 +1,4 @@
-import { PlusIcon } from "@heroicons/react/24/outline";
+import PlusIconWhite from "~/components/Icons/PlusIcon";
 
 export default function Values() {
     const backed = [
@@ -70,14 +70,14 @@ export default function Values() {
     return (
         <div className="w-11/12 max-w-screen-2xl mx-auto text-center mt-12 xl:mt-20 xl:w-8/12">
             <div className="flex items-center justify-center">
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">
                     <h1 className="font-trash font-bold text-sm text-center md:text-3xl xl:text-5xl">
                     Built on powerful
                         <div className="font-americana font-medium text-xs md:text-2xl lg:text-3xl">partnerships</div>
                     </h1>
                 </div>
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
             <div className="flex item-center justify-center mt-12 lg:mt-20">
                 {backed.map((partner, index) => (
@@ -86,14 +86,14 @@ export default function Values() {
 
             </div>
             <div className="flex items-center justify-center mt-16 md:mt-36">
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">
                     <h1 className="font-trash font-bold text-sm text-center md:text-3xl xl:text-5xl">
                         We draw our experience
                         <div className="font-americana font-medium text-xs md:text-2xl lg:text-3xl">from an expert community</div>
                     </h1>
                 </div>
-                <PlusIcon className="w-8 md:w-12"></PlusIcon>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
             <div className="flex flex-wrap item-center justify-center mt-8 md:mt-12 lg:mt-20">
                 {experiences.map((partner, index) => (
