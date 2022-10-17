@@ -572,6 +572,16 @@ video {
   margin-bottom: 4rem;
 }
 
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
@@ -608,12 +618,12 @@ video {
   margin-top: 4rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .mt-20 {
   margin-top: 5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mt-10 {
@@ -768,6 +778,10 @@ video {
 
 .w-5 {
   width: 1.25rem;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .min-w-full {
@@ -969,6 +983,10 @@ video {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 20%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%), linear-gradient(0deg, rgba(0, 42, 45, 0), rgba(0, 42, 45, 0)), url('/assets/images/home/home-header-bg.jpg');
 }
 
+.bg-waiting-list {
+  background-image: url('/assets/images/home/bg-map.svg'), linear-gradient(270deg, #A8C4EF 39.58%, #0AF2AD 100%);
+}
+
 .from-green {
   --tw-gradient-from: #0AF2AD;
   --tw-gradient-to: rgb(10 242 173 / 0);
@@ -983,8 +1001,32 @@ video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.bg-origin-padding {
+  background-origin: padding-box;
+}
+
+.bg-origin-content {
+  background-origin: content-box;
 }
 
 .p-1 {
@@ -993,10 +1035,6 @@ video {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-6 {
-  padding: 1.5rem;
 }
 
 .p-12 {
@@ -1028,6 +1066,11 @@ video {
   padding-right: 3rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-48 {
   padding-top: 12rem;
   padding-bottom: 12rem;
@@ -1048,9 +1091,9 @@ video {
   padding-right: 0.75rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .py-6 {
@@ -1058,14 +1101,14 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.py-32 {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-}
-
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pb-4 {
@@ -1441,8 +1484,8 @@ html {
     margin-top: 2rem;
   }
 
-  .md\:mt-32 {
-    margin-top: 8rem;
+  .md\:mt-36 {
+    margin-top: 9rem;
   }
 
   .md\:mt-12 {
@@ -1481,10 +1524,6 @@ html {
     width: 25%;
   }
 
-  .md\:w-10 {
-    width: 2.5rem;
-  }
-
   .md\:w-11\/12 {
     width: 91.666667%;
   }
@@ -1499,6 +1538,10 @@ html {
 
   .md\:w-2\/3 {
     width: 66.666667%;
+  }
+
+  .md\:w-6\/12 {
+    width: 50%;
   }
 
   .md\:p-12 {
