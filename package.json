@@ -16,7 +16,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.1",
     "@heroicons/react": "^2.0.11",
-    "@prisma/client": "^4.4.0",
+    "@prisma/client": "^4.5.0",
     "@radix-ui/react-slider": "^1.0.0",
     "@radix-ui/react-use-previous": "^1.0.0",
     "@remix-run/node": "^1.7.2",
@@ -48,7 +48,7 @@
     "eslint": "^8.20.0",
     "happy-dom": "^7.5.6",
     "postcss": "^8.4.16",
-    "prisma": "^4.4.0",
+    "prisma": "^4.5.0",
     "react-is": "^17.0.2",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",

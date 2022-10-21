@@ -1,4 +1,4 @@
-import type { Prisma, PrismaPromise } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { db } from "~/utils/db.server";
 
 /**
@@ -6,9 +6,12 @@ import { db } from "~/utils/db.server";
  * 
  * @returns { Promise<string> } starnknetId or empty string
  */
-export async function fetchConfiguration(): Promise<PrismaPromise<{
-    type: string;
-    config: Prisma.JsonValue;
-}[]>> {
-    return await db.simulatorConfig.findMany({ select: {type: true, config: true }})
+export async function fetchConfiguration(): Promise<{ type: string; config: Prisma.JsonValue; }[] | null> {
+    try {
+        return await db.simulatorConfig.findMany({ select: {type: true, config: true }});
+    } catch {
+        return null;
+    }
+    
+    
 }
