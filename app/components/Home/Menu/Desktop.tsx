@@ -21,10 +21,9 @@ export default function Desktop() {
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchpad"
-                    className="bg-green"
+                    href="#"
+                    className="bg-green min-w-[50%] text-center before:content-['Invest'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed	hover:opacity-75"
                 >
-                    Invest
                 </LinkButton>
             </div>
         </div>

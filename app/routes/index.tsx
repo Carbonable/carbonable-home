@@ -1,7 +1,7 @@
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Menu } from "~/components/Home/Menu";
-import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators } from "~/components/Home/Section";
+import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators, ParallaxTop } from "~/components/Home/Section";
 import Separator from "~/components/Separator/Separator";
 import type { ConfigData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
@@ -48,13 +48,10 @@ export async function action({ request }: ActionArgs) {
 
 export default function Index() {
   const config = useLoaderData<LoaderData>();
-  console.log(config);
 
   return (
       <>
-        <Menu />
-        <Title />
-        <Video />
+        <ParallaxTop />
         <Carousel />
         { config.simulators_config ? <Simulators config={config.simulators_config} /> : null }
         <B2B />

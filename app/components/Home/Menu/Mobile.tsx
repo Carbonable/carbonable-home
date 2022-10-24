@@ -13,9 +13,8 @@ export default function Mobile() {
                 </LinkOutsideButton>
                 <LinkButton
                     href="#"
-                    className="bg-green text-xs md:text-sm"
+                    className="bg-green w-[124px] text-center before:content-['Invest'] hover:before:content-['Soon'] hover:cursor-not-allowed	hover:opacity-75"
                 >
-                    Invest
                 </LinkButton>
             </div>
         </div>

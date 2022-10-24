@@ -7,5 +7,6 @@ import Values from './Values';
 import Partners from './Partners';
 import Footer from './Footer';
 import Simulators from './Simulators';
+import ParallaxTop from './ParallaxTop';
 
-export { Title, Video, Carousel, WaitingList, B2B, Values, Partners, Footer, Simulators }
+export { Title, Video, Carousel, WaitingList, B2B, Values, Partners, Footer, Simulators, ParallaxTop }
