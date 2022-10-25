@@ -562,6 +562,34 @@ video {
   top: 1.5rem;
 }
 
+.top-\[94px\] {
+  top: 94px;
+}
+
+.left-\[80px\] {
+  left: 80px;
+}
+
+.top-\[68px\] {
+  top: 68px;
+}
+
+.left-\[156px\] {
+  left: 156px;
+}
+
+.left-\[166px\] {
+  left: 166px;
+}
+
+.left-\[180px\] {
+  left: 180px;
+}
+
+.top-\[67px\] {
+  top: 67px;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -719,6 +747,10 @@ video {
 
 .min-h-\[300px\] {
   min-height: 300px;
+}
+
+.min-h-\[50vh\] {
+  min-height: 50vh;
 }
 
 .w-10 {
@@ -1176,6 +1208,14 @@ video {
   padding-right: 0.5rem;
 }
 
+.pl-8 {
+  padding-left: 2rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1257,6 +1297,18 @@ video {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.leading-3 {
+  line-height: .75rem;
+}
+
+.leading-4 {
+  line-height: 1rem;
+}
+
+.leading-5 {
+  line-height: 1.25rem;
 }
 
 .text-white {
@@ -1405,17 +1457,16 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.chip-clip {
-  -webkit-clip-path: polygon(0 37%, 0 26%, 1% 23%, 4% 20%, 4% 18%, 4% 2%, 5% 0, 43% 0, 44% 0, 48% 4%, 51% 5%, 99% 5%, 100% 7%, 100% 49%, 99% 52%, 91% 56%, 90% 56%, 90% 69%, 91% 70%, 99% 70%, 100% 72%, 100% 98%, 100% 100%, 4% 100%, 4% 98%, 4% 42%, 4% 41%, 0 39%);
-          clip-path: polygon(0 37%, 0 26%, 1% 23%, 4% 20%, 4% 18%, 4% 2%, 5% 0, 43% 0, 44% 0, 48% 4%, 51% 5%, 99% 5%, 100% 7%, 100% 49%, 99% 52%, 91% 56%, 90% 56%, 90% 69%, 91% 70%, 99% 70%, 100% 72%, 100% 98%, 100% 100%, 4% 100%, 4% 98%, 4% 42%, 4% 41%, 0 39%);
-}
-
 .scroll-snap-end {
   scroll-snap-align: end;
 }
 
 .scroll-snap-center {
   scroll-snap-align: center;
+}
+
+.scroll-snap-start {
+  scroll-snap-align: start;
 }
 
 @font-face {
