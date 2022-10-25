@@ -51,6 +51,7 @@ export default function Index() {
 
   return (
       <>
+        <Menu />
         <ParallaxTop />
         <Carousel />
         { config.simulators_config ? <Simulators config={config.simulators_config} /> : null }

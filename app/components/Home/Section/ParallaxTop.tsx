@@ -1,59 +1,36 @@
-import type { MotionValue} from "framer-motion";
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
 import { LinkButtonBig } from "~/components/Button";
-import { Menu } from "../Menu";
-
-function useParallaxTop(value: MotionValue<number>, distance: number) {
-    return useTransform(value, [0, 1], [-distance, distance]);
-}
-
-function useParallaxBottom(value: MotionValue<number>, distance: number) {
-    return useTransform(value, [0, 1], [distance, -distance]);
-}
 
 function Title() {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref });
-    const y = useParallaxBottom(scrollYProgress, 500);
 
     return (
-        <div className="w-screen h-screen text-center max-w-screen-2xl mx-auto relative scroll-snap pt-1 overflow-hidden">
-            <Menu />
-            <div ref={ref}>
-                <div className="z-10 relative">
-                    <h1 className="font-americana text-2xl md:text-4xl pt-12 lg:text-6xl lg:pt-36 w-9/12 mx-auto uppercase">
-                        LONG TERM YIELDS FOR INVESTORS & THE PLANET
-                    </h1>
-                    <h2 className="font-trash text-bold text-green text-lg w-10/12 lg:text-2xl lg:w-6/12 mx-auto mt-8">
-                        BEST VALUE INVESTMENTS VALUES THE PLANET
-                    </h2>
-                    <div className="mt-12 w-fit mx-auto">
-                        <LinkButtonBig href="#" className="bg-green w-[200px] text-center before:content-['Invest\00a0Now'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed hover:opacity-75">
-                        </LinkButtonBig>
-                    </div>
-                </div>
-                <div className="mx-auto w-11/12 z-0 relative" >
-                    <img src="/assets/images/home/map-bg.svg" alt="world map" />
+        <div className="w-screen h-auto text-center max-w-screen-2xl mx-auto relative scroll-snap-end pt-1">
+            <div className="relative md:mt-12 lg:mt-4 z-10">
+                <h1 className="font-americana text-2xl md:text-4xl pt-12 lg:text-5xl w-9/12 mx-auto uppercase">
+                    LONG TERM YIELDS FOR INVESTORS & THE PLANET
+                </h1>
+                <h2 className="font-trash text-bold text-green text-lg w-10/12 md:text-xl lg:text-2xl lg:w-6/12 xl:mt-8 xl:text-3xl mx-auto mt-8">
+                    BEST VALUE INVESTMENTS VALUES THE PLANET
+                </h2>
+                <div className="mt-12 w-fit mx-auto xl:mt-20">
+                    <LinkButtonBig href="#" className="bg-green w-[200px] text-center before:content-['Invest\00a0Now'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed hover:opacity-75">
+                    </LinkButtonBig>
                 </div>
             </div>
-            <motion.div style={{ y }} className="mx-auto w-4/12 z-10 mr-[15%] mt-[-50%]">
-                <img src="/assets/images/home/project_card.png" alt="project card"/>
-            </motion.div>
+            <div className="mx-auto w-[320px] relative mt-12 md:w-[780px] md:mt-12 lg:mt-[-140px] lg:w-[920px] xl:w-[1200px] 2xl:w-[1400px] z-0" >
+                <img src="/assets/images/home/map-bg.svg" alt="world map" className="w-full" />
+                <img src="assets/images/maps/marker-line.png" alt="map marker" className="absolute top-[92px] left-[76px] w-[100px] md:w-[200px] md:left-[190px] md:top-[228px] lg:w-[220px] lg:left-[222px] lg:top-[266px] xl:w-[250px] xl:left-[294px] xl:top-[350px] 2xl:w-[280px] 2xl:left-[340px] 2xl:top-[408px]" />
+                <img src="/assets/images/home/project_card.png" alt="project card" className="absolute top-[66px] left-[150px] w-[40%] md:w-[30%] md:left-[398px] md:top-[194px] lg:top-[214px] lg:left-[452px] xl:top-[258px] xl:left-[556px] 2xl:w-[25%] 2xl:top-[344px] 2xl:left-[634px]"/>
+            </div>
         </div>
     )
 }
 
 function Video() {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref });
-    const y = useParallaxBottom(scrollYProgress, 400);
+
     return (
         <>
-            <div ref={ref} id="video" className="z-0 w-11/12 h-[50vh] mx-auto bg-home-video chip-clip text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-32 lg:py-52 scroll-snap">
-            <motion.div style={{ y }} className="mx-auto w-4/12 z-10 mr-[15%] mt-[-10%]">
-                <img src="/assets/images/home/project_card.png" alt="project card"/>
-            </motion.div>
+            <div id="video" className="z-0 w-full h-[50vh] mx-auto bg-home-video text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-32 lg:py-52 scroll-snap-center">
+            
             </div>
             
         </>
