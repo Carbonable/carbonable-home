@@ -1,7 +1,7 @@
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Menu } from "~/components/Home/Menu";
-import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators, ParallaxTop } from "~/components/Home/Section";
+import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators, Steps } from "~/components/Home/Section";
 import Separator from "~/components/Separator/Separator";
 import type { ConfigData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
@@ -52,9 +52,11 @@ export default function Index() {
   return (
       <>
         <Menu />
-        <ParallaxTop />
+        <Title />
+        <Video />
         <Carousel />
         { config.simulators_config ? <Simulators config={config.simulators_config} /> : null }
+        <Steps />
         <B2B />
         <Values />
         <Separator />

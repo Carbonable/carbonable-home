@@ -28,6 +28,9 @@ module.exports = {
       },
       boxShadow: {
         'home': '0px 4px 20px rgba(0, 0, 0, 0.08);',
+      },
+      animation: {
+        'spin-slow': 'spin 12s linear infinite reverse',
       }
     }
   },

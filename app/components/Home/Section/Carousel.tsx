@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Slider from "react-slick";
-import LinkOutsideButton from "~/components/Button";
+import LinkOutsideButton, { LinkButton } from "~/components/Button";
 import PlusIconWhite from "~/components/Icons/PlusIcon";
+import { MEDIUM_LINK } from "~/utils/links";
 
 export default function Carousel() {
     const [activeSlide, setActiveSlide] = useState(0);
@@ -84,7 +85,7 @@ export default function Carousel() {
     ];
     
     return (
-        <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-12 xl:mt-24">
+        <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 scroll-snap-center lg:mt-12 xl:mt-24">
             <div className="flex items-start justify-center">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</h1>
@@ -118,8 +119,8 @@ export default function Carousel() {
                 </div>
             </div>
             <div className="flex items-center justify-center lg:justify-start lg:w-10/12 mx-auto mt-8">
-                <LinkOutsideButton href="#" className="bg-green text-xs md:text-sm">Estimate your yield</LinkOutsideButton>
-                <LinkOutsideButton href="#" className="bg-lightblue text-xs md:text-sm ml-2">Learn more</LinkOutsideButton>
+                <LinkButton href="#simulator" className="bg-green text-xs md:text-sm">Estimate your yield</LinkButton>
+                <LinkOutsideButton href={MEDIUM_LINK} className="bg-lightblue text-xs md:text-sm ml-2">Learn more</LinkOutsideButton>
             </div>
       </div>
     )
