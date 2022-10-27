@@ -1,5 +1,5 @@
 import { LITE_PAPER_LINK } from "~/utils/links";
-import { LinkButton, LinkOutsideButton } from "../../Button";
+import LinkButton, { LinkOutsideButton } from "../../Button";
 import MenuLink from "../../Link/MenuLink";
 
 export default function Desktop() {

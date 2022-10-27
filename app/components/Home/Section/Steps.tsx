@@ -54,7 +54,7 @@ export default function Steps() {
 
 
     return (
-        <div ref={ref} id="steps" className="scroll-snap-start w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-12 lg:mt-12 xl:mt-24">
+        <div ref={ref} id="steps" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-12 lg:mt-16 xl:mt-32">
             <div className="flex items-center justify-center">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">

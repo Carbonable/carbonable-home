@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Slider from "react-slick";
-import LinkOutsideButton, { LinkButton } from "~/components/Button";
+import LinkButton, { LinkOutsideButton } from "~/components/Button";
 import PlusIconWhite from "~/components/Icons/PlusIcon";
 import { MEDIUM_LINK } from "~/utils/links";
 
