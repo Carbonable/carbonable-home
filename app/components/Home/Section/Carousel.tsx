@@ -114,7 +114,7 @@ export default function Carousel() {
                 <div className="w-full flex items-center justify-center font-inter text-3xl line-through mt-4 lg:w-4/12 lg:justify-end lg:text-right lg:min-h-[96px] md:text-4xl lg:text-5xl">
                     {slides[activeSlide].title}
                 </div>
-                <div className="w-full lg:hidden">
+                <div className="w-full lg:hidden min-h-[52px]">
                     {slides[activeSlide].subtitle}
                 </div>
             </div>
