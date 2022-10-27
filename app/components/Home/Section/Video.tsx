@@ -1,4 +1,4 @@
-import { PlayIcon } from "@heroicons/react/24/outline";
+import { PlayIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { ModalVideo } from "~/components/Modal";
 

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { LinkButtonBig } from "~/components/Button";
 
 export default function Title() {
@@ -17,10 +18,25 @@ export default function Title() {
             </div>
             <div className="mx-auto w-[320px] relative mt-12 md:w-[780px] md:mt-12 lg:mt-[-140px] lg:w-[920px] xl:w-[1200px] 2xl:w-[1400px] z-0" >
                 <img src="/assets/images/home/map-bg.svg" alt="world map" className="w-full" />
-                <img src="assets/images/maps/marker-line.png" alt="map marker" className="absolute top-[92px] left-[76px] w-[100px] md:w-[200px] md:left-[190px] md:top-[228px] lg:w-[220px] lg:left-[222px] lg:top-[266px] xl:w-[250px] xl:left-[294px] xl:top-[350px] 2xl:w-[280px] 2xl:left-[340px] 2xl:top-[408px]" />
-                <img src="/assets/images/home/project_card.png" alt="project card" className="absolute top-[67px] left-[180px] w-[40%] md:w-[30%] md:left-[398px] md:top-[194px] lg:top-[214px] lg:left-[452px] xl:top-[258px] xl:left-[556px] 2xl:w-[25%] 2xl:top-[344px] 2xl:left-[634px]"/>
+                <motion.img
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ ease: "easeOut", duration: 1.5 }}
+                    src="assets/images/maps/marker-line.png" alt="map marker" className="absolute top-[98px] left-[78px] w-[100px] md:w-[200px] md:left-[194px] md:top-[234px] lg:w-[220px] lg:left-[228px] lg:top-[276px] xl:w-[250px] xl:left-[300px] xl:top-[358px] 2xl:w-[280px] 2xl:left-[349px] 2xl:top-[420px]">
+                </motion.img>
+                <motion.img 
+                    initial={{ height: 0, y: -200 }}
+                    animate={{ height: 32, y: 0 }}
+                    transition={{ ease: "easeOut", duration: 2 }}
+                    src="assets/images/maps/leaf-marker.svg" alt="map marker" className="absolute top-[70px] left-[68px] w-[20px] md:w-[200px] md:left-[94px] md:top-[200px] lg:w-[220px] lg:left-[118px] lg:top-[244px] xl:w-[250px] xl:left-[176px] xl:top-[324px] 2xl:w-[280px] 2xl:left-[210px] 2xl:top-[384px]">
+                </motion.img>
+                <motion.img
+                    initial={{ x: 200 }}
+                    animate={{ x: 0 }}
+                    transition={{ ease: "easeOut", duration: 1.5 }}
+                    src="/assets/images/home/project_card.png" alt="project card" className="absolute top-[67px] left-[184px] w-[40%] md:w-[30%] md:left-[404px] md:top-[188px] lg:top-[212px] lg:left-[458px] xl:top-[250px] xl:left-[562px] 2xl:w-[25%] 2xl:top-[338px] 2xl:left-[644px]">
+                </motion.img>
             </div>
         </div>
     )
 }
-
