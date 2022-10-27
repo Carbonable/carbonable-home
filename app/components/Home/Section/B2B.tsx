@@ -2,7 +2,7 @@ import PlusIconWhite from "~/components/Icons/PlusIcon";
 
 export default function B2B() {
     return (
-        <div id="b2b" className="block scroll-mt-12 relative bg-home-b2b w-full text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-48">
+        <div id="b2b" className="block snap-align-start scroll-mt-12 relative bg-home-b2b w-full text-center bg-no-repeat bg-cover mt-12 xl:mt-20 py-48">
             <div className="w-11/12 max-w-screen-2xl mx-auto bg-home-b2b-gradient rounded-2xl shadow-home backdrop-blur-md py-8 px-2 md:w-10/12 md:mx-auto lg:w-8/12 xl:w-5/12">
                 <div className="flex items-start justify-center">
                     <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
