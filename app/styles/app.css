@@ -952,6 +952,18 @@ video {
   min-width: max-content;
 }
 
+.min-w-\[150px\] {
+  min-width: 150px;
+}
+
+.min-w-\[180px\] {
+  min-width: 180px;
+}
+
+.min-w-\[190px\] {
+  min-width: 190px;
+}
+
 .max-w-screen-2xl {
   max-width: 1536px;
 }
@@ -1629,6 +1641,11 @@ html {
 
 .before\:content-\[\'Invest\\00a0Now\'\]::before {
   --tw-content: 'Invest\00a0Now';
+  content: var(--tw-content);
+}
+
+.before\:content-\[\'Estimate\\00a0your\\00a0yield\'\]::before {
+  --tw-content: 'Estimate\00a0your\00a0yield';
   content: var(--tw-content);
 }
 
