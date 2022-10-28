@@ -54,7 +54,7 @@ export default function Steps() {
 
 
     return (
-        <div ref={ref} id="steps" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-12 lg:mt-16 xl:mt-32">
+        <div ref={ref} id="howitworks" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-12 lg:mt-16 xl:mt-32">
             <div className="flex items-center justify-center">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">
@@ -64,7 +64,7 @@ export default function Steps() {
                 </h1>
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
-            <div className="w-full relative">
+            <div className="w-full relative mt-8">
                 <div className="absolute w-[4px] h-[2250px]  md:h-[2000px] bg-progress-unfill top-12 left-0 rounded-full md:left-[55%] lg:left-[52%] xl:left-[50%]"></div>
                 <motion.div 
                     style={{ height }}
@@ -111,8 +111,8 @@ function Step({step}: StepProps) {
                         <img className="w-[300px] mx-auto" src={`/assets/images/home/steps/${step.id}.png`} alt="Buy carbonable NFT" />
                     </div>
                     <div className="pl-8 w-full md:w-1/2 md:pl-20">
-                        <div className="w-full text-green font-trash font-bold mt-2 text-2xl uppercase">{step.title}</div>
-                        <div className="w-full font-inter mt-1 text-beaige text-sm">{step.text}</div>
+                        <div className="w-full text-green font-trash font-bold mt-2 text-2xl uppercase md:text-3xl xl:text-4xl">{step.title}</div>
+                        <div className="w-full font-inter mt-1 text-beaige text-sm md:text-base xl:text-lg">{step.text}</div>
                         { step.hasButton && <LinkOutsideButton
                             href={MEDIUM_LINK}
                             className="bg-white w-fit mt-12"

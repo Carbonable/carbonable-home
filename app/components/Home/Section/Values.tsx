@@ -2,7 +2,7 @@ export default function Values() {
     return (
         <div id="articles" className="w-full scroll-mt-12 text-center mt-24 lg:mt-32 max-w-screen-2xl mx-auto">
             <div className="relative">
-                <img className="mx-auto" src="/assets/images/home/map-bg.svg" alt="world map" />
+                <img className="mx-auto" src="/assets/images/home/map-bg.png" alt="world map" />
                 <img className="absolute inset-0 mx-auto w-1/3 lg:w-1/4 xl:w-1/5" src="/assets/images/home/logo-map.png" alt="Carbonable logo" />
             </div>
             <h1 className="w-10/12 mx-auto mt-8 items-center uppercase font-trash font-bold text-2xl text-center md:text-3xl xl:text-5xl">

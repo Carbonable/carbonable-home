@@ -1,5 +1,4 @@
 import { LinkFooter } from "~/components/Button";
-import { MenuLink } from "~/components/Link";
 import { DISCORD_LINK, LINKEDIN_LINK, MEDIUM_LINK, TELEGRAM_LINK, TWITTER_LINK, YOUTUBE_LINK } from "~/utils/links";
 
 export default function Footer() {
@@ -19,9 +18,7 @@ export default function Footer() {
                 </div>
                 <div className="w-full flex flex-wrap font-inter uppercase text-center mt-8 text-beaige md:w-7/12 md:order-3 md:mt-[-64px] md:text-left md:ml-12 xl:md:w-8/12 lg:items-center lg:mt-[-32px]">
                     <div className="w-11/12 mx-auto justify-between text-center flex md:w-full md:justify-start md:text-left lg:w-[36%] lg:text-sm items-center">
-                        <div className="w-[33%] md:w-[30%] lg:w-[33%]"><MenuLink href="#">Privacy</MenuLink></div>
-                        <div className="w-[33%] md:w-[30%] lg:w-[33%]"><MenuLink href="#">Terms</MenuLink></div>
-                        <div className="w-[33%] md:w-[30%] lg:w-[33%]"><MenuLink href="#">Legal</MenuLink></div>
+                        
                     </div>
                     <div className="w-full text-xs md:text-sm mt-4 lg:w-[64%] lg:text-xs lg:mt-0">CARBONABLE 2022. All Rights Reserved.</div>
                 </div>

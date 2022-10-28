@@ -14,10 +14,9 @@ export default function Video() {
         <>
             <div id="video" className="z-0 w-full min-h-[50vh] bg-home-video bg-no-repeat bg-cover mt-16 scroll-snap-center flex flex-wrap items-center xl:min-h-[70vh]">
                 <div className="w-7/12 pl-6 md:w-1/2 md:pl-16 lg:pl-36 xl:pl-52 2xl:pl-[25%]">
-                    <h1 className="uppercase font-trash text-bold text-lg leading-5 md:text-3xl lg:text-4xl xl:text-5xl text-left">be significant<br/>by financing</h1>
-                    <h2 className="uppercase font-americana text-bold text-green leading-5 text-lg md:text-3xl lg:text-4xl xl:text-5xl text-left">natures<br/>regeneration</h2>
-                    <div className="font-inter mt-4 text-xs leading-5 md:text-sm lg:text-base 2xl:max-w-[90%]">Carbonable empowers anyone to invest in the greatest challenge of our time, by financing nature’s regeneration. 
-                       Get a significant, long-term and growing yield while fighting climate change.</div>
+                    <h1 className="uppercase font-trash text-bold text-lg leading-5 md:text-3xl lg:text-4xl xl:text-5xl text-left">FIGHT CLIMATE CHANGE</h1>
+                    <h2 className="uppercase font-americana text-bold text-green leading-5 text-lg md:text-3xl lg:text-4xl xl:text-5xl text-left">GET HIGH & GROWING YIELD</h2>
+                    <div className="font-inter mt-4 text-xs leading-5 md:text-sm lg:text-base 2xl:max-w-[90%]">Carbonable empowers anyone to invest in the greatest challenge of our time, by financing nature’s regeneration.</div>
                 </div>
                 <div className="w-5/12 md:w-1/2">
                     <div className="relative w-full flex items-center justify-center md:w-1/2 mx-auto 2xl:mr-[40%]">

@@ -17,8 +17,10 @@ export default function B2B() {
                 <h2 className="text-center font-inter mt-4 uppercase text-xs px-8 md:text-sm">TO OFFSET YOUR RESIDUAL CARBON EMISSIONS… AND MORE!</h2>
                 <div className="relative p-[1px] bg-carousel-button-border rounded-lg mt-12 md:mt-24">
                     <div className="relative flex flex-wrap rounded-lg bg-black">
-                        <div className="w-full bg-home-b2b-mobile bg-cover bg-no-repeat p-12 rounded-t-lg md:w-1/2 md:rounded-t-none md:rounded-l-lg md:bg-home-b2b-landscape"></div>
-                        <div className="w-full bg-black p-8 rounded-b-lg md:w-1/2 md:rounded-b-none md:rounded-r-lg py-32">
+                        <div className="w-full bg-home-b2b-mobile bg-cover bg-no-repeat p-12 rounded-t-lg lg:w-1/2 lg:rounded-t-none lg:rounded-l-lg lg:bg-home-b2b-landscape flex items-center justify-center">
+                            <img src="/assets/images/home/b2b-placeholder.jpg" alt="b2b placeholder" className="w-full md:mt-12 xl:w-10/12 mx-auto" />
+                        </div>
+                        <div className="w-full bg-black p-8 md:p-12 rounded-b-lg lg:w-1/2 lg:rounded-b-none lg:rounded-r-lg py-8 lg:py-32 lg:mt-12">
                             <div className="bg-clip-text text-transparent bg-gradient-to-r from-green to-lightblue font-trash uppercase text-lg md:text-2xl md:pr-4 lg:pr-16 xl:text-4xl">
                                 Show your CSR team A little TLC
                             </div>
@@ -29,7 +31,7 @@ export default function B2B() {
                             </div>
                         </div>
                     </div>
-                    <img src="/assets/images/home/globe.png" alt="globe" className="absolute top-[32%] right-[-42px] w-[120px] md:top-[-80px] md:right-[70px] md:w-[180px] xl:right-[150px]" />
+                    <img src="/assets/images/home/globe.png" alt="globe" className="absolute top-[45%] right-[-42px] w-[120px] md:top-[-80px] md:right-[70px] md:w-[180px] xl:right-[150px]" />
                 </div>
                 <div className="mt-8 w-full mx-auto uppercase text-center">
                     <div className="font-americana text-bold text-beaige text-base md:text-2xl">Are you a company committed</div>

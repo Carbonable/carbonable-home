@@ -11,7 +11,6 @@ export default function Desktop() {
                 <MenuLink href="#assets">Our assets</MenuLink>
                 <MenuLink href="#howitworks">How it works</MenuLink>
                 <MenuLink href="#b2b">B2B</MenuLink>
-                <MenuLink href="#articles">Articles</MenuLink>
             </div>
             <div className="w-3/12 flex justify-end space-x-4">
                 <LinkOutsideButton

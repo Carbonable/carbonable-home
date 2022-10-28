@@ -14,7 +14,8 @@ import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Carbonable",
+  title: "Carbonable - Web3 powered end-to-end carbon offset platform",
+  description: "The simplest and smartest way to reach carbon neutrality. Invest in the best nature-based solutions. Manage your assets and drive your strategy efficiently.",
   viewport: "width=device-width,initial-scale=1",
 });
 
