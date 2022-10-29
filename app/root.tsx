@@ -17,6 +17,14 @@ export const meta: MetaFunction = () => ({
   title: "Carbonable - Web3 powered end-to-end carbon offset platform",
   description: "The simplest and smartest way to reach carbon neutrality. Invest in the best nature-based solutions. Manage your assets and drive your strategy efficiently.",
   viewport: "width=device-width,initial-scale=1",
+  'og:url': "https://carbonable.io",
+  'og:type': "website",
+  'og:title': "Carbonable - Web3 powered end-to-end carbon offset platform",
+  'og:description': "The simplest and smartest way to reach carbon neutrality. Invest in the best nature-based solutions. Manage your assets and drive your strategy efficiently.",
+  'twitter:domain': "carbonable.io",
+  'twitter:url': "https://carbonable.io",
+  'twitter:title': "Carbonable - Web3 powered end-to-end carbon offset platform",
+  'twitter:description': "The simplest and smartest way to reach carbon neutrality. Invest in the best nature-based solutions. Manage your assets and drive your strategy efficiently.",
 });
 
 export function links() {
