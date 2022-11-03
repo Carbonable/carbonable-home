@@ -1,6 +1,6 @@
 import { useAccount, useConnectors } from '@starknet-react/core';
 import { useEffect, useState } from 'react';
-import { fetchStarnetId } from '~/utils/starknetid';
+import { fetchStarnetId } from '~/utils/starknetId';
 
 
 export default function Launchpad() {

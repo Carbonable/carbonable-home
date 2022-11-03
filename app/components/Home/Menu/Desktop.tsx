@@ -1,4 +1,5 @@
-import { LinkButton, LinkOutsideButton } from "../../Button";
+import { LITE_PAPER_LINK } from "~/utils/links";
+import LinkButton, { LinkOutsideButton } from "../../Button";
 import MenuLink from "../../Link/MenuLink";
 
 export default function Desktop() {
@@ -10,20 +11,18 @@ export default function Desktop() {
                 <MenuLink href="#assets">Our assets</MenuLink>
                 <MenuLink href="#howitworks">How it works</MenuLink>
                 <MenuLink href="#b2b">B2B</MenuLink>
-                <MenuLink href="#articles">Articles</MenuLink>
             </div>
             <div className="w-3/12 flex justify-end space-x-4">
                 <LinkOutsideButton
-                    href="https://carbonable.notion.site/CarbonABLE-Lite-Paper-82bda161f3594964931b2be7d84429ff"
+                    href={LITE_PAPER_LINK}
                     className="bg-white"
                 >
                     Litepaper
                 </LinkOutsideButton>
                 <LinkButton
-                    href="/launchpad"
-                    className="bg-green"
+                    href="#"
+                    className="bg-green min-w-[50%] text-center before:content-['Invest'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed	hover:opacity-75"
                 >
-                    Invest
                 </LinkButton>
             </div>
         </div>

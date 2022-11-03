@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,19 +8,19 @@ datasource db {
 }
 
 model SimulatorConfig {
-  id         String @id @default(uuid())
-  type       String @unique
-  config     Json
+  id     String @id @default(uuid())
+  type   String @unique
+  config Json
+}
+
+model SimulatorAnalytics {
+  id        String        @id @default(uuid())
+  createdAt DateTime      @default(now())
+  type      AnalyticsType
+  value     Int
 }
 
 enum AnalyticsType {
   YIELD
   OFFSET
-}
-
-model SimulatorAnalytics {
-  id         String @id @default(uuid())
-  createdAt  DateTime @default(now())
-  type       AnalyticsType
-  value      Int
 }

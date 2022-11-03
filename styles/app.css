@@ -42,10 +42,25 @@
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
         backdrop-filter: blur(22.78px);
         border-radius: 40px;
+    } 
+}
+
+@layer utilities {
+    .chip-clip {
+        clip-path: polygon(0 37%, 0 26%, 1% 23%, 4% 20%, 4% 18%, 4% 2%, 5% 0, 43% 0, 44% 0, 48% 4%, 51% 5%, 99% 5%, 100% 7%, 100% 49%, 99% 52%, 91% 56%, 90% 56%, 90% 69%, 91% 70%, 99% 70%, 100% 72%, 100% 98%, 100% 100%, 4% 100%, 4% 98%, 4% 42%, 4% 41%, 0 39%);
     }
 
-    
-}
+    .scroll-snap-end {
+        scroll-snap-align: end;
+    }
+
+    .scroll-snap-center {
+        scroll-snap-align: center;
+    }
+    .scroll-snap-start {
+        scroll-snap-align: start;
+    } 
+ }
 
 .full-screen-video {
     width: 100vw;

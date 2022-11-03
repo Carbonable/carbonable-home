@@ -1,7 +1,7 @@
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Menu } from "~/components/Home/Menu";
-import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators } from "~/components/Home/Section";
+import { B2B, Carousel, Values, Title, Video, WaitingList, Partners, Footer, Simulators, Steps } from "~/components/Home/Section";
 import Separator from "~/components/Separator/Separator";
 import type { ConfigData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
@@ -10,12 +10,19 @@ import { saveSimulatorAnalytics } from '~/utils/analytics.server';
 import type { ActionArgs } from '@remix-run/node';
 
 
-type LoaderData = { simulators_config: Array<ConfigData> };
+type LoaderData = { simulators_config: Array<ConfigData> | null };
 
 export async function loader() {
   const data: LoaderData = {
     simulators_config: await fetchConfiguration(),
   };
+
+  if (!data) {
+    throw new Response("Database unavailable", {
+      status: 500
+    });
+  }
+
   return json(data);
 };
 
@@ -48,7 +55,8 @@ export default function Index() {
         <Title />
         <Video />
         <Carousel />
-        <Simulators config={config.simulators_config} />
+        { config.simulators_config ? <Simulators config={config.simulators_config} /> : null }
+        <Steps />
         <B2B />
         <Values />
         <Separator />

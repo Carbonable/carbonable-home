@@ -1,25 +1,15 @@
-import { Fragment, useRef, useState } from 'react';
+import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { PlayCircleIcon, XMarkIcon } from '@heroicons/react/24/solid';
-import { ModalButton } from '../Button';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-export default function ModalVideo() {
-  const [open, setOpen] = useState(false);
+export default function ModalVideo({open, handleClose}: any) {
 
   const cancelButtonRef = useRef(null);
 
-  const handleClick = () => {
-    setOpen(true);
-  };
-
   return (
     <>
-      <ModalButton className="bg-lightblue flex items-center justify-center mx-auto" onClick={handleClick}>
-        <PlayCircleIcon className="w-10 rounded-full mr-2"></PlayCircleIcon>
-        Watch video
-      </ModalButton>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={handleClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -46,8 +36,8 @@ export default function ModalVideo() {
                 <Dialog.Panel className="relative flex flex-wrap items-start transform overflow-hidden min-h-screen rounded-lg bg-black text-left shadow-xl transition-all w-full">
                   <div className="bg-black w-full">
                     <div className="flex items-center justify-end p-4 w-full">
-                      <div onClick={() => setOpen(false)}><XMarkIcon className="h-6 w-6 text-green cursor-pointer" aria-hidden="true" /></div>
-                      <div onClick={() => setOpen(false)} className="uppercase text-bold font-inter text-xl text-green cursor-pointer">Close</div>
+                      <div onClick={handleClose}><XMarkIcon className="h-6 w-6 text-green cursor-pointer" aria-hidden="true" /></div>
+                      <div onClick={handleClose} className="uppercase text-bold font-inter text-xl text-green cursor-pointer">Close</div>
                     </div>
                   </div>
                   <div className="min-h-full w-full text-center">
