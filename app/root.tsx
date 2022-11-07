@@ -1,13 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
-  useLoaderData,
+  ScrollRestoration
 } from "@remix-run/react";
 import { StarknetConfig, InjectedConnector } from '@starknet-react/core'
 import styles from "./styles/app.css";
@@ -31,17 +29,7 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }]
 }
 
-export async function loader() {
-  return json({
-    ENV: {
-      AIRTABLE_API_KEY: process.env.AIRTABLE_API_KEY,
-      AIRTABLE_USER_BASE: process.env.AIRTABLE_USER_BASE,
-    },
-  });
-}
-
 export default function App() {
-  const data = useLoaderData();
   const connectors = [
     new InjectedConnector({ options: { id: 'braavos' }}),
     new InjectedConnector({ options: { id: 'argentX' }}),
@@ -60,13 +48,6 @@ export default function App() {
         <body className="bg-black text-white">
           <StarknetConfig connectors={connectors}>
             <Outlet />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `window.ENV = ${JSON.stringify(
-                  data.ENV
-                )}`,
-              }}
-            />
             <ScrollRestoration />
             <Scripts />
             <LiveReload />
