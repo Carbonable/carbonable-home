@@ -69,6 +69,22 @@ export default function Values() {
 
     return (
         <div className="w-11/12 max-w-screen-2xl mx-auto text-center mt-12 xl:mt-20 xl:w-8/12">
+            <div className="flex items-center justify-center">
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
+                <div className="w-10/12 mx-auto px-6 uppercase text-center">
+                    <h1 className="font-trash font-bold text-sm text-center md:text-3xl xl:text-5xl">
+                    Built on powerful
+                        <div className="font-americana font-medium text-xs md:text-2xl lg:text-3xl">partnerships</div>
+                    </h1>
+                </div>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
+            </div>
+            <div className="flex item-center justify-center mt-12 lg:mt-20">
+                {backed.map((partner, index) => (
+                    <img key={`backed_${index}`} className="w-4/12 px-3 md:w-3/12 md:px-8 lg:px-16" src={partner.img_src} alt={partner.alt} />
+                ))}
+
+            </div>
             <div className="flex items-center justify-center mt-16 md:mt-36">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">
