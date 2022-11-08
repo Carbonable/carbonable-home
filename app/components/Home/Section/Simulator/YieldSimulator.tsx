@@ -7,15 +7,7 @@ import { Form, useSubmit } from '@remix-run/react';
 import { RadioGroup } from '@headlessui/react';
 import { XCircleIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
-
-function Kpi({value, unit, label}: any) {
-    return(
-        <div className="mt-8 w-full text-center md:w-1/2">
-            <div className="bg-clip-text text-transparent bg-gradient-to-r from-green to-lightblue font-trash uppercase text-6xl">{value}{unit}</div>
-            <div className="font-inter text-beaige uppercase">{label}</div>
-        </div>
-    )
-}
+import Kpi from './Kpi';
 
 export default function YieldSimulator({carbonPrices, globalConf}: any) {
 
@@ -97,10 +89,10 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
 
     return (
         <div className="w-full mt-6 md:mt-10 flex flex-wrap">
-            <div className="w-11/12 mx-auto justify-start text-left md:w-8/12 lg:w-11/12">
+            <div className="w-11/12 mx-auto justify-start text-left md:w-8/12 lg:w-11/12 lg:order-1">
                 <Form method="post" onChange={handleChange}>
-                    <div className="flex flex-wrap justify-start items-center">
-                        <div className="w-full lg:w-1/3">
+                    <div className="flex flex-wrap justify-center items-start lg:space-x-8 xl:space-x-12 xl:ml-20">
+                        <div className="w-full lg:w-1/4">
                             <div className="text-white uppercase font-inter font-extralight ml-1 text-sm">Investment ($)</div>
                             <div className="relative w-full">
                                 <input id="investment" type="number" className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={investment} name="investment" onChange={(e) => setInvestment(parseInt(e.target.value))} placeholder="How much do you want to invest" />
@@ -109,8 +101,8 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
                             </div>
                             <input hidden id="source" name="source" defaultValue="yield" />
                         </div>
-                        <div className="w-full lg:w-1/3">
-                            <div className="text-white uppercase font-inter font-extralight mt-8 ml-1 text-sm">Duration (years)</div>
+                        <div className="w-full lg:w-1/4">
+                            <div className="text-white uppercase font-inter font-extralight mt-8 ml-1 text-sm lg:mt-0">Duration (years)</div>
                             <div className="mt-1 mb-10">
                                 <div className="border border-white w-full pt-[5px] pl-[4px] pr-[4px] rounded-full bg-transparent h-8 grow">
                                     <SliderPrimitive.Root
@@ -187,7 +179,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
                     </div>
                 </Form>
             </div>
-            <div className="w-full px-0 mt-8 min-h-[300px] md:min-h-[400px]">
+            <div className="w-full px-0 mt-8 min-h-[300px] md:min-h-[400px] lg:w-9/12 lg:order-3">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         width={1000}
@@ -214,7 +206,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-            <div className="w-full mb-4 flex flex-wrap">
+            <div className="w-full mb-4 flex flex-wrap lg:w-3/12 lg:order-2 lg:items-center">
                 <Kpi value={50} unit={"%"} label={"Average APR"}></Kpi>
                 <Kpi value={100} unit={"$"} label={"Total revenue"}></Kpi>
             </div>
