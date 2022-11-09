@@ -94,7 +94,7 @@ export default function OffsetSimulator({offset, globalConf}: any) {
                 <Form method="post" onChange={handleChange}>
                     <div className="flex flex-wrap justify-center items-start lg:space-x-8 xl:space-x-12 xl:ml-20">
                         <div className="w-full lg:w-1/4">
-                            <div className="text-white uppercase font-inter font-extralight ml-1 text-sm">Carbon to offset (T)</div>
+                            <div className="text-white uppercase font-inter font-extralight ml-1 text-sm">Carbon to offset (Tons)</div>
                             <div className="relative w-full">
                                 <input id="investment" type="number" className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={ccNeed} name="investment" onChange={(e) => setCcNeed(parseInt(e.target.value))} placeholder="How much tons of carbon do you need to offset" />
                                 <button className="outline-none rounded-full bg-white text-black flex items-end justify-center text-xl w-6 h-6 absolute top-[8px] right-[34px]" onClick={() => setCcNeed(ccNeed + 1)}>+</button>
@@ -209,7 +209,6 @@ export default function OffsetSimulator({offset, globalConf}: any) {
             </div>
             <div className="w-full mb-4 flex flex-wrap lg:w-3/12 lg:order-2 lg:items-center">
                 <Kpi value={50} unit={"$"} label={"Investment value Carbonable"}></Kpi>
-                <Kpi value={100} unit={"$"} label={"Investment value Market"}></Kpi>
                 <Kpi value={50} unit={"$"} label={"Total cost saving"}></Kpi>
                 <Kpi value={100} unit={"$"} label={"Average Yearly Cost saving"}></Kpi>
             </div>
