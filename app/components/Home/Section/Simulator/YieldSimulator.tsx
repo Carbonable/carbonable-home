@@ -179,7 +179,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
                         <div className="w-full lg:w-1/4">
                             <div className="text-white uppercase font-inter font-extralight ml-1 text-sm">Investment ($)</div>
                             <div className="relative w-full">
-                                <input id="investment" type="number" ref={ref} className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={investment} name="investment" onChange={(e) => setInvestment(parseInt(e.target.value) || 1)} placeholder="How much do you want to invest" />
+                                <input id="investment" type="number" ref={ref} className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={investment} name="investment" onChange={(e) => parseInt(e.target.value) > 0 ? setInvestment(parseInt(e.target.value) || 1) : 1} placeholder="How much do you want to invest" />
                                 <button className="outline-none rounded-full bg-white text-black flex items-end justify-center text-xl w-6 h-6 absolute top-[8px] right-[34px]" onClick={() => setInvestment(investment + 1)}>+</button>
                                 <button className="outline-none rounded-full bg-white text-black flex items-end justify-center text-xl w-6 h-6 absolute top-[8px] right-[6px]" onClick={() => setInvestment(investment - 1)}>-</button>
                             </div>

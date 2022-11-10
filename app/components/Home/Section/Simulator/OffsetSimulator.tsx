@@ -152,7 +152,7 @@ export default function OffsetSimulator({offset, globalConf}: any) {
                         <div className="w-full lg:w-1/4">
                             <div className="text-white uppercase font-inter font-extralight ml-1 text-sm">Carbon to offset (Tons)</div>
                             <div className="relative w-full">
-                                <input id="investment" type="number" ref={ref} className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={ccNeed} name="investment" onChange={(e) => setCcNeed(parseInt(e.target.value) | 1)} placeholder="How much tons of carbon do you need to offset" />
+                                <input id="investment" type="number" ref={ref} className="text-white border border-white rounded-full outline-0 w-full px-4 py-1 mt-1 bg-transparent" value={ccNeed} name="investment" onChange={(e) => parseInt(e.target.value) > 0 ? setCcNeed(parseInt(e.target.value) || 1) : 1 } placeholder="How much tons of carbon do you need to offset" />
                                 <button className="outline-none rounded-full bg-white text-black flex items-end justify-center text-xl w-6 h-6 absolute top-[8px] right-[34px]" onClick={() => setCcNeed(ccNeed + 1)}>+</button>
                                 <button className="outline-none rounded-full bg-white text-black flex items-end justify-center text-xl w-6 h-6 absolute top-[8px] right-[6px]" onClick={() => setCcNeed(ccNeed - 1)}>-</button>
                             </div>
