@@ -1,4 +1,5 @@
-import LinkButton, { LinkOutsideButton } from "../../Button";
+import { LEGACY_LAUNCHPAD_LINK } from "~/utils/links";
+import { LinkOutsideButton } from "../../Button";
 
 export default function Mobile() {
     return (
@@ -11,11 +12,11 @@ export default function Mobile() {
                 >
                     Litepaper
                 </LinkOutsideButton>
-                <LinkButton
-                    href="#"
-                    className="bg-green w-[124px] text-center before:content-['Invest'] hover:before:content-['Soon'] hover:cursor-not-allowed	hover:opacity-75"
+                <LinkOutsideButton
+                    href={LEGACY_LAUNCHPAD_LINK}
+                    className="bg-green w-[124px] text-center before:content-['Invest']"
                 >
-                </LinkButton>
+                </LinkOutsideButton>
             </div>
         </div>
     )
