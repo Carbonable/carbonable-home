@@ -11,7 +11,7 @@ export default function Simulators({config}: any) {
     const globalConfig = config.filter((conf:any) => conf.type === "global");
 
     return (
-        <div id="simulator" className="w-full scroll-mt-12 text-center mt-20 xl:mt-32 max-w-screen-2xl mx-auto scroll-snap-center">
+        <div id="simulators" className="w-full scroll-mt-12 text-center mt-20 xl:mt-32 max-w-screen-2xl mx-auto scroll-snap-center">
             <div className="w-11/12 flex items-center justify-center mx-auto">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 mx-auto mt-8 items-center uppercase font-trash font-bold text-2xl text-center md:text-3xl xl:text-5xl">
