@@ -10,7 +10,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import Kpi from './Kpi';
 import { shortenNumber } from '~/utils/utils';
 
-function getAccruedRevenues({selectedScenario, chartsData, investment}: any) {
+function getAccruedRevenues({selectedScenario, chartsData}: any) {
     if (chartsData.length === 1) { return 0 };
 
     switch(selectedScenario) {
@@ -160,10 +160,10 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
             
             return (
                 <div className="px-8 pt-4 pb-4 bg-black font-inter rounded-lg">
-                <p className="text-left uppercase bold text-beaige">{`Forecast for ${label} `}</p>
-                <p className="text-lightblue text-left mt-1">{`Yield: ${shortenYield}$`}</p>
-                <p className="text-beaige text-left">{`APR: ${APR}%`}</p>
-                <p className="text-green text-left">{`Accrued Yield: ${accruedYield}$`}</p>
+                    <p className="text-left uppercase bold text-beaige">{`Forecast for ${label} `}</p>
+                    <p className="text-lightblue text-left mt-1">{`Yield: ${shortenYield}$`}</p>
+                    <p className="text-beaige text-left">{`APR: ${APR}%`}</p>
+                    <p className="text-green text-left">{`Accrued Yield: ${accruedYield}$`}</p>
                 </div>
             );
         }
