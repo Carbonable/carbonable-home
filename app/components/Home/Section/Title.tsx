@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { LinkButtonBig } from "~/components/Button";
+import { LinkOutsideButtonBig } from "~/components/Button";
+import { LEGACY_LAUNCHPAD_LINK } from "~/utils/links";
 
 export default function Title() {
     return (
@@ -14,8 +15,8 @@ export default function Title() {
                 long-term yields for investors <br/>& mother earth
                 </h2>
                 <div className="mt-12 w-fit mx-auto xl:mt-20">
-                    <LinkButtonBig href="#" className="bg-green w-[200px] text-center before:content-['Invest\00a0Now'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed hover:opacity-75">
-                    </LinkButtonBig>
+                    <LinkOutsideButtonBig href={LEGACY_LAUNCHPAD_LINK} className="bg-green w-[200px] text-center before:content-['Invest\00a0Now']">
+                    </LinkOutsideButtonBig>
                 </div>
             </div>
             <div className="mx-auto w-[320px] relative mt-12 md:w-[780px] md:mt-12 lg:mt-[-140px] lg:w-[920px] xl:w-[1200px] 2xl:w-[1400px] z-0" >
