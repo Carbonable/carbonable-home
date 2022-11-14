@@ -82,7 +82,7 @@ export default function Values() {
             </div>
             <div className="flex flex-wrap item-center justify-center mt-8 md:mt-12 lg:mt-20">
                 {experiences.map((partner, index) => (
-                    <img key={`backed_${index}`} className="w-3/12 px-4 py-2 md:p-12 lg:w-2/12 xl:px-16" src={partner.img_src} alt={partner.alt} />
+                    <img key={`backed_${index}`} className="w-4/12 p-[24px] md:w-3/12 md:p-[48px] lg:p-[72px] xl:p-[88px]" src={partner.img_src} alt={partner.alt} />
                 ))}
             </div>
         </div>

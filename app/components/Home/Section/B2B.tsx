@@ -10,7 +10,7 @@ export default function B2B() {
                     <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                     <h1 className="w-10/12 items-center uppercase font-trash text-bold md:text-3xl lg:text-4xl xl:text-5xl text-center">
                         The easiest and smartest<br/>
-                        <span className="font-americana font-bold md:text-2xl lg:text-3xl xl:text-4xl">way for you business</span><br/>
+                        <span className="font-americana font-bold md:text-2xl lg:text-3xl xl:text-4xl">way for your business</span><br/>
                     </h1>
                     <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 </div>

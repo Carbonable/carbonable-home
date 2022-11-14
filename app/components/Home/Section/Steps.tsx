@@ -44,7 +44,7 @@ export default function Steps() {
 
     useEffect(() => {
         function updateHeight() {
-            const offsetTop = ref.current?.offsetTop || 0;
+            const offsetTop = ref.current?.offsetTop || 0;
             height.set(scrollY.get() - offsetTop + 400);
           }
 

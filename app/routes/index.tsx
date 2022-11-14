@@ -50,7 +50,7 @@ export default function Index() {
   const config = useLoaderData<LoaderData>();
 
   return (
-      <>
+      <div className="relative">
         <Menu />
         <Title />
         <Video />
@@ -58,11 +58,12 @@ export default function Index() {
         { config.simulators_config ? <Simulators config={config.simulators_config} /> : null }
         <Steps />
         <B2B />
+        <div className="mt-24"></div>
         <Values />
         <Separator />
         <Partners />
         <WaitingList />
         <Footer />
-      </>
+      </div>
   );
 }
