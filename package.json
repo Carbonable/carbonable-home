@@ -33,6 +33,7 @@
     "react-sticky": "^6.0.3",
     "react-stickynode": "^4.1.0",
     "recharts": "^2.1.14",
+    "sharp": "^0.31.2",
     "slick-carousel": "^1.8.1",
     "starknet": "^4.9.0",
     "tailwindcss-radix": "^2.6.0"

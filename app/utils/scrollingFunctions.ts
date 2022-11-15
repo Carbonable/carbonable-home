@@ -61,6 +61,8 @@ export const useCenterCard = (cardId, containerId) => {
     () => {
       const card = document.getElementById(cardId)
       const endBoundary = document.getElementById(containerId)
+
+      // offset top to center card
       if (card) {
         const rect = card.getBoundingClientRect()
         const height = rect.height
@@ -68,17 +70,18 @@ export const useCenterCard = (cardId, containerId) => {
         setPosition(top)
       }
 
+      // bottom boundary
       if (endBoundary && card) {
         const cardRect = card.getBoundingClientRect()
         const rect = endBoundary.getBoundingClientRect()
         const bottomBoundary = getCoords(endBoundary).top + rect.height + ((cardRect.height - rect.height) / 2)
-        console.log(bottomBoundary)
         setEndPosition(bottomBoundary)
       }
     },
     [setPosition]
   )
 
+  // Resize event
   React.useEffect(
     () => {
       handleResize()

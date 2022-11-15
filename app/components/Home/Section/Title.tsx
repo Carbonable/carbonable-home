@@ -29,8 +29,10 @@ const useLazyComponent = (importer, enabled) => {
 }
 
 export default function Title() {
-    const isMobile = useBreakpoint()    
+    const isMobile = useBreakpoint() 
+    // Only enabled on screen > 769px   
     const Sticky = useLazyComponent(() => import("react-stickynode"), !isMobile)
+    // Sticky position
     const [top, botttom] = useCenterCard(cardId, containerId)
 
     return (
@@ -57,6 +59,7 @@ export default function Title() {
                     w={2946}
                     h={1442}
                 />
+                {/* Line marker */}
                 <motion.div
                     id="line-marker"
                     initial={{ scale: 0 }}
@@ -65,6 +68,7 @@ export default function Title() {
                     className="absolute bottom-[-9.5%] left-[25.55%] w-[35%] z-2"
                 >
                 </motion.div>
+                {/* Leaf marker */}
                 <motion.img 
                     initial={{ height: 0, y: -200 }}
                     animate={{ height: 32, y: 0 }}
@@ -73,6 +77,8 @@ export default function Title() {
                     className="absolute w-[2.15%] top-[57.5%] left-[24.5%]"
                 >
                 </motion.img>
+                
+                {/* Sticky card */}
                 <div className="z-3 absolute right-[7%] w-[30%] md:w-[30%] md:right-[7%] bottom-[-25%]">
                     <Sticky 
                         innerZ={2}
