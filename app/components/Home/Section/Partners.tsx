@@ -69,6 +69,7 @@ export default function Values() {
 
     return (
         <div className="w-11/12 max-w-screen-2xl mx-auto text-center mt-12 xl:mt-20 xl:w-8/12">
+            
             <div className="flex items-center justify-center mt-16 md:mt-36">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">

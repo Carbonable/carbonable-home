@@ -1,5 +1,5 @@
-import { LITE_PAPER_LINK } from "~/utils/links";
-import LinkButton, { LinkOutsideButton } from "../../Button";
+import { LEGACY_LAUNCHPAD_LINK, LITE_PAPER_LINK } from "~/utils/links";
+import { LinkOutsideButton } from "../../Button";
 import MenuLink from "../../Link/MenuLink";
 
 export default function Desktop() {
@@ -19,11 +19,11 @@ export default function Desktop() {
                 >
                     Litepaper
                 </LinkOutsideButton>
-                <LinkButton
-                    href="#"
-                    className="bg-green min-w-[50%] text-center before:content-['Invest'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed	hover:opacity-75"
+                <LinkOutsideButton
+                    href={LEGACY_LAUNCHPAD_LINK}
+                    className="bg-green min-w-[50%] text-center before:content-['Invest']"
                 >
-                </LinkButton>
+                </LinkOutsideButton>
             </div>
         </div>
     )
