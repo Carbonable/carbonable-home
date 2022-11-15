@@ -7,7 +7,6 @@ import type { ConfigData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
 
 
-
 type LoaderData = { simulators_config: Array<ConfigData> | null };
 
 export async function loader() {

@@ -31,8 +31,10 @@
     "react-dom": "^18.2.0",
     "react-slick": "^0.29.0",
     "react-sticky": "^6.0.3",
+    "react-stickynode": "^4.1.0",
     "recharts": "^2.1.14",
     "slick-carousel": "^1.8.1",
+    "starknet": "^4.9.0",
     "tailwindcss-radix": "^2.6.0"
   },
   "devDependencies": {
