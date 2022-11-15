@@ -24,7 +24,6 @@ function getAccruedRevenues({selectedScenario, chartsData}: any) {
 }
 
 function getAverageAPR({selectedScenario, chartsData, investment, duration}: any) {
-    console.log(investment);
     if (chartsData.length === 1) { return 0 };
 
     const totalInvestment = investment * duration;
