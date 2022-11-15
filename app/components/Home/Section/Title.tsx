@@ -44,7 +44,7 @@ export default function Title() {
                 <h2 className="font-trash text-green uppercase text-lg md:text-xl lg:text-2xl xl:mt-8 xl:text-3xl mx-auto mt-8">
                 long-term yields for investors <br/>& mother earth
                 </h2>
-                <div className="w-24mt-12 w-fit mx-auto xl:mt-20">
+                <div className="w-24 mt-12 w-fit mx-auto xl:mt-20">
                     <LinkOutsideButtonBig href={LEGACY_LAUNCHPAD_LINK} className="bg-green w-[200px] text-center before:content-['Invest\00a0Now']">
                     </LinkOutsideButtonBig>
                 </div>
