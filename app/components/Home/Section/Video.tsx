@@ -12,7 +12,7 @@ export default function Video() {
 
     return (
         <>
-            <div id="video" className="z-0 w-full min-h-[50vh] bg-home-video bg-no-repeat bg-cover mt-16 scroll-snap-center flex flex-wrap items-center xl:min-h-[70vh]">
+            <div id="video" className="z-0 w-full min-h-[50vh] bg-home-video bg-no-repeat bg-cover mt-16 flex flex-wrap items-center xl:min-h-[70vh]">
                 <div className="w-7/12 pl-6 md:w-1/2 md:pl-16 lg:pl-36 xl:pl-52 2xl:pl-[25%]">
                     <h1 className="uppercase font-trash text-bold text-lg leading-5 md:text-3xl lg:text-4xl xl:text-5xl text-left">FIGHT CLIMATE CHANGE</h1>
                     <h2 className="uppercase font-americana text-bold text-green leading-5 text-lg md:text-3xl lg:text-4xl xl:text-5xl text-left">GET HIGH & GROWING YIELD</h2>

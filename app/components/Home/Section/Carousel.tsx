@@ -85,7 +85,7 @@ export default function Carousel() {
     ];
     
     return (
-        <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 scroll-snap-center lg:mt-12 xl:mt-24">
+        <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-12 xl:mt-24">
             <div className="flex items-start justify-center">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</h1>

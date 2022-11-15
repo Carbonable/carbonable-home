@@ -4,7 +4,7 @@ import { LEGACY_LAUNCHPAD_LINK } from "~/utils/links";
 
 export default function Title() {
     return (
-        <div className="w-screen h-auto text-center max-w-screen-2xl mx-auto relative scroll-snap-start pt-1">
+        <div className="w-screen h-auto text-center max-w-screen-2xl mx-auto relative pt-1">
             <div className="relative md:mt-12 lg:mt-4 z-10">
                 <h1 className="font-trash text-bold text-2xl md:text-4xl pt-12 lg:text-5xl w-9/12 mx-auto uppercase">
                     Best value<br/>

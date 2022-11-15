@@ -71,6 +71,11 @@ html {
     scroll-behavior: smooth;
 }
 
+.snap-mandatory {
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+
 input[type='number'] {
     -moz-appearance:textfield;
 }
