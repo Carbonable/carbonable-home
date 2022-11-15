@@ -39,6 +39,7 @@ export default function Title() {
                     transition={{ ease: "easeOut", duration: 1.5 }}
                     src="/assets/images/home/project_card.png" alt="project card" className="absolute top-[69px] left-[184px] w-[40%] md:w-[30%] md:left-[404px] md:top-[191px] lg:top-[216px] lg:left-[458px] xl:top-[256px] xl:left-[562px] 2xl:w-[25%] 2xl:top-[345px] 2xl:left-[644px]">
                 </motion.img>
+                <!-- ouech -->
             </div>
         </div>
     )
