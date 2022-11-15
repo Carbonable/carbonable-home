@@ -14,4 +14,17 @@ export function validateEmail(email: string | undefined): boolean {
 export function getErrorMessage(error: unknown) {
     if (error instanceof Error) return error.message
     return String(error)
-  }
+}
+
+/**
+ * Shorten number to display
+ * 
+ * @param {number} number
+ * @returns {string} Shorten value
+ */
+export function shortenNumber(number: number): string {
+    return Intl.NumberFormat('en-US', {
+        notation: "compact",
+        maximumFractionDigits: 2
+      }).format(number);
+}

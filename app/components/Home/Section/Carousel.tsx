@@ -119,7 +119,7 @@ export default function Carousel() {
                 </div>
             </div>
             <div className="flex items-center justify-center lg:justify-start lg:w-10/12 mx-auto mt-8">
-                <LinkButton href="#" className="bg-green text-xs md:text-sm text-center min-w-[190px] before:content-['Estimate\00a0your\00a0yield'] hover:before:content-['Coming\00a0Soon'] hover:cursor-not-allowed hover:opacity-75" children={undefined}></LinkButton> 
+                <LinkButton href="#simulators" className="bg-green text-xs md:text-sm text-center min-w-[190px] before:content-['Estimate\00a0your\00a0yield']" children={undefined}></LinkButton> 
                 <LinkOutsideButton href={MEDIUM_LINK} className="bg-lightblue text-xs md:text-sm ml-2">Learn more</LinkOutsideButton>
             </div>
       </div>

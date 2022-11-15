@@ -4,7 +4,7 @@ import { db } from "~/utils/db.server";
 /**
  * Fetch simulator configuration
  * 
- * @returns { Promise<string> } starnknetId or empty string
+ * @returns { Promise<string> } simulator configuration
  */
 export async function fetchConfiguration(): Promise<{ type: string; config: Prisma.JsonValue; }[] | null> {
     try {

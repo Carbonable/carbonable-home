@@ -28,7 +28,8 @@ module.exports = {
         'home-b2b-gradient': 'linear-gradient(90.2deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 0.01%, rgba(255, 255, 255, 0.2) 0.02%, rgba(255, 255, 255, 0.1) 43.23%, rgba(255, 255, 255, 0) 70.83%, rgba(255, 255, 255, 0.24) 100%);',
         'progress-unfill': 'linear-gradient(137.25deg, rgba(255, 255, 255, 0.13) 31.83%, rgba(255, 255, 255, 0) 76.49%, rgba(255, 255, 255, 0) 76.49%);',
         'progress-fill': 'linear-gradient(359.96deg, #A8C4EF 0.07%, #0AF2AD 100.51%);',
-        'green-logo': "url('/assets/images/home/manifesto-logo.png')"
+        'green-logo': "url('/assets/images/home/manifesto-logo.png')",
+        'home-simulator': 'linear-gradient(90.2deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 0.01%, rgba(255, 255, 255, 0.2) 0.02%, rgba(255, 255, 255, 0.1) 43.23%, rgba(255, 255, 255, 0) 70.83%, rgba(255, 255, 255, 0.24) 100%);'
       },
       boxShadow: {
         'home': '0px 4px 20px rgba(0, 0, 0, 0.08);',
