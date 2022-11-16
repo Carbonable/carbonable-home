@@ -1,6 +1,6 @@
-# fly.toml file generated for carbonable-dapp on 2022-09-29T20:35:47+02:00
+# fly.toml file generated for dev-carbonable-home on 2022-09-29T20:35:47+02:00
 
-app = "carbonable-dapp"
+app = "dev-carbonable-home"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []

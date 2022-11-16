@@ -7,7 +7,6 @@ import {
   Scripts,
   ScrollRestoration
 } from "@remix-run/react";
-import { StarknetConfig, InjectedConnector } from '@starknet-react/core'
 import styles from "./styles/app.css";
 
 export const meta: MetaFunction = () => ({
@@ -30,10 +29,6 @@ export function links() {
 }
 
 export default function App() {
-  const connectors = [
-    new InjectedConnector({ options: { id: 'braavos' }}),
-    new InjectedConnector({ options: { id: 'argentX' }}),
-  ]
   return (
     <html lang="en">
         <head>
@@ -46,12 +41,10 @@ export default function App() {
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </head>
         <body className="bg-black text-white">
-          <StarknetConfig connectors={connectors}>
-            <Outlet />
-            <ScrollRestoration />
-            <Scripts />
-            <LiveReload />
-          </StarknetConfig>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
         </body>
     </html>
   );
