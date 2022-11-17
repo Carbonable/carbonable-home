@@ -26,10 +26,10 @@ const values = [
 
 function TopEffect() {
     const refTop = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({ target: refTop });
+    const { scrollYProgress } = useScroll({ target: refTop, offset: ["-50vh", "end"] });
     const marginLeft = useMotionValue('0%');
     const marginRight = useMotionValue('0%');
-    const x = useTransform(scrollYProgress, (value) => `${value * 100 - (100 - (value * 100)) }%`);
+    const x = useTransform(scrollYProgress, (value) => `${value * 100 }%`);
 
     useEffect(() => {
         function updateLeftMargin() {
