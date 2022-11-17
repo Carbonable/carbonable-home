@@ -26,7 +26,7 @@ export default function Index() {
   const config = useLoaderData<LoaderData>();
 
   return (
-      <div className="relative">
+      <div className="relative w-screen">
         <Menu />
         <Title />
         <Video />

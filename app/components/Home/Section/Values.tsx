@@ -41,10 +41,10 @@ function TopEffect() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
-        <div ref={refTop} className="text-center w-full rounded-t-xl bg-green">
-            <motion.div style={{ marginLeft }} className="overflow-hidden whitespace-nowrap font-trash text-lg font-bold uppercase md:text-4xl xl:text-6xl pt-3">We align the best interests</motion.div>
-            <motion.div style={{ marginRight }} className="overflow-hidden whitespace-nowrap font-americana text-xl uppercase md:text-3xl xl:text-5xl">of investors, business</motion.div>
-            <motion.div style={{ marginLeft }} className="overflow-hidden whitespace-nowrap font-trash text-lg font-bold uppercase md:text-4xl xl:text-6xl lg:pt-3">and the planet</motion.div>
+        <div ref={refTop} className="text-center w-full  bg-green grid align-center justify-center justify-items-center">
+            <motion.div style={{ x}} className=" whitespace-nowrap font-trash text-2xl font-bold uppercase md:text-4xl xl:text-7xl 2xl:text-8xl pt-3 w-full"><p>We align best interests</p></motion.div>
+            <motion.div style={{ marginRight }} className="  whitespace-nowrap font-americana text-2xl uppercase md:text-4xl xl:text-7xl 2xl:text-8xl w-full">of investors, business</motion.div>
+            <motion.div style={{ x}} className="overflow-hidden whitespace-nowrap font-trash text-2xl font-bold uppercase md:text-4xl xl:text-7xl 2xl:text-8xl lg:pt-3 w-full">and the planet</motion.div>
         </div>
     )
 }
@@ -66,10 +66,10 @@ function BottomEffect() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
-        <div ref={refBottom} className="text-center w-full rounded-b-xl bg-green">
-            <motion.div style={{ marginLeft }} className="overflow-hidden whitespace-nowrap font-trash text-lg font-bold uppercase md:text-4xl xl:text-6xl pt-3">Because the best</motion.div>
-            <motion.div style={{ marginRight }} className="overflow-hidden whitespace-nowrap font-americana text-xl uppercase md:text-3xl xl:text-5xl">investments earn you</motion.div>
-            <motion.div style={{ marginLeft }} className="overflow-hidden whitespace-nowrap font-trash text-lg font-bold uppercase md:text-4xl xl:text-6xl lg:pt-3">more than money.</motion.div>
+        <div ref={refBottom} className="text-center w-full rounded-b-xl bg-green grid align-center justify-center justify-items-center">
+            <motion.div style={{ x }} className=" whitespace-nowrap font-trash text-3xl font-bold uppercase md:text-5xl xl:text-8xl 2xl:text-8xl pt-3 w-full">Because the best</motion.div>
+            <motion.div style={{ marginRight }} className=" whitespace-nowrap font-americana text-2xl uppercase md:text-4xl xl:text-7xl 2xl:text-8xl w-full">investments earn you</motion.div>
+            <motion.div style={{ x }} className=" whitespace-nowrap font-trash text-3xl font-bold uppercase md:text-5xl xl:text-8xl 2xl:text-8xl lg:pt-3 w-full">more than money.</motion.div>
         </div>
     )
 }
