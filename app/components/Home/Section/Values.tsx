@@ -77,7 +77,7 @@ function BottomEffect() {
 export default function Values() {
     return (
         <div className="relative text-black">
-            <div className="tracking-tighter leading-5 uppercase snap-mandatory">
+            <div className="tracking-tighter leading-5 uppercase">
                 <div className="bg-green h-screen w-full flex justify-center items-center sticky top-0">
                     <div className="w-0 lg:w-2/12"><PlusIconBlack className="w-8 md:w-12 mx-auto"></PlusIconBlack></div>
                     <div className="w-full mx-auto text-center flex flex-wrap justify-center items-center lg:w-8/12 md:px-12 lg:px-6 xl:px-2">
@@ -106,7 +106,6 @@ export default function Values() {
                     <div className="w-0 lg:w-2/12"><PlusIconBlack className="w-8 md:w-12 mx-auto"></PlusIconBlack></div>
                 </div>
             </div>
-            
         </div>
     )
 }

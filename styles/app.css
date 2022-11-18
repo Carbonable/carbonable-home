@@ -71,11 +71,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.snap-mandatory {
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-}
-
 input[type='number'] {
     -moz-appearance:textfield;
 }
@@ -204,10 +199,3 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
-.oHidden {
-    overflow: hidden
-}
-
-body > div {
-    overflow: hidden
-}
