@@ -18,7 +18,7 @@ export default function B2B() {
                 <div className="relative p-[1px] bg-carousel-button-border rounded-lg mt-12 md:mt-24">
                     <div className="relative flex flex-wrap rounded-lg bg-black">
                         <div className="w-full bg-home-b2b-mobile bg-cover bg-no-repeat p-12 rounded-t-lg lg:w-1/2 lg:rounded-t-none lg:rounded-l-lg lg:bg-home-b2b-landscape flex items-center justify-center">
-                            <img src="/assets/images/home/b2b-placeholder.jpg" alt="b2b placeholder" className="w-full md:mt-12 xl:w-10/12 mx-auto" />
+                            <img src="/assets/images/home/b2b-placeholder2.png" alt="b2b placeholder" className="w-full md:mt-12 xl:w-10/12 mx-auto" />
                         </div>
                         <div className="w-full bg-black p-8 md:p-12 rounded-b-lg lg:w-1/2 lg:rounded-b-none lg:rounded-r-lg py-8 lg:py-32 lg:mt-12">
                             <div className="bg-clip-text text-transparent bg-gradient-to-r from-green to-lightblue font-trash uppercase text-lg md:text-2xl md:pr-4 lg:pr-16 xl:text-4xl">
