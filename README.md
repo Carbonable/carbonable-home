@@ -68,6 +68,7 @@ Connection with pgAdmin: localhost:5432 postgres/[password]
 ##### Build database
 ```bash
 npx prisma db push
+npx prisma migrate dev --name [name of the migration]
 ```
 
 If your database gets messed up, you can always delete the prisma/dev.db file and run npx prisma db push again. 

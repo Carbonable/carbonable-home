@@ -73,7 +73,6 @@ export const useCenterCard = (cardId: string, containerId: string) => {
         const cardRect = card.getBoundingClientRect()
         const rect = endBoundary.getBoundingClientRect()
         const bottomBoundary = getCoords(endBoundary).top + rect.height + ((cardRect.height - rect.height) / 2)
-        console.log(bottomBoundary)
         setEndPosition(bottomBoundary)
       }
     },
