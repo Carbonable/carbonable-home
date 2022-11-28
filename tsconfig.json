@@ -5,7 +5,6 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "resolveJsonModule": true,

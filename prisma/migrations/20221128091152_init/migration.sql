@@ -2,6 +2,15 @@
 CREATE TYPE "AnalyticsType" AS ENUM ('YIELD', 'OFFSET');
 
 -- CreateTable
+CREATE TABLE "SimulatorConfig" (
+    "id" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "config" JSONB NOT NULL,
+
+    CONSTRAINT "SimulatorConfig_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "SimulatorAnalytics" (
     "id" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -10,3 +19,6 @@ CREATE TABLE "SimulatorAnalytics" (
 
     CONSTRAINT "SimulatorAnalytics_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SimulatorConfig_type_key" ON "SimulatorConfig"("type");
