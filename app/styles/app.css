@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -408,6 +411,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
 *, ::before, ::after {
@@ -2454,6 +2463,16 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1280px) {
+  @media (min-width: 768px) {
+    .xl\:md\:w-8\/12 {
+      width: 66.666667%;
+    }
+
+    .xl\:md\:w-4\/12 {
+      width: 33.333333%;
+    }
+  }
+
   .xl\:right-\[150px\] {
     right: 150px;
   }
@@ -2562,16 +2581,6 @@ input::-webkit-inner-spin-button {
   .xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  @media (min-width: 768px) {
-    .xl\:md\:w-8\/12 {
-      width: 66.666667%;
-    }
-
-    .xl\:md\:w-4\/12 {
-      width: 33.333333%;
-    }
   }
 }
 

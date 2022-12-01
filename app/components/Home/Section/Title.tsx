@@ -19,9 +19,9 @@ const useLazyComponent = (importer: any, enabled: any) => {
 
   useEffect(() => {
     if (enabled) {
-      importer().then(({ default: LazyComponent }: any) =>
-        setComponent(() => LazyComponent)
-      )
+      importer()
+        .then(({ default: LazyComponent }: any) => setComponent(() => LazyComponent))
+        .catch(console.log)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled])
@@ -32,7 +32,7 @@ const useLazyComponent = (importer: any, enabled: any) => {
 export default function Title() {
     const isMobile = useBreakpoint()    
     const Sticky = useLazyComponent(() => import("react-stickynode"), !isMobile)
-    const [top, botttom] = useCenterCard(cardId, containerId)
+    const [top, bottom] = useCenterCard(cardId, containerId)
 
     return (
         <div className="pb-[20%] w-screen h-auto text-center max-w-screen-2xl mx-auto relative pt-1">
@@ -78,7 +78,7 @@ export default function Title() {
                     <Sticky 
                         innerZ={2}
                         enabled={!isMobile} 
-                        bottomBoundary={botttom}
+                        bottomBoundary={bottom}
                         top={top}
                     >
                         <motion.img
