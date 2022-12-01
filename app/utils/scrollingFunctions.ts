@@ -72,19 +72,26 @@ export const useCenterCard = (cardId: string, containerId: string) => {
       if (endBoundary && card) {
         const cardRect = card.getBoundingClientRect()
         const rect = endBoundary.getBoundingClientRect()
-        const bottomBoundary = getCoords(endBoundary).top + rect.height + ((cardRect.height - rect.height) / 2)
+        const top = Math.round(rect.top + window.scrollY)
+        // const top = getCoords(endBoundary).top
+        const bottomBoundary = top + rect.height + ((cardRect.height - rect.height) / 2)
+        
         setEndPosition(bottomBoundary)
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [setPosition]
+    [setPosition, setEndPosition]
   )
 
   React.useEffect(
     () => {
       handleResize()
+      window.addEventListener("scroll", handleResize)
       window.addEventListener("resize", handleResize)
-      return () => window.removeEventListener("resize", handleResize)
+      return () => {
+        window.removeEventListener("resize", handleResize)
+        window.removeEventListener("scroll", handleResize)
+      }
     },
     [handleResize]
   )
