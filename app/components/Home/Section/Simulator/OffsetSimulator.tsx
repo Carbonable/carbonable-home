@@ -44,7 +44,7 @@ export default function OffsetSimulator({offset, globalConf}: any) {
 
     const debouncedSubmit = useRef(
         debounce(async (criteria) => {
-            analytics.submit(criteria);;
+            analytics.submit(criteria);
         }, 1000)
       ).current;
 
