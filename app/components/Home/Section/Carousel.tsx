@@ -86,20 +86,23 @@ export default function Carousel() {
     
     return (
         <div className="preventOverflow">
-            <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-12 xl:mt-24">
+            <div id="assets" className="w-11/12 max-w-screen-2xl scroll-mt-12 mx-auto mt-8 lg:mt-16 xl:mt-28">
                 <div className="flex items-start justify-center">
                     <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                     <h1 className="w-10/12 items-center uppercase font-trash text-bold text-xl md:text-3xl lg:text-4xl xl:text-5xl text-center">FUTURE-PROOF NFT<br/>INVESTMENTS</h1>
                     <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 </div>
                 <h2 className="text-center font-inter mb-8">Break free from old beliefs</h2>
-                <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">
-                    {slides.map((image, index) => (
-                        <div key={`image_${index}`} className="px-2  outline-0">
-                            <img alt={`Carbonable project ${index}`} onClick={() => handleClick(index)} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-110 cursor-pointer" : "rounded-lg brightness-50 cursor-pointer"} />
-                        </div>
-                    ))}
-                </Slider>
+                <div className="gradientOverflow">
+                    <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">
+                        {slides.map((image, index) => (
+                            <div key={`image_${index}`} className="px-2  outline-0">
+                                <img alt={`Carbonable project ${index}`} onClick={() => handleClick(index)} src={`/assets/images/home/${image.name}`} className={index === activeSlide ? "rounded-lg brightness-110 cursor-pointer" : "rounded-lg brightness-50 cursor-pointer"} />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+                
                 <div className="flex flex-wrap mt-8 text-center lg:text-left lg:w-10/12 lg:mx-auto lg:flex-nowrap">
                     <div className="flex w-full items-center justify-center lg:w-9/12 lg:justify-start lg:flex-wrap">
                     <div className="flex w-full items-center justify-center lg:justify-start">

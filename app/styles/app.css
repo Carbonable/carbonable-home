@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,7 +30,6 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -45,8 +44,6 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
 }
 
 /*
@@ -413,12 +410,6 @@ video {
   height: auto;
 }
 
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden] {
-  display: none;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -684,6 +675,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -694,10 +689,6 @@ video {
 
 .mt-12 {
   margin-top: 3rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
 }
 
 .mb-8 {
@@ -728,20 +719,24 @@ video {
   margin-top: 0.25rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mr-0 {
-  margin-right: 0px;
-}
-
-.ml-auto {
-  margin-left: auto;
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-24 {
   margin-bottom: 6rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
+}
+
+.ml-\[8\.33\%\] {
+  margin-left: 8.33%;
 }
 
 .mt-\[1px\] {
@@ -780,6 +775,10 @@ video {
   display: none;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -802,10 +801,6 @@ video {
 
 .h-auto {
   height: auto;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .h-8 {
@@ -844,8 +839,8 @@ video {
   min-height: 350px;
 }
 
-.min-h-\[50vh\] {
-  min-height: 50vh;
+.min-h-\[33vh\] {
+  min-height: 33vh;
 }
 
 .min-h-\[300px\] {
@@ -1127,10 +1122,6 @@ video {
   overflow-y: auto;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
-}
-
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1393,10 +1384,6 @@ video {
   padding-left: 2rem;
 }
 
-.pb-\[20\%\] {
-  padding-bottom: 20%;
-}
-
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -1461,16 +1448,26 @@ video {
   text-align: right;
 }
 
-.font-inter {
-  font-family: Inter, sans-serif;
-}
-
 .font-trash {
   font-family: trash, sans-serif;
 }
 
 .font-americana {
   font-family: americana, sans-serif;
+}
+
+.font-inter {
+  font-family: Inter, sans-serif;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .text-sm {
@@ -1513,16 +1510,6 @@ video {
   line-height: 1;
 }
 
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1560,6 +1547,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(10 242 173 / var(--tw-text-opacity));
+}
+
 .text-black\/50 {
   color: rgb(0 0 0 / 0.5);
 }
@@ -1567,11 +1559,6 @@ video {
 .text-beaige {
   --tw-text-opacity: 1;
   color: rgb(239 236 234 / var(--tw-text-opacity));
-}
-
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(10 242 173 / var(--tw-text-opacity));
 }
 
 .text-transparent {
@@ -1775,17 +1762,17 @@ input::-webkit-inner-spin-button {
  * Carousel overflow
  */
 
-.preventOverflow {
+.gradientOverflow {
   position: relative;
   overflow: hidden;
 }
 
-.preventOverflow .slick-list {
+.gradientOverflow .slick-list {
   overflow: visible;
 }
 
-.preventOverflow::before,
-.preventOverflow::after {
+.gradientOverflow::before,
+.gradientOverflow::after {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1793,26 +1780,26 @@ input::-webkit-inner-spin-button {
   z-index: 1;
 }
 
-.preventOverflow::before {
+.gradientOverflow::before {
   left: 0;
   background: linear-gradient(90deg, #000000 51.85%, rgba(0, 0, 0, 0) 100%);
 }
 
-.preventOverflow::after {
+.gradientOverflow::after {
   right: 0;
   background: linear-gradient(-90deg, #000000 51.85%, rgba(0, 0, 0, 0) 100%);
 }
 
 @media screen and (min-width: 640px) {
-  .preventOverflow::before,
-    .preventOverflow::after {
+  .gradientOverflow::before,
+    .gradientOverflow::after {
     content: "";
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .preventOverflow::before,
-    .preventOverflow::after {
+  .gradientOverflow::before,
+    .gradientOverflow::after {
     width: 244px;
   }
 }
@@ -1842,25 +1829,9 @@ input::-webkit-inner-spin-button {
 }
 
 #line-marker {
-  /* Vector 1 */
-  /* border-left: 1px solid #0AF2AD; */
-  /* border-bottom: 1px solid #0AF2AD; */
   box-shadow: inset 1px -1px 0 #0AF2AD;
   border-radius: 0 0 0 8px;
   height: calc(91.66667vw * .18 - 1px);
-}
-
-@media screen and (min-width: 769px) {
-  #line-marker {
-    height: calc(83.3333vw * .21 - 1px);
-    border-radius: 0 0 0 32px;
-  }
-}
-
-@media screen and (min-width: 1280px){
-  #line-marker {
-    height: 45.4%;
-  }
 }
 
 .background {
@@ -1874,8 +1845,20 @@ input::-webkit-inner-spin-button {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
-  min-width: 640px;
   max-width: 1440px;
+}
+
+@media screen and (min-width: 769px) {
+  #line-marker {
+    height: calc(83.3333vw * .21 - 1px);
+    border-radius: 0 0 0 32px;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  #line-marker {
+    height: 45.4%;
+  }
 }
 
 .clip-video img {
@@ -1892,6 +1875,10 @@ input::-webkit-inner-spin-button {
   right: 0;
   height: 20%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.oHidden {
+  overflow: hidden
 }
 
 .before\:content-\[\'Invest\'\]::before {
@@ -2022,16 +2009,16 @@ input::-webkit-inner-spin-button {
     margin-top: 9rem;
   }
 
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .md\:ml-\[8\.33\%\] {
     margin-left: 8.33%;
   }
 
   .md\:mt-\[-10\%\] {
     margin-top: -10%;
-  }
-
-  .md\:mt-16 {
-    margin-top: 4rem;
   }
 
   .md\:mt-10 {
@@ -2044,6 +2031,10 @@ input::-webkit-inner-spin-button {
 
   .md\:max-h-\[2000px\] {
     max-height: 2000px;
+  }
+
+  .md\:min-h-\[50vh\] {
+    min-height: 50vh;
   }
 
   .md\:min-h-\[400px\] {
@@ -2150,12 +2141,12 @@ input::-webkit-inner-spin-button {
     padding-left: 5rem;
   }
 
-  .md\:text-left {
-    text-align: left;
+  .md\:pb-\[20\%\] {
+    padding-bottom: 20%;
   }
 
-  .md\:text-right {
-    text-align: right;
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-sm {
@@ -2225,6 +2216,10 @@ input::-webkit-inner-spin-button {
     margin-top: 3rem;
   }
 
+  .lg\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .lg\:ml-1 {
     margin-left: 0.25rem;
   }
@@ -2241,8 +2236,8 @@ input::-webkit-inner-spin-button {
     margin-top: 5rem;
   }
 
-  .lg\:mt-16 {
-    margin-top: 4rem;
+  .lg\:mr-0 {
+    margin-right: 0px;
   }
 
   .lg\:mt-4 {
@@ -2463,16 +2458,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1280px) {
-  @media (min-width: 768px) {
-    .xl\:md\:w-8\/12 {
-      width: 66.666667%;
-    }
-
-    .xl\:md\:w-4\/12 {
-      width: 33.333333%;
-    }
-  }
-
   .xl\:right-\[150px\] {
     right: 150px;
   }
@@ -2483,6 +2468,10 @@ input::-webkit-inner-spin-button {
 
   .xl\:mt-24 {
     margin-top: 6rem;
+  }
+
+  .xl\:mt-28 {
+    margin-top: 7rem;
   }
 
   .xl\:mt-20 {
@@ -2582,6 +2571,16 @@ input::-webkit-inner-spin-button {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  @media (min-width: 768px) {
+    .xl\:md\:w-8\/12 {
+      width: 66.666667%;
+    }
+
+    .xl\:md\:w-4\/12 {
+      width: 33.333333%;
+    }
+  }
 }
 
 @media (min-width: 1536px) {
@@ -2602,4 +2601,3 @@ input::-webkit-inner-spin-button {
     line-height: 1;
   }
 }
-
