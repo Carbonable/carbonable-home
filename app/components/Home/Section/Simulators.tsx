@@ -1,4 +1,5 @@
 
+import { InformationCircleIcon } from "@heroicons/react/24/solid";
 import { useState } from "react"
 import PlusIconWhite from "~/components/Icons/PlusIcon";
 import OffsetSimulator from "./Simulator/OffsetSimulator";
@@ -29,7 +30,12 @@ export default function Simulators({config}: any) {
                     { selectedSimulator === 'yield' && <YieldSimulator carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} /> }
                     { selectedSimulator === 'offset' && <OffsetSimulator offset={offsetConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} /> }
                 </div>
-                <div className="text-beaige px-6 py-3 mt-2 rounded-xl text-center md:text-right font-inter w-full md:w-9/12 lg:w-6/12 mr-0 ml-auto">
+                <div className="text-green text-xs md:text-sm text-center mt-8 px-8">
+                    <InformationCircleIcon className="w-6 mx-auto mb-2" />
+                    This graph aims to  provide global forecasts by taking into account today's market information, and using a linear carbon credit reception model.<br />
+                    That said, by definition, all projects are specific, as well as their carbon capture reception schedule.
+                </div>
+                <div className="text-beaige px-6 py-3 mt-8 rounded-xl text-center lg:text-right font-inter w-full md:w-9/12 lg:w-6/12 lg:mr-0 mx-auto">
                     <div className="text-xs">Based on BloombergNEF and McKinsey forecasts</div>
                     <div>NOT FINANCIAL ADVICE</div>
                 </div>

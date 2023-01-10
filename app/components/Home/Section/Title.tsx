@@ -35,7 +35,7 @@ export default function Title() {
     const [top, bottom] = useCenterCard(cardId, containerId)
 
     return (
-        <div className="pb-[20%] w-screen h-auto text-center max-w-screen-2xl mx-auto relative pt-1">
+        <div className="md:pb-[20%] w-screen h-auto text-center max-w-screen-2xl mx-auto relative pt-1">
             <div className="mx-auto w-11/12 md:w-10/12 xl:w-[1136px] relative md:mt-12 lg:mt-4 z-10">
                 <h1 className="font-trash text-bold text-2xl md:text-4xl pt-12 lg:text-5xl uppercase">
                     Best value<br/>

@@ -83,17 +83,17 @@ input::-webkit-inner-spin-button {
 /**
  * Carousel overflow
  */
-.preventOverflow {
+.gradientOverflow {
     position: relative;
     overflow: hidden;
 }
 
-.preventOverflow .slick-list {
+.gradientOverflow .slick-list {
     overflow: visible;
 }
 
-.preventOverflow::before,
-.preventOverflow::after {
+.gradientOverflow::before,
+.gradientOverflow::after {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -101,27 +101,27 @@ input::-webkit-inner-spin-button {
     z-index: 1;
 }
 
-.preventOverflow::before {
+.gradientOverflow::before {
     left: 0;
     background: linear-gradient(90deg, #000000 51.85%, rgba(0, 0, 0, 0) 100%);
 }
 
-.preventOverflow::after {
+.gradientOverflow::after {
     right: 0;
     background: linear-gradient(-90deg, #000000 51.85%, rgba(0, 0, 0, 0) 100%);
 
 }
 
 @media screen and (min-width: 640px) {
-    .preventOverflow::before,
-    .preventOverflow::after {
+    .gradientOverflow::before,
+    .gradientOverflow::after {
         content: "";
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .preventOverflow::before,
-    .preventOverflow::after {
+    .gradientOverflow::before,
+    .gradientOverflow::after {
         width: 244px;
     }
 }
@@ -150,25 +150,10 @@ input::-webkit-inner-spin-button {
 }
 
 #line-marker {
-    /* Vector 1 */
-    /* border-left: 1px solid #0AF2AD; */
-    /* border-bottom: 1px solid #0AF2AD; */
     box-shadow: inset 1px -1px 0 #0AF2AD;
     border-radius: 0 0 0 8px;
 
     height: calc(91.66667vw * .18 - 1px);
-}
-@media screen and (min-width: 769px) {
-    #line-marker { 
-        height: calc(83.3333vw * .21 - 1px);
-        border-radius: 0 0 0 32px;
-    }
-}
-
-@media screen and (min-width: 1280px){
-    #line-marker {
-        height: 45.4%;
-    }
 }
 
 .background {
@@ -180,8 +165,21 @@ input::-webkit-inner-spin-button {
     object-position: 50% 50%;
     object-fit: cover;
     z-index: -1;
-    min-width: 640px;
     max-width: 1440px;
+}
+
+
+@media screen and (min-width: 769px) {
+    #line-marker { 
+        height: calc(83.3333vw * .21 - 1px);
+        border-radius: 0 0 0 32px;
+    }
+}
+
+@media screen and (min-width: 1280px){
+    #line-marker {
+        height: 45.4%;
+    }
 }
 
 .clip-video img {
@@ -199,3 +197,6 @@ input::-webkit-inner-spin-button {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 
+.oHidden {
+    overflow: hidden
+}

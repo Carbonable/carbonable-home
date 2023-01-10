@@ -19,13 +19,13 @@ export default function Video() {
                 h={1080}
                 className="background clip-video"
             />
-            <div id="video" className="w-full min-h-[50vh] mt-16 flex flex-wrap items-center xl:min-h-[70vh] xl:w-[1136px] mx-auto">
+            <div id="video" className="w-full min-h-[33vh] md:min-h-[50vh] mt-28 md:mt-16 flex flex-wrap items-center xl:min-h-[70vh] xl:w-[1136px] mx-auto">
                 <div 
-                    className="w-11/12 mx-auto md:ml-[8.33%] md:w-5/12 lg:w-[556px]"
+                    className="w-1/2 ml-[8.33%] md:ml-[8.33%] md:w-5/12 lg:w-[556px]"
                     id="sticky-card-end"
                 >
-                    <h1 className="uppercase font-trash text-bold text-lg leading-5 md:text-3xl lg:text-4xl xl:text-5xl text-left">FIGHT CLIMATE CHANGE</h1>
-                    <h2 className="uppercase font-americana text-bold text-green leading-5 text-lg md:text-3xl lg:text-4xl xl:text-5xl text-left">GET HIGH & GROWING YIELD</h2>
+                    <h1 className="uppercase font-trash text-bold text-base leading-5 md:text-3xl lg:text-4xl xl:text-5xl text-left">FIGHT CLIMATE CHANGE</h1>
+                    <h2 className="uppercase font-americana text-bold text-green leading-5 text-base md:text-3xl lg:text-4xl xl:text-5xl text-left">GET HIGH & GROWING YIELD</h2>
                     <div className="font-inter mt-4 text-xs leading-5 md:text-sm lg:text-base 2xl:max-w-[90%]">Carbonable empowers anyone to invest in the greatest challenge of our time, by financing nature’s regeneration.</div>
                 </div>
             </div>
