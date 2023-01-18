@@ -88,7 +88,7 @@ export default function OffsetSimulator({offset, globalConf}: any) {
             costSavingsBest.push(bestYear - carbonableInvest);
         }
         setGraphData(dataGraph);
-        setCarbonableValue(shortenNumber(carbonCreditPrice * ccNeed));
+        setCarbonableValue(shortenNumber(carbonCreditPrice * ccNeed * duration[0]));
 
         switch(selectedScenario) {
             case "Base":
