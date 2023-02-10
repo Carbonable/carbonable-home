@@ -24,7 +24,7 @@ export default function Simulators({config}: any) {
             <div className="w-full max-w-screen-2xl mx-auto bg-home-simulator rounded-2xl backdrop-blur-md py-8 px-2 md:w-11/12 md:mx-auto mt-8">
                 <div className="w-full md:w-9/12 lg:w-8/12 xl:w-6/12 p-1 flex font-semibold border border-white rounded-full items-center mx-auto justify-evenly uppercase text-xs md:text-base mt-1">
                     <div className={selectedSimulator === 'yield' ? "bg-green-blue rounded-full px-2 md:px-12 py-2 md:py-4 w-1/2 text-black/50" : "cursor-pointer w-1/2 text-beaige"} onClick = {() => { setSelectedSimulator("yield"); }}>Yield simulator</div>
-                    <div className={selectedSimulator === 'offset' ? "bg-green-blue rounded-full px-2 md:px-12 py-2 md:py-4 w-1/2 text-black/50" : "cursor-pointer w-1/2 text-beaige"} onClick = {() => { setSelectedSimulator("offset"); }}>Offseting simulator</div>
+                    <div className={selectedSimulator === 'offset' ? "bg-green-blue rounded-full px-2 md:px-12 py-2 md:py-4 w-1/2 text-black/50" : "cursor-pointer w-1/2 text-beaige"} onClick = {() => { setSelectedSimulator("offset"); }}>Offsetting simulator</div>
                 </div>
                 <div>
                     { selectedSimulator === 'yield' && <YieldSimulator carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} /> }
