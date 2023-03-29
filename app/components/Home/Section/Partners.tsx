@@ -69,7 +69,21 @@ export default function Values() {
 
     return (
         <div className="w-11/12 max-w-screen-2xl mx-auto text-center mt-12 xl:mt-20 xl:w-8/12">
-            
+            <div className="flex items-center justify-center">
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
+                <div className="w-10/12 mx-auto px-6 uppercase text-center">
+                    <h1 className="font-trash font-bold text-sm text-center md:text-3xl xl:text-5xl">
+                    Backed by 
+                        <div className="font-americana font-medium text-xs md:text-2xl lg:text-3xl">World’s Leading Investors</div>
+                    </h1>
+                </div>
+                <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
+            </div>
+            <div className="grid grid-cols-3 gap-12 lg:gap-28 mt-12 lg:mt-20 content-center">
+                {backed.map((partner, index) => (
+                    <img key={`backed_${index}`} className="" src={partner.img_src} alt={partner.alt} />
+                ))}
+            </div>
             <div className="flex items-center justify-center mt-16 md:mt-36">
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">
@@ -80,9 +94,11 @@ export default function Values() {
                 </div>
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
-            <div className="flex flex-wrap item-center justify-center mt-8 md:mt-12 lg:mt-20">
+            <div className="grid grid-cols-4 content-center mt-8 md:mt-12 lg:mt-20 gap-x-16 lg:gap-x-32 gap-y-12">
                 {experiences.map((partner, index) => (
-                    <img key={`backed_${index}`} className="w-4/12 p-[24px] md:w-3/12 md:p-[48px] lg:p-[68px] 2xl:p-[88px]" src={partner.img_src} alt={partner.alt} />
+                    <div key={`expert_${index}`} className="flex items-center justify-center">
+                        <img className="" src={partner.img_src} alt={partner.alt} />
+                    </div>
                 ))}
             </div>
         </div>

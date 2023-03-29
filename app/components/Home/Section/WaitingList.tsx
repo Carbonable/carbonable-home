@@ -19,7 +19,7 @@ export default function WaitingList() {
         : "idle";
 
     return (
-        <div className="bg-waiting-list bg-no-repeat bg-bottom bg-origin-padding rounded-2xl w-11/12 mx-auto py-2 px-2 mt-12 text-black md:w-10/12 md:px-12 xl:w-6/12">
+        <div className="bg-waiting-list bg-no-repeat bg-bottom bg-origin-padding rounded-2xl w-11/12 mx-auto py-2 px-2 mt-20 text-black md:w-10/12 md:px-12 xl:w-6/12">
             <div className="flex items-center justify-center mt-10">
                 <PlusIconBlack className="w-8 md:w-12"></PlusIconBlack>
                 <div className="w-10/12 mx-auto px-6 uppercase text-center">
