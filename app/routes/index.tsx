@@ -31,7 +31,6 @@ export default function Index() {
   const data = useLoaderData();
   const config = data.config;
   const news = data.news;
-  console.log(config)
   return (
       <div className="relative w-screen">
         <Menu />
