@@ -29,17 +29,21 @@ export default function News({news}: {news: any[]}) {
             <div className="w-full relative mt-8">
                 <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">
                     {news.map((article: any, index: any) => (
-                        <>
-                            <a key={`article_${article.media}`} href={article.link} target="_blank" className="p-6 outline-0 flex w-full justify-start items-start" rel="noreferrer">
-                                <div className="min-w-[120px] w-[120px]">
-                                    <img alt={article.title} src={urlFor(article.image).width(200).url()} className="rounded-lg min-w-[120px] w-[120px]" />
+                        <div key={`article_${article.media}`}>
+                            <div className="p-6 outline-0 flex flex-nowrap w-full justify-start items-start">
+                                <div className="w-fit">
+                                    <a href={article.link} target="_blank" rel="noreferrer">
+                                        <img alt={article.title} src={urlFor(article.image).width(200).url()} className="rounded-lg min-w-[120px] w-[120px]" />
+                                    </a>
                                 </div>
-                                <div className="pl-4">
-                                    <div className="font-inter font-extralight text-white">{article.title}</div>
-                                    <div className="text-grey font-trash font-bold text-sm mt-1">{article.media}</div>
+                                <div className="pl-4 w-fit">
+                                    <a href={article.link} target="_blank" rel="noreferrer">
+                                        <div className="font-inter font-extralight text-white">{article.title}</div>
+                                        <div className="text-grey font-trash font-bold text-sm mt-1">{article.media}</div>
+                                    </a>
                                 </div>
-                            </a>
-                        </>
+                            </div>
+                        </div>
                     ))}
                 </Slider>
             </div>
