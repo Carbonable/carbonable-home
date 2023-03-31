@@ -15,6 +15,32 @@ export default function News({news}: {news: any[]}) {
         autoplaySpeed: 4000,
         rows: 2,
         slidesPerRow: 1,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                  slidesToShow: 2
+                }
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                  slidesToShow: 1,
+                }
+            }
+          ]
     };
 
     return (
@@ -27,13 +53,13 @@ export default function News({news}: {news: any[]}) {
                 <PlusIconWhite className="w-8 md:w-12"></PlusIconWhite>
             </div>
             <div className="w-full relative mt-8">
-                <Slider ref={slider => (slidz = slider)} {...settings} className="w-10/12 mx-auto md:mt-8">
+                <Slider ref={slider => (slidz = slider)} {...settings} className="w-11/12 lg:w-10/12 mx-auto md:mt-8">
                     {news.map((article: any, index: any) => (
                         <div key={`article_${article.media}`}>
-                            <div className="p-6 outline-0 flex flex-nowrap w-full justify-start items-start">
+                            <div className="p-2 lg:p-6 outline-0 flex flex-nowrap w-full justify-start items-start">
                                 <div className="w-fit">
                                     <a href={article.link} target="_blank" rel="noreferrer">
-                                        <img alt={article.title} src={urlFor(article.image).width(200).url()} className="rounded-lg min-w-[120px] w-[120px]" />
+                                        <img alt={article.title} src={urlFor(article.image).width(200).url()} className="rounded-lg min-w-[80px] w-[80px] lg:min-w-[120px] lg:w-[120px]" />
                                     </a>
                                 </div>
                                 <div className="pl-4 w-fit">
