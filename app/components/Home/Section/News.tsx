@@ -39,8 +39,8 @@ export default function News({news}: {news: any[]}) {
                                 <div className="pl-4 w-fit">
                                     <a href={article.link} target="_blank" rel="noreferrer">
                                         <div className="font-inter font-extralight text-white">{article.title}</div>
-                                        <div className="text-grey font-trash font-bold text-sm mt-1">{article.media}</div>
                                     </a>
+                                    <div className="text-grey font-trash font-bold text-sm mt-1">{article.media}</div>
                                 </div>
                             </div>
                         </div>
