@@ -6,7 +6,7 @@ export default function TooltipInfo({text}: {text: React.ReactNode}) {
         <Tooltip.Provider delayDuration={300}>
             <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                    <InformationCircleIcon className="w-6 ml-2" />
+                    <InformationCircleIcon className="w-6 ml-2 text-neutral-200" />
                 </Tooltip.Trigger>
                 <Tooltip.Portal>
                     <Tooltip.Content sideOffset={5} className="bg-neutral-700/90 border border-neutral-500 p-4 z-50 rounded-xl max-w-sm text-sm font-light text-neutral-100">
