@@ -20,7 +20,6 @@ export async function loader() {
     });
   }
 
-
   return json({ config });
 };
 
