@@ -2,8 +2,8 @@ import {  ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useState } from "react";
-import { YieldSimulator } from "~/components/Simulator";
-import TooltipInfo from "~/components/Simulator/Tooltip";
+import TooltipInfo from "~/components/Common/Tooltip";
+import YieldSimulator from "~/components/Simulator/YieldSimulator";
 import type { ConfigData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
 
@@ -29,14 +29,6 @@ export default function Simulator() {
   const [yieldConfig] = useState(config ? config.filter((conf: any) => conf.type === "yield") : null);
   const [globalConfig] = useState(config ? config.filter((conf: any) => conf.type === "global") : null);
 
-  if (config.simulators_config === null || config.simulators_config === null) {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-
   const TooltipText: React.FC = () => {
     return (
       <div>
@@ -47,8 +39,8 @@ export default function Simulator() {
   }
 
   return (
-    <div className="w-full text-center mt-8 xl:mt-12">
-      <div className="w-11/12  mx-auto">
+    <div className="w-full text-center mt-8 xl:mt-16">
+      <div className="w-11/12 mx-auto">
           <h1 className="uppercase font-extrabold text-2xl text-center md:text-3xl xl:text-5xl text-neutral-50 flex items-start justify-center">
               YIELD SIMULATOR
               <TooltipInfo text={<TooltipText />}  />
@@ -60,9 +52,14 @@ export default function Simulator() {
           </div>
       </div>
       <div className="w-full rounded-2xl bg-neutral-700 border border-neutral-500 py-8 px-2 md:w-11/12 md:mx-auto mt-8">
-          <div>
-            <YieldSimulator carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} />
+        {config === null || config === undefined || config.length === 0
+          ? 
+          <div className="text-xl">
+            Sorry, the simulator is not available at the moment. Please try again later.
           </div>
+          : 
+          <YieldSimulator carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} />
+        }
       </div>
     </div>
   )
