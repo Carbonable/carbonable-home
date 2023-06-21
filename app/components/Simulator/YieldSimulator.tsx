@@ -4,7 +4,7 @@ import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'rec
 import { debounce } from "lodash"
 import { useFetcher } from '@remix-run/react';
 import { RadioGroup } from '@headlessui/react';
-import Kpi from './Kpi';
+import Kpi from '../Common/Kpi';
 import { shortenNumber } from '~/utils/utils';
 
 function getAccruedRevenues({selectedScenario, chartsData}: any) {
