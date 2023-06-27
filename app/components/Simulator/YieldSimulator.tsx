@@ -7,8 +7,8 @@ import { RadioGroup } from '@headlessui/react';
 import Kpi from '../Common/Kpi';
 import { shortenNumber } from '~/utils/utils';
 
-function getAccruedRevenues({selectedScenario, chartsData}: any) {
-    if (chartsData.length === 1) { return 0 };
+function getAccruedRevenues({selectedScenario, chartsData}: {selectedScenario: string, chartsData: any}) {
+    if (chartsData.length === 1) { return 0 }
 
     switch(selectedScenario) {
         case "Base":
@@ -20,10 +20,10 @@ function getAccruedRevenues({selectedScenario, chartsData}: any) {
     }
 }
 
-function getAverageAPR({selectedScenario, chartsData, investment, duration}: any) {
-    if (chartsData.length === 1) { return 0 };
+function getAverageAPR({selectedScenario, chartsData, investment, duration}: {selectedScenario: string, chartsData: any, investment: number, duration: number[]}) {
+    if (chartsData.length === 1) { return 0 }
 
-    const totalInvestment = investment * duration;
+    const totalInvestment = investment * duration[0];
 
     switch(selectedScenario) {
         case "Base":
@@ -35,7 +35,7 @@ function getAverageAPR({selectedScenario, chartsData, investment, duration}: any
     }
 }
 
-function getTooltipData({payload, selectedScenario, investment}: any) {
+function getTooltipData({payload, selectedScenario, investment}: {payload: any, selectedScenario: string, investment: number}) {
     let yearlyYield;
     let APR;
     let accruedYield;
@@ -67,7 +67,7 @@ function getTooltipData({payload, selectedScenario, investment}: any) {
     return { yearlyYield, APR, accruedYield }
 }
 
-export default function YieldSimulator({carbonPrices, globalConf}: any) {
+export default function YieldSimulator({carbonPrices, globalConf}: {carbonPrices: any, globalConf: any}) {
     // Inputs
     const [investment, setInvestment] = useState(100);
     const [duration, setDuration] = useState([30]);
@@ -96,7 +96,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
 
     const debouncedSubmit = useRef(
         debounce(async (criteria) => {
-            analytics.submit(criteria);;
+            analytics.submit(criteria);
         }, 1000)
       ).current;
 
@@ -107,7 +107,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
     }, [debouncedSubmit]);
 
     useEffect(() => {
-        let dataGraph = [];
+        const dataGraph = [];
         const startingYear = new Date().getFullYear();
         const carbonAbsorption = investment / (duration[0] * carbonCreditPrice);
 
@@ -152,7 +152,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
     // Tooltip to display on mouse over the chart
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (active && payload && payload.length) {
-            let { shortenYield, APR, accruedYield } = getTooltipData({payload, selectedScenario, investment});
+            const { shortenYield, APR, accruedYield } = getTooltipData({payload, selectedScenario, investment});
             
             return (
                 <div className="px-8 pt-4 pb-4 bg-neutral-700/90 border border-neutral-500 font-inter rounded-xl">
@@ -171,15 +171,15 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
         <div className="w-full mt-6 md:mt-10 flex flex-wrap">
             <div className="w-11/12 mx-auto justify-start text-left md:w-8/12 lg:w-11/12 lg:order-1">
                 <analytics.Form method="post" action="/simulators/analytics" onChange={handleChange}>
-                    <div className="flex flex-wrap justify-center items-start lg:space-x-8 xl:space-x-12 xl:ml-20">
-                        <div className="w-full lg:w-1/4">
+                    <div className="flex flex-wrap justify-center items-start lg:space-x-8 xl:space-x-12 xl:ml-20 lg:flex-nowrap">
+                        <div className="w-full lg:w-1/3">
                             <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Investment ($)</div>
                             <div className="relative w-full">
                                 <input id="investment" type="number" ref={ref} className="text-neutral-100 border border-neutral-500 rounded-xl outline-0 w-full px-4 py-1 mt-1 bg-transparent focus:border-neutral-300" value={investment} name="investment" onChange={(e) => parseInt(e.target.value) > 0 ? setInvestment(parseInt(e.target.value) || 1) : 1} placeholder="How much do you want to invest" />
                             </div>
                             <input hidden id="source" name="source" defaultValue="yield" />
                         </div>
-                        <div className="w-full lg:w-1/4">
+                        <div className="w-full lg:w-1/3">
                             <div className="text-neutral-100 font-inter font-medium ml-1 text-sm mt-4 lg:mt-0">Duration (years)</div>
                             <div className="mt-1 mb-10">
                                 <div className="text-neutral-100 border border-neutral-500 w-full pt-[5px] pl-[4px] pr-[4px] rounded-xl bg-transparent h-8 grow hover:border-neutral-300">
@@ -265,20 +265,20 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
                                 fontFamily: 'Inter',
                             }}
                         >
-                            <defs>
-                                <linearGradient id="colorBest" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#0AF2AD" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#0AF2AD" stopOpacity={0}/>
-                                </linearGradient>
-                                <linearGradient id="colorBase" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#AAC6FD" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#AAC6FD" stopOpacity={0}/>
-                                </linearGradient>
-                                <linearGradient id="colorWorst" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#787675" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#787675" stopOpacity={0}/>
-                                </linearGradient>
-                            </defs>
+                        <defs>
+                            <linearGradient id="colorBest" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#0AF2AD" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#0AF2AD" stopOpacity={0}/>
+                            </linearGradient>
+                            <linearGradient id="colorBase" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#AAC6FD" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#AAC6FD" stopOpacity={0}/>
+                            </linearGradient>
+                            <linearGradient id="colorWorst" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#787675" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#787675" stopOpacity={0}/>
+                            </linearGradient>
+                        </defs>
                         <XAxis dataKey="year" />
                         <YAxis />
                         <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
@@ -291,7 +291,7 @@ export default function YieldSimulator({carbonPrices, globalConf}: any) {
             </div>
             <div className="w-full mt-8 lg:mt-0 mb-4 lg:pb-24 flex flex-wrap lg:w-3/12 lg:order-2 lg:items-center">
                 <Kpi value={getAverageAPR({selectedScenario, chartsData, investment, duration})} unit={"%"} label={"Average APR"}></Kpi>
-                <Kpi value={getAccruedRevenues({selectedScenario, chartsData, investment})} unit={"$"} label={"Total revenue"}></Kpi>
+                <Kpi value={getAccruedRevenues({selectedScenario, chartsData})} unit={"$"} label={"Total revenue"}></Kpi>
             </div>
         </div>
     )
