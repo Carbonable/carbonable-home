@@ -24,3 +24,22 @@ enum AnalyticsType {
   YIELD
   OFFSET
 }
+
+model AuthorizedDomain {
+  id            String   @id
+}
+
+model MagikLink {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  hash        String
+  isVerified  Boolean  @default(false)
+  email       String
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  data      String
+}
+

@@ -1,6 +1,26 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import { redirect, type LoaderArgs } from "@remix-run/node";
 import CalculatorB2B from "~/components/Calculator/CalculatorB2B";
 import TooltipInfo from "~/components/Common/Tooltip";
+import { getSession } from "~/utils/sessions.server";
+
+export async function loader({ request }: LoaderArgs) {
+    const session = await getSession(request.headers.get("Cookie"));
+    const data = await session.get("data");
+  
+    if (data === undefined) return redirect("/login");
+  
+    // Try to parse the data
+    if (typeof data === "string") {
+      try {
+        if (!JSON.parse(data).data?.hasOwnProperty("userId")) return redirect("/login");
+      } catch (error) {
+        return redirect("/login");
+      }
+    }
+    
+    return;
+}
 
 export default function Calculator() {
     const TooltipText: React.FC = () => {
