@@ -1,8 +1,12 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import { redirect, type LoaderArgs } from "@remix-run/node";
+import { redirect, type LoaderArgs, json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { useState } from "react";
 import CalculatorB2B from "~/components/Calculator/CalculatorB2B";
 import TooltipInfo from "~/components/Common/Tooltip";
+import type { LoaderData } from "~/types/types";
 import { getSession } from "~/utils/sessions.server";
+import { fetchConfiguration } from "~/utils/simulator.server";
 
 export async function loader({ request }: LoaderArgs) {
     const session = await getSession(request.headers.get("Cookie"));
@@ -18,11 +22,27 @@ export async function loader({ request }: LoaderArgs) {
         return redirect("/login");
       }
     }
+
+    const config: LoaderData = {
+        simulators_config: await fetchConfiguration(),
+      };
     
-    return;
+      if (!config) {
+        throw new Response("Database unavailable", {
+          status: 500
+        });
+      }
+    
+      return json({ config });
 }
 
 export default function Calculator() {
+    const data = useLoaderData();
+    const config = data.config.simulators_config;
+    const [yieldConfig] = useState(config ? config.filter((conf: any) => conf.type === "yield") : null);
+    const [globalConfig] = useState(config ? config.filter((conf: any) => conf.type === "global") : null);
+    const [buyConfig] = useState(config ? config.filter((conf: any) => conf.type === "buy") : null);
+
     const TooltipText: React.FC = () => {
         return (
           <div>
@@ -36,18 +56,18 @@ export default function Calculator() {
         <div className="w-full text-center mt-8 xl:mt-16">
             <div className="w-11/12 mx-auto">
                 <h1 className="uppercase font-extrabold text-2xl text-center md:text-3xl xl:text-5xl text-neutral-50 flex items-start justify-center">
-                    Carbon Investment Calculator
+                    Carbon Contribution Calculator
                     <TooltipInfo text={<TooltipText />}  />
                 </h1>
-                <div className="text-sm text-neutral-300 mt-2">Based on BloombergNEF and McKinsey forecasts</div>
+                <div className="text-sm text-neutral-300 mt-2">Based on BloombergNEF and McKinsey forecasts for a project duration of 20 years</div>
                 <div className="text-sm text-neutral-300 flex items-center justify-center">
                     <ExclamationTriangleIcon className="w-6 mr-1" />
                     NOT FINANCIAL ADVICE
                 </div>
             </div>
-            <div className="w-full rounded-2xl bg-neutral-700 border border-neutral-500 py-8 px-2 md:w-11/12 md:mx-auto mt-8">
+            <div className="w-full mt-8">
                 <div className="text-xl">
-                    <CalculatorB2B />
+                    <CalculatorB2B carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} buyPrices={buyConfig[0].config.carbonable} />
                 </div>
             </div>
             <div className="w-11/12 mx-auto mt-8 text-neutral-200 text-center">

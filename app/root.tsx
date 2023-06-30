@@ -56,7 +56,7 @@ export default function App() {
           <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </head>
-        <body className="bg-neutral-800 text-neutral-100 relative w-screen mx-auto 2xl:max-w-6xl">
+        <body className="bg-neutral-800 text-neutral-100 relative w-screen mx-auto 2xl:max-w-7xl">
           <Menu dAppLink={data.dapp} />
           <Outlet />
           <ScrollRestoration />
@@ -85,7 +85,7 @@ export function ErrorBoundary() {
               <div className="text-9xl font-trash w-full text-center">{error.status}</div>
               <div className="text-7xl font-americana w-full text-center">{error.data.message}</div>
               <div className="text-center mt-4">
-                <Link to={"/launchpad"} className="text-green text-center">Go to simulator</Link>
+                <Link to={"/simulator"} className="text-green text-center">Go to simulator</Link>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export function ErrorBoundary() {
             <div className="text-6xl font-trash w-full text-center">Oops!</div>
             <div className="text-4xl font-americana w-full text-center">We are working on fixing this issue</div>
             <div className="text-center mt-4">
-              <Link to={"/"} className="text-green text-center">Go to simulator</Link>
+              <Link to={"/simulator"} className="text-green text-center">Go to simulator</Link>
             </div>
           </div>
         </div>

@@ -5,10 +5,9 @@ import { useState } from "react";
 import TooltipInfo from "~/components/Common/Tooltip";
 import OffsetSimulator from "~/components/Simulator/OffsetSimulator";
 import YieldSimulator from "~/components/Simulator/YieldSimulator";
-import type { ConfigData } from "~/types/types";
+import type { LoaderData } from "~/types/types";
 import { fetchConfiguration } from "~/utils/simulator.server";
 
-type LoaderData = { simulators_config: Array<ConfigData> | null };
 
 export async function loader() {
   const config: LoaderData = {

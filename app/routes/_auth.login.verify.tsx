@@ -34,7 +34,7 @@ export async function loader({ request }: LoaderArgs) {
     const MAX_AGE = process.env.SESSION_EXPIRATION_IN_SECONDS !== undefined ? parseInt(process.env.SESSION_EXPIRATION_IN_SECONDS) : 10;
     expires.setSeconds(expires.getSeconds() + MAX_AGE);
     
-    return redirect("/", {
+    return redirect("/calculator", {
         headers: {
           "Set-Cookie": await commitSession(session, {expires}),
         },
