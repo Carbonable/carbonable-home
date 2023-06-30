@@ -17,6 +17,15 @@ export async function action({ request }: ActionArgs) {
     // Check if the email is valid
     if (!email || !validateEmail(email.toString())) return json({error: "Please enter a valid email address"}, {status: 400});
 
+    // Check if the email is part of authorized emails
+    const authorizedDomains = await db.authorizedDomain.count({
+        where: {
+            id: email.toString().split("@")[1]
+        }
+    });
+
+    if (authorizedDomains === 0) return json({error: "This email address is not authorized to access this application"}, {status: 400});
+
     // Check if the email is already in the database and if it is not verified
     const hashedEmail = bcrypt.hashSync(email.toString(), process.env.HASH_SECRET);
     
@@ -38,15 +47,6 @@ export async function action({ request }: ActionArgs) {
             }
         })
     }
-
-    // Check if the email is part of authorized emails
-    const authorizedDomains = await db.authorizedDomain.count({
-        where: {
-            id: email.toString().split("@")[1]
-        }
-    });
-
-    if (authorizedDomains === 0) return json({error: "This email address is not authorized to access this application"}, {status: 400});
 
     // Send the magik link
     return await sendMagikLink({request, email: email.toString()});

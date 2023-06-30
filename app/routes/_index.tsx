@@ -1,17 +1,19 @@
 import type { LoaderArgs} from "@remix-run/node";
-import { redirect } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
+
 
 export async function loader({ request }: LoaderArgs) {
   try {
     const { pathname } = new URL(request.url);
-    if (pathname === '/') {
+
+    if (pathname === '/' || pathname === '') {
       return redirect("/simulator");
     }
-    return null;
+    return json({});
 
   } catch (error) {
     console.error(error);
-    return null;
+    return json({});
   }
 }
   
