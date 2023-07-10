@@ -1,8 +1,8 @@
 import { json, type ActionArgs } from "@remix-run/node";
+import { scryptSync } from "crypto";
 import { db } from "~/utils/db.server";
 import { sendMagikLink } from "~/utils/magikLink.server";
 import { validateEmail } from "~/utils/utils";
-import bcrypt from "bcryptjs";
 
 /**
  * Create a magik link and send it to the user's email address
@@ -27,7 +27,7 @@ export async function action({ request }: ActionArgs) {
     if (authorizedDomains === 0) return json({error: "This email address is not authorized to access this application"}, {status: 400});
 
     // Check if the email is already in the database and if it is not verified
-    const hashedEmail = bcrypt.hashSync(email.toString(), process.env.HASH_SECRET);
+    const hashedEmail = scryptSync(email.toString(), process.env.HASH_SECRET || "", 64).toString('hex');
     
     const result = await db.magikLink.findFirst({
         where: {
