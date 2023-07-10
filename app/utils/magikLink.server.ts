@@ -1,14 +1,13 @@
 import { json } from "@remix-run/node";
-import { randomBytes } from "crypto";
+import { randomBytes, scryptSync } from "crypto";
 import { db } from "./db.server";
-import bcrypt from "bcryptjs";
 import { sendEmail } from "./emails.servers";
 
 export async function sendMagikLink({request, email}: {request: Request, email: string}) {
     // Generate a random hash
     const hash = randomBytes(32).toString('hex');
     
-    const hashedEmail = bcrypt.hashSync(email, process.env.HASH_SECRET);
+    const hashedEmail = scryptSync(email.toString(), process.env.HASH_SECRET || "", 64).toString('hex');
 
     // Save the hash in the database
     try {
