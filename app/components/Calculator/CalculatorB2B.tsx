@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Repartition from "./Repartition";
 import FeatureTable from "./FeatureTable";
 import { shortenNumber } from "~/utils/utils";
+import Chart from "./Chart";
 
 
 function calculateMixedArray(firstArray: number[], secondArray: number[], repartition: number): number[] {
@@ -35,7 +36,6 @@ export default function CalculatorB2B({carbonPrices, globalConf, buyPrices}: {ca
     const [totalTailoredCarbonable, setTotalTailoredCarbonable] = useState(tailoredCarbonableValues.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
 
     // Cost for current year
-
     const [totalFundCarbonableCurrentYear, setTotalFundCarbonableCurrentYear] = useState(buyPrices.values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
     const [totalBuyCarbonableCurrentYear, setTotalBuyCarbonableCurrentYear] = useState(carbonPrices[1].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * (emission * 0.9));
     const [tailoredCarbonableValuesCurrentYear, setTailoredCarbonableValuesCurrentYear] = useState(calculateMixedArray(buyPrices.values, carbonPrices[1].values, repartition[0]));
@@ -137,7 +137,9 @@ export default function CalculatorB2B({carbonPrices, globalConf, buyPrices}: {ca
             <div className="text-sm text-neutral-300 mt-2">
                 For the same quality and quantity of carbon credits.
             </div>
+            <div className="mt-20 mx-auto w-11/12">
+                <Chart emission={emission} startingIndex={startingIndex} buyPrices={buyPrices.values} carbonPrices={carbonPrices[1].values} projectDuration={projectDuration} repartition={repartition[0]} />
+            </div>
         </>
-        
     )
 }
