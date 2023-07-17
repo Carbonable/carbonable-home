@@ -27,13 +27,13 @@ fly auth signup
 
 ```bash
 DATABASE_URL="postgresql://postgres:@localhost:5432/carbonable_home?schema=public"
-#DATABASE_URL="postgresql://dev_carbonable_home:V9N5InmHTU7ywM5@localhost:15432/dev_carbonable_home"
 
 DAPP_URL=https://testnet.carbonable.io
 
 SESSION_EXPIRATION_IN_SECONDS=""
 SESSIONS_SECRETS=""
 HASH_SECRET=""
+ENABLE_EMAIL_VERIFICATION=true/false
 
 MAILJS_PUBLIC_KEY=""
 MAILJS_PRIVATE_KEY=""

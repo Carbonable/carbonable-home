@@ -10,6 +10,7 @@ import { getSession } from "~/utils/sessions.server";
 import { fetchConfiguration } from "~/utils/simulator.server";
 
 export async function loader({ request }: LoaderArgs) {
+  if (process.env.ENABLE_EMAIL_VERIFICATION === "true") {
     const session = await getSession(request.headers.get("Cookie"));
     const data = await session.get("data");
   
@@ -23,6 +24,7 @@ export async function loader({ request }: LoaderArgs) {
         return redirect("/login");
       }
     }
+  } 
 
     const config: LoaderData = {
         simulators_config: await fetchConfiguration(),
