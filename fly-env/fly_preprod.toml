@@ -1,6 +1,6 @@
 # fly.toml file generated for preprod-carbonable-home on 2022-10-25T15:39:37+02:00
 
-app = "preprod-carbonable-home"
+app = "preprod-carbonable-calculator"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
