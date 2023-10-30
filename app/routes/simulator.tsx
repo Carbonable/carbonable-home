@@ -26,7 +26,7 @@ export async function loader() {
 export default function Simulator() {
   const data = useLoaderData();
   const config = data.config.simulators_config;
-  const [selectedSimulator, setSelectedSimulator] = useState("yield");
+  const [selectedSimulator] = useState("offset");
   const [yieldConfig] = useState(config ? config.filter((conf: any) => conf.type === "yield") : null);
   const [offsetConfig] = useState(config ? config.filter((conf: any) => conf.type === "offset") : null);
   const [globalConfig] = useState(config ? config.filter((conf: any) => conf.type === "global") : null);
@@ -43,12 +43,7 @@ export default function Simulator() {
   return (
     <div className="w-full text-center mt-8 xl:mt-16">
       <div className="w-11/12 mx-auto">
-        <div className="w-full md:w-9/12 lg:w-8/12 mt-8 p-1 flex font-semibold border border-neutral-300 rounded-full items-center mx-auto justify-evenly uppercase text-xs md:text-base whitespace-nowrap">
-          <div className={selectedSimulator === 'yield' ? "bg-opacityLight-5 rounded-full px-2 md:px-12 py-2 md:py-4 w-1/2 text-neutral-100" : "cursor-pointer w-1/2 text-neutral-100"} onClick = {() => { setSelectedSimulator("yield"); }}>Yield simulator</div>
-          <div className={selectedSimulator === 'offset' ? "bg-opacityLight-5 rounded-full px-2 md:px-12 py-2 md:py-4 w-1/2 text-neutral-100" : "cursor-pointer w-1/2 text-neutral-100"} onClick = {() => { setSelectedSimulator("offset"); }}>Offset simulator</div>
-        </div>
         <h1 className="uppercase font-extrabold text-2xl text-center md:text-3xl xl:text-5xl text-neutral-50 flex items-start justify-center mt-12">
-          { selectedSimulator === 'yield' && <div>YIELD SIMULATOR </div>}
           { selectedSimulator === 'offset' && <div>OFFSET SIMULATOR </div>}
             <TooltipInfo text={<TooltipText />}  />
         </h1>

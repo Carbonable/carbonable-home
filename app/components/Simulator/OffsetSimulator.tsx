@@ -264,7 +264,7 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
                 </ResponsiveContainer>
             </div>
             <div className="w-full mb-4 flex flex-wrap lg:w-3/12 lg:order-2 lg:items-center">
-                <Kpi value={carbonableValue} unit={"$"} label={"Investment value Carbonable"}></Kpi>
+                <Kpi value={carbonableValue} unit={"$"} label={"Funding value"}></Kpi>
                 <Kpi value={totalCostSaving} unit={"$"} label={"Total cost saving"}></Kpi>
                 <Kpi value={averageYearlyCostSaving} unit={"$"} label={"Average Yearly Cost saving"}></Kpi>
             </div>
