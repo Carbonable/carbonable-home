@@ -8,11 +8,9 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
-  useLoaderData,
   useRouteError
 } from "@remix-run/react";
 import styles from "./styles/app.css";
-import Menu from "./components/Menu";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -43,7 +41,6 @@ export async function loader() {
 }
 
 export default function App() {
-  const data = useLoaderData();
 
   return (
     <html lang="en">
@@ -57,7 +54,6 @@ export default function App() {
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </head>
         <body className="bg-neutral-800 text-neutral-100 relative w-screen mx-auto 2xl:max-w-7xl">
-          <Menu dAppLink={data.dapp} />
           <Outlet />
           <ScrollRestoration />
           <Scripts />

@@ -3,7 +3,6 @@ import { redirect, type LoaderArgs, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import CalculatorB2B from "~/components/Calculator/CalculatorB2B";
-import ComparativeAnalysis from "~/components/Calculator/ComparativeAnalysis";
 import TooltipInfo from "~/components/Common/Tooltip";
 import type { LoaderData } from "~/types/types";
 import { getSession } from "~/utils/sessions.server";
@@ -56,7 +55,7 @@ export default function Calculator() {
     }
 
     return (
-        <div className="w-full text-center mt-8 xl:mt-16">
+        <div className="w-full text-center mt-8 xl:mt-16 mb-12">
             <div className="w-11/12 mx-auto">
               <h1 className="uppercase font-extrabold text-2xl text-center md:text-3xl xl:text-5xl text-neutral-50 flex items-start justify-center">
                 Carbon Contribution Calculator
@@ -75,14 +74,6 @@ export default function Calculator() {
             </div>
             <div className="w-11/12 mx-auto mt-6 text-neutral-200 text-center">
               We offer <b>risk rating A</b> opportunities through recognized certifiers
-            </div>
-            <div className="w-11/12 mx-auto mt-16 mb-24">
-              <div className="font-extrabold text-xl text-left md:text-2xl xl:text-4xl text-neutral-50">
-                Comparative analysis
-              </div>
-              <div className="mt-8 overflow-x-auto w-full">
-                <ComparativeAnalysis />
-              </div>
             </div>
         </div>
       )
