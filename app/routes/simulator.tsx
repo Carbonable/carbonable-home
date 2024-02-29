@@ -44,7 +44,7 @@ export default function Simulator() {
     <div className="w-full text-center mt-8 xl:mt-16">
       <div className="w-11/12 mx-auto">
         <h1 className="uppercase font-extrabold text-2xl text-center md:text-3xl xl:text-5xl text-neutral-50 flex items-start justify-center mt-12">
-          { selectedSimulator === 'offset' && <div>MARGIN SIMULATOR </div>}
+          <div>MARGIN SIMULATOR </div>
             <TooltipInfo text={<TooltipText />}  />
         </h1>
         <div className="text-sm text-neutral-300 mt-2">Based on BloombergNEF and McKinsey forecasts</div>

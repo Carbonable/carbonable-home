@@ -11,7 +11,7 @@ import Kpi from '../Common/Kpi';
 export default function OffsetSimulator({offset, globalConf}: {offset: any, globalConf: any}) {
 
     // Inputs
-    const [ccNeed, setCcNeed] = useState(10);
+    const [ccNeed, setCcNeed] = useState(1);
     const [duration, setDuration] = useState([30]);
 
     // Outputs
@@ -57,7 +57,7 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
         const costSavingsBase = [];
         const costSavingsWorst = [];
         const costSavingsBest = [];
-        const startingYear = new Date().getFullYear();
+        const startingYear = 2022;
         let baseYear = 0;
         let worstYear = 0;
         let bestYear = 0;
