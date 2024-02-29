@@ -265,8 +265,8 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
             </div>
             <div className="w-full mb-4 flex flex-wrap lg:w-3/12 lg:order-2 lg:items-center">
                 <Kpi value={carbonableValue} unit={"$"} label={"Funding value"}></Kpi>
-                <Kpi value={totalCostSaving} unit={"$"} label={"Total cost saving"}></Kpi>
-                <Kpi value={averageYearlyCostSaving} unit={"$"} label={"Average Yearly Cost saving"}></Kpi>
+                <Kpi value={totalCostSaving} unit={"$"} label={"Total resale margin"}></Kpi>
+                <Kpi value={averageYearlyCostSaving} unit={"$"} label={"Average yearly resale margin"}></Kpi>
             </div>
         </div>
     )
