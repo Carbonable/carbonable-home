@@ -11,7 +11,8 @@ import Kpi from '../Common/Kpi';
 export default function OffsetSimulator({offset, globalConf}: {offset: any, globalConf: any}) {
 
     // Inputs
-    const [ccNeed, setCcNeed] = useState(1);
+    const [ccNeed, setCcNeed] = useState<number>(1);
+    const [ccInput, setCcInput] = useState(1);
     const [duration, setDuration] = useState([30]);
 
     // Outputs
@@ -38,6 +39,17 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
 
     function handleChange(event: any) {
         debouncedSubmit(event.currentTarget)
+    }
+
+    function handleCCChange(event: any) {
+        const value = event.target.value;
+        setCcInput(value);
+
+        if (value < 1 || value === "") {
+            return;
+        }
+
+        setCcNeed(parseInt(event.target.value));
     }
 
     const debouncedSubmit = useRef(
@@ -150,7 +162,7 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
                         <div className="w-full lg:w-1/3">
                             <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Carbon to offset (Tons/Year)</div>
                             <div className="relative w-full">
-                                <input id="investment" type="number" ref={ref} className="text-neutral-100 border border-neutral-500 rounded-xl outline-0 w-full px-4 py-1 mt-1 bg-transparent focus:border-neutral-300" value={ccNeed} name="investment" onChange={(e) => parseInt(e.target.value) > 0 ? setCcNeed(parseInt(e.target.value) || 1) : 1 } placeholder="How much tons of carbon do you need to offset" />
+                                <input id="investment" type="number" ref={ref} className="text-neutral-100 border border-neutral-500 rounded-xl outline-0 w-full px-4 py-1 mt-1 bg-transparent focus:border-neutral-300" value={ccInput} name="investment" onChange={handleCCChange} placeholder="How much tons of carbon do you need to offset" />
                             </div>
                             <input hidden id="source" name="source" defaultValue="offset" />
                         </div>
