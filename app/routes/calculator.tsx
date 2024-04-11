@@ -42,7 +42,6 @@ export default function Calculator() {
     const data = useLoaderData();
     const config = data.config.simulators_config;
     const [yieldConfig] = useState(config ? config.filter((conf: any) => conf.type === "yield") : null);
-    const [globalConfig] = useState(config ? config.filter((conf: any) => conf.type === "global") : null);
     const [buyConfig] = useState(config ? config.filter((conf: any) => conf.type === "buy") : null);
 
     const TooltipText: React.FC = () => {
@@ -69,7 +68,10 @@ export default function Calculator() {
             </div>
             <div className="w-full mt-8">
               <div className="text-xl">
-                <CalculatorB2B carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable} globalConf={globalConfig[0]} buyPrices={buyConfig[0].config.carbonable} />
+                <CalculatorB2B 
+                  carbonPrices={yieldConfig[0].config.annual_growth[0].carbonable}
+                  buyPrices={buyConfig[0].config.carbonable}
+                />
               </div>
             </div>
             <div className="w-11/12 mx-auto mt-6 text-neutral-200 text-center">
