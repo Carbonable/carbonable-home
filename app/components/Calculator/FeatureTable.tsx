@@ -4,18 +4,13 @@ import { shortenNumber } from "~/utils/utils";
 export default function FeatureTable({startingYear, projectDuration, totalCost, totalBuyCarbonable, totalFundCarbonable, totalTailoredCarbonable, currentYear, totalBuyCarbonableCurrentYear, totalFundCarbonableCurrentYear, totalTailoredCarbonableCurrentYear}: 
     {startingYear: number, projectDuration: number, totalCost: number, totalBuyCarbonable: number, totalFundCarbonable: number, totalTailoredCarbonable: number, currentYear: number, totalBuyCarbonableCurrentYear: number, totalFundCarbonableCurrentYear: number, totalTailoredCarbonableCurrentYear: number}) {
     
-    
     return (
         <div className="min-w-full">
-            <div className="grid grid-cols-5 gap-4 min-w-max text-left font-inter w-11/12 mx-auto">
+            <div className="grid grid-cols-4 gap-4 min-w-max text-left font-inter w-11/12 mx-auto">
                 {/* Column headers */}
                 <div className="p-2 text-white max-w-[195px]">
                     <div>Features</div>
                     <div className="text-sm text-neutral-300 mt-4">Everything your need to take your carbon investment to the next level.</div>
-                </div>
-                <div className="p-2 text-white max-w-[195px]">
-                    <div className="flex flex-nowrap justify-start items-center">Brokers <Tag color="#878A94" text="Buy" /></div>
-                    <div className="text-sm text-neutral-200 mt-4">Buy your carbon credit OTC with a broker</div>
                 </div>
                 <div className="p-2 text-white max-w-[195px]">
                     <div className="flex flex-nowrap justify-start items-center">Carbonable <Tag color="#9EBAF0" text="Buy" /></div>
@@ -29,12 +24,9 @@ export default function FeatureTable({startingYear, projectDuration, totalCost, 
                     <div className="flex flex-nowrap justify-start items-center">Carbonable <Tag color="#CFBD70" text="Tailored" /></div>
                     <div className="text-sm text-neutral-200 mt-4">Build the best strategy that fits your need between funding and buying</div>
                 </div>
-                <div className="col-span-5 mx-2 my-4 border-t border-neutral-600 w-full"></div>
+                <div className="col-span-4 mx-2 my-4 border-t border-neutral-600 w-full"></div>
                 <div className="p-2 text-sm text-neutral-200 max-w-[195px]">
                     Total cost: {startingYear}
-                </div>
-                <div className="p-2 text-sm text-neutral-300 max-w-[195px] font-semibold">
-                    $ {shortenNumber(totalCost)}
                 </div>
                 <div className="p-2 text-sm text-blue max-w-[195px] font-semibold">
                     $ {shortenNumber(totalBuyCarbonable)}
@@ -48,9 +40,6 @@ export default function FeatureTable({startingYear, projectDuration, totalCost, 
                 <div className="p-2 text-sm text-neutral-200 max-w-[195px]">
                     Average yearly cost: {startingYear}
                 </div>
-                <div className="p-2 text-sm text-neutral-300 max-w-[195px] font-semibold">
-                    $ {shortenNumber(totalCost / projectDuration)}
-                </div>
                 <div className="p-2 text-sm text-neutral-100 max-w-[195px] font-semibold">
                     $ {shortenNumber(totalBuyCarbonable / projectDuration)}
                 </div>
@@ -62,12 +51,9 @@ export default function FeatureTable({startingYear, projectDuration, totalCost, 
                 </div>
             </div>
             <div className="border border-neutral-300 rounded-xl py-4 mt-4 bg-neutral-700 w-fit xl:w-[94%] mx-auto">
-                <div className="grid grid-cols-5 gap-4 min-w-max text-left font-inter w-[98%] mx-auto">
+                <div className="grid grid-cols-4 gap-4 min-w-max text-left font-inter w-[98%] mx-auto">
                     <div className="p-2 text-sm text-neutral-100 max-w-[195px]">
                         Total cost: {currentYear}
-                    </div>
-                    <div className="p-2 text-sm text-neutral-100 max-w-[195px] font-semibold">
-                        /
                     </div>
                     <div className="p-2 text-sm text-neutral-100  max-w-[195px] font-semibold">
                         $ {shortenNumber(totalBuyCarbonableCurrentYear)}
@@ -79,10 +65,7 @@ export default function FeatureTable({startingYear, projectDuration, totalCost, 
                         $ {shortenNumber(totalTailoredCarbonableCurrentYear)}
                     </div>
                     <div className="p-2 text-sm text-neutral-100 max-w-[195px]">
-                        Average yearly cost:: {currentYear}
-                    </div>
-                    <div className="p-2 text-sm text-neutral-100 max-w-[195px] font-semibold">
-                        /
+                        Average yearly cost: {currentYear}
                     </div>
                     <div className="p-2 text-sm text-neutral-100  max-w-[195px] font-semibold">
                         $ {shortenNumber(totalBuyCarbonableCurrentYear / projectDuration)}
