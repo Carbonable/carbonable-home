@@ -28,3 +28,10 @@ export function shortenNumber(number: number): string {
         maximumFractionDigits: 2
       }).format(number);
 }
+
+export const DEFAULT_FIRST_YEAR = 2022;
+export enum ForecastType {
+    BASE = 1,
+    WORST = 0,
+    BEST = 2,
+}
