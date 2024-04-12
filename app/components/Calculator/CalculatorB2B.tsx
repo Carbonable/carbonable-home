@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Repartition from "./Repartition";
 import FeatureTable from "./FeatureTable";
-import { shortenNumber } from "~/utils/utils";
+import { DEFAULT_FIRST_YEAR, ForecastType, shortenNumber } from "~/utils/utils";
 import Chart from "./Chart";
 
 
@@ -20,56 +20,57 @@ function calculateMixedArray(firstArray: number[], secondArray: number[], repart
   }
 
 export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: any, buyPrices: any}) {
-    const defaultFirstYear = 2022;
     const projectDuration = 20;
     const [repartition, setRepartition] = useState([50]);
     const [emission, setEmission] = useState(100);
     const [startingYear, setStartingYear] = useState(new Date().getFullYear());
     const currentYear = new Date().getFullYear();
-    const [startingIndex, setStartingIndex] = useState(startingYear - currentYear + (currentYear - defaultFirstYear));
+    const defaultIndex = currentYear - DEFAULT_FIRST_YEAR;
+    const [startingIndex, setStartingIndex] = useState(startingYear - currentYear + defaultIndex);
+    const [scenarioIndex, setScenarioIndex] = useState(ForecastType.BASE);
 
     // Cost for targetted starting year
-    const [totalCost, setTotalCost] = useState(carbonPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
-    const [totalFundCarbonable, setTotalFundCarbonable] = useState(buyPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
-    const [totalBuyCarbonable, setTotalBuyCarbonable] = useState(carbonPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * (emission * 0.9));
-    const [tailoredCarbonableValues, setTailoredCarbonableValues] = useState(calculateMixedArray(buyPrices[1].values, carbonPrices[1].values, repartition[0]));
+    const [totalCost, setTotalCost] = useState(carbonPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+    const [totalFundCarbonable, setTotalFundCarbonable] = useState(buyPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+    const [totalBuyCarbonable, setTotalBuyCarbonable] = useState(carbonPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * (emission * 0.9));
+    const [tailoredCarbonableValues, setTailoredCarbonableValues] = useState(calculateMixedArray(buyPrices[scenarioIndex].values, carbonPrices[scenarioIndex].values, repartition[0]));
     const [totalTailoredCarbonable, setTotalTailoredCarbonable] = useState(tailoredCarbonableValues.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
 
     // Cost for current year
-    const [totalFundCarbonableCurrentYear, setTotalFundCarbonableCurrentYear] = useState(buyPrices[1].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
-    const [totalBuyCarbonableCurrentYear, setTotalBuyCarbonableCurrentYear] = useState(carbonPrices[1].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * (emission * 0.9));
-    const [tailoredCarbonableValuesCurrentYear, setTailoredCarbonableValuesCurrentYear] = useState(calculateMixedArray(buyPrices[1].values, carbonPrices[1].values, repartition[0]));
+    const [totalFundCarbonableCurrentYear, setTotalFundCarbonableCurrentYear] = useState(buyPrices[scenarioIndex].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
+    const [totalBuyCarbonableCurrentYear, setTotalBuyCarbonableCurrentYear] = useState(carbonPrices[scenarioIndex].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * (emission * 0.9));
+    const [tailoredCarbonableValuesCurrentYear, setTailoredCarbonableValuesCurrentYear] = useState(calculateMixedArray(buyPrices[scenarioIndex].values, carbonPrices[scenarioIndex].values, repartition[0]));
     const [totalTailoredCarbonableCurrentYear, setTotalTailoredCarbonableCurrentYear] = useState(tailoredCarbonableValues.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
 
     useEffect(() => {
-        setStartingIndex(startingYear - currentYear + (currentYear - defaultFirstYear));
+        setStartingIndex(startingYear - currentYear + defaultIndex);
     }, [startingYear]);
 
     useEffect(() => {
-        setTotalCost(carbonPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
-        setTotalFundCarbonable(buyPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
-        setTotalBuyCarbonable(carbonPrices[1].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission * 0.9);
-        setTailoredCarbonableValues(calculateMixedArray(buyPrices[1].values, carbonPrices[1].values, repartition[0]));
+        setTotalCost(carbonPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+        setTotalFundCarbonable(buyPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+        setTotalBuyCarbonable(carbonPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission * 0.9);
+        setTailoredCarbonableValues(calculateMixedArray(buyPrices[scenarioIndex].values, carbonPrices[scenarioIndex].values, repartition[0]));
         
-        setTotalFundCarbonableCurrentYear(buyPrices[1].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
-        setTotalBuyCarbonableCurrentYear(carbonPrices[1].values.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission * 0.9);
-        setTailoredCarbonableValuesCurrentYear(calculateMixedArray(buyPrices[1].values, carbonPrices[1].values, repartition[0]));
-    }, [emission, startingIndex, repartition]);
+        setTotalFundCarbonableCurrentYear(buyPrices[scenarioIndex].values.slice(defaultIndex, projectDuration + defaultIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+        setTotalBuyCarbonableCurrentYear(carbonPrices[scenarioIndex].values.slice(defaultIndex, projectDuration + defaultIndex).reduce((a: number, b: number) => a + b, 0) * emission * 0.9);
+        setTailoredCarbonableValuesCurrentYear(calculateMixedArray(buyPrices[scenarioIndex].values, carbonPrices[scenarioIndex].values, repartition[0]));
+    }, [emission, startingIndex, repartition, scenarioIndex]);
 
     useEffect(() => {
         setTotalTailoredCarbonable(tailoredCarbonableValues.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
 
-        setTotalTailoredCarbonableCurrentYear(tailoredCarbonableValuesCurrentYear.slice(0, projectDuration).reduce((a: number, b: number) => a + b, 0) * emission);
-    }, [tailoredCarbonableValues, startingIndex]);
+        setTotalTailoredCarbonableCurrentYear(tailoredCarbonableValuesCurrentYear.slice(defaultIndex, projectDuration + defaultIndex).reduce((a: number, b: number) => a + b, 0) * emission);
+    }, [tailoredCarbonableValues, startingIndex, scenarioIndex]);
 
     // Build the possible options for the select based on the buyPrices array length 
-    const options = Array.from({ length: buyPrices[1].values.length - projectDuration - 1 }, (_, index) => new Date().getFullYear() + index);
+    const options = Array.from({ length: buyPrices[scenarioIndex].values.length - projectDuration - 1 }, (_, index) => new Date().getFullYear() + index);
 
     return (
         <>
             <div className="mt-6 md:mt-10 w-11/12 mx-auto lg:w-11/12 text-left rounded-2xl bg-neutral-700 border border-neutral-500 p-8">
                 <div className="flex flex-wrap md:flex-nowrap items-center md:gap-4 justify-start ">
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full md:w-1/3">
                         <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Incompressible Yearly Emissions (t)</div>
                         <div className="relative w-full">
                             <input 
@@ -82,7 +83,7 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                                 onChange={(e) => setEmission(parseInt(e.target.value))} />
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 mt-4 md:mt-0">
+                    <div className="w-full md:w-1/3 mt-4 md:mt-0">
                         <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Define a starting year of investment</div>
                         <div className="relative w-full border border-neutral-500 rounded-xl pl-4 pr-2 py-1 mt-1 focus:border-neutral-300">
                             <select 
@@ -98,6 +99,23 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                                         <option key={index} value={value}>{value}</option>
                                     )
                                 })}
+                            </select>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/3 mt-4 md:mt-0">
+                        <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Define a price forecast</div>
+                        <div className="relative w-full border border-neutral-500 rounded-xl pl-4 pr-2 py-1 mt-1 focus:border-neutral-300">
+                            <select 
+                                id="scenarioIndex" 
+                                className="text-neutral-100 outline-0 w-full bg-transparent cursor-pointer" 
+                                style={{ WebkitPaddingEnd: '20px'}} 
+                                name="scenarioIndex" 
+                                placeholder="1"
+                                onChange={(e) => setScenarioIndex(parseInt(e.target.value))}
+                            >
+                                <option key={0} value={0}>Low</option>
+                                <option key={1} value={1}>Medium</option>
+                                <option key={2} value={2}>High</option>
                             </select>
                         </div>
                     </div>
@@ -138,7 +156,7 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                 For the same quality and quantity of carbon credits.
             </div>
             <div className="mt-20 mx-auto w-11/12">
-                <Chart emission={emission} startingIndex={startingIndex} buyPrices={buyPrices[1].values} carbonPrices={carbonPrices[1].values} projectDuration={projectDuration} repartition={repartition[0]} />
+                <Chart emission={emission} startingIndex={startingIndex} buyPrices={buyPrices[scenarioIndex].values} carbonPrices={carbonPrices[scenarioIndex].values} projectDuration={projectDuration} repartition={repartition[0]} />
             </div>
         </>
     )
