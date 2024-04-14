@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Area, ComposedChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, Label } from "recharts";
+import { ComposedChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, Label } from "recharts";
 import { shortenNumber } from "~/utils/utils";
 
 export default function Chart({emission, startingIndex, buyPrices, carbonPrices, projectDuration, repartition}: {emission: number, startingIndex: number, buyPrices: any, carbonPrices: any, projectDuration: number, repartition: number}) {
@@ -37,10 +37,9 @@ export default function Chart({emission, startingIndex, buyPrices, carbonPrices,
             return (
                 <div className="px-8 pt-4 pb-4 bg-neutral-700/90 border border-neutral-500 font-inter rounded-xl">
                     <p className="text-left uppercase bold text-neutral-100">{`Forecast for ${label} `}</p>
-                    <p className="text-left text-neutral-200">Broker buy: {shortenNumber(payload[0].value)}</p>
-                    <p className="text-left text-blue">Carbonable buy: {shortenNumber(payload[2].value)}</p>
-                    <p className="text-left text-orange">Carbonable tailored: {shortenNumber(payload[3].value)}</p>
-                    <p className="text-left text-greenish-500">Carbonable fund: {shortenNumber(payload[1].value)}</p>
+                    <p className="text-left text-blue">Carbonable buy: {shortenNumber(payload[1].value)}</p>
+                    <p className="text-left text-orange">Carbonable tailored: {shortenNumber(payload[2].value)}</p>
+                    <p className="text-left text-greenish-500">Carbonable fund: {shortenNumber(payload[0].value)}</p>
                 </div>
             );
         }
@@ -79,7 +78,6 @@ export default function Chart({emission, startingIndex, buyPrices, carbonPrices,
                         <Label value="Cost (USD)" offset={-2}  angle={-90} position="insideLeft" style={{ textAnchor: 'middle', fontSize: '100%', fill: '#878A94' }} />
                     </YAxis>
                     <Tooltip content={<CustomTooltip />} wrapperStyle={{ outline: "none" }} />
-                    <Area name="Market forecast base" type="monotone" dataKey="baseYear" fill={'url(#colorBase)'} stroke={'#555861'} dot={false} activeDot={true} />
                     <Line name="Carbonable fund" type="monotone" dataKey="fundYear" stroke="#29A46F" dot={false} activeDot={true} />
                     <Line name="Carbonable buy" type="monotone" dataKey="buyYear" stroke="#9EBAF0" dot={false} activeDot={true} />
                     <Line name="Carbonable tailored" type="monotone" dataKey="tailoredYear" stroke="#CFBD70" dot={false} activeDot={true} />

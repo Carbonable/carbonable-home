@@ -3,6 +3,7 @@ import Repartition from "./Repartition";
 import FeatureTable from "./FeatureTable";
 import { DEFAULT_FIRST_YEAR, ForecastType, shortenNumber } from "~/utils/utils";
 import Chart from "./Chart";
+import Scenarios from "./Scenarios";
 
 
 function calculateMixedArray(firstArray: number[], secondArray: number[], repartition: number): number[] {
@@ -28,6 +29,9 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
     const defaultIndex = currentYear - DEFAULT_FIRST_YEAR;
     const [startingIndex, setStartingIndex] = useState(startingYear - currentYear + defaultIndex);
     const [scenarioIndex, setScenarioIndex] = useState(ForecastType.BASE);
+
+    // Scenarios filters
+    const scenarios = ["Low", "Medium", "High"];
 
     // Cost for targetted starting year
     const [totalCost, setTotalCost] = useState(carbonPrices[scenarioIndex].values.slice(startingIndex, projectDuration + startingIndex).reduce((a: number, b: number) => a + b, 0) * emission);
@@ -102,22 +106,13 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                             </select>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/3 mt-4 md:mt-0">
+                    <div className="w-full md:w-1/3 mt-4 md:mt-0 md:ml-4">
                         <div className="text-neutral-100 font-inter font-medium ml-1 text-sm">Define a price forecast</div>
-                        <div className="relative w-full border border-neutral-500 rounded-xl pl-4 pr-2 py-1 mt-1 focus:border-neutral-300">
-                            <select 
-                                id="scenarioIndex" 
-                                className="text-neutral-100 outline-0 w-full bg-transparent cursor-pointer" 
-                                style={{ WebkitPaddingEnd: '20px'}} 
-                                name="scenarioIndex" 
-                                placeholder="1"
-                                onChange={(e) => setScenarioIndex(parseInt(e.target.value))}
-                            >
-                                <option key={0} value={0}>Low</option>
-                                <option key={1} value={1}>Medium</option>
-                                <option key={2} value={2}>High</option>
-                            </select>
-                        </div>
+                            <Scenarios
+                                scenarios={scenarios}
+                                scenarioIndex={scenarioIndex}
+                                setScenarioIndex={setScenarioIndex}
+                            />
                     </div>
                 </div>
                 <div className="mt-8">
