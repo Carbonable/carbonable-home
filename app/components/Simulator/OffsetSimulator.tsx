@@ -2,10 +2,10 @@ import * as SliderPrimitive from '@radix-ui/react-slider';
 import { useFetcher } from '@remix-run/react';
 import { debounce } from 'lodash';
 import { useEffect, useRef, useState } from "react";
-import { RadioGroup } from '@headlessui/react';
 import { Area, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { shortenNumber } from '~/utils/utils';
 import Kpi from '../Common/Kpi';
+import Scenarios from './Scenarios';
 
 
 export default function OffsetSimulator({offset, globalConf}: {offset: any, globalConf: any}) {
@@ -191,45 +191,11 @@ export default function OffsetSimulator({offset, globalConf}: {offset: any, glob
                         </div>
                         <div className="w-full lg:w-1/3">
                         <div className="text-neutral-100 font-inter font-medium ml-1 text-sm mt-8 lg:mt-0">Filter by scenario</div>
-                            <div className="w-full">
-                                <RadioGroup value={selectedScenario} onChange={setSelectedScenario}>
-                                <RadioGroup.Label className="sr-only">Scenarios</RadioGroup.Label>
-                                <div className="space-x-2 flex flex-wrap items-center justify-start w-full mt-2">
-                                    {scenarios.map((scenario) => (
-                                    <RadioGroup.Option
-                                        key={scenario}
-                                        value={scenario}
-                                        className={({ checked }) =>
-                                        `
-                                        ${
-                                            checked ? 'text-neutral-100 border-neutral-100 bg-opacityLight-5' : 'bg-transparent text-neutral-400 border-neutral-400'
-                                        }
-                                            relative flex cursor-pointer rounded-full shadow-md border focus:outline-none uppercase text-sm`
-                                        }
-                                    >
-                                        {({ checked }) => (
-                                        <>
-                                            <div className="flex w-full items-center px-2 py-1">
-                                                <div className="px-2">
-                                                    <div className="text-sm">
-                                                        <RadioGroup.Label
-                                                            as="p"
-                                                            className={` ${
-                                                            checked ? 'text-neutral-100' : ' text-neutral-400'
-                                                            }`}
-                                                        >
-                                                            {scenario}
-                                                        </RadioGroup.Label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </>
-                                        )}
-                                    </RadioGroup.Option>
-                                    ))}
-                                </div>
-                                </RadioGroup>
-                            </div>
+                            <Scenarios
+                                scenarios={scenarios}
+                                selectedScenario={selectedScenario}
+                                setSelectedScenario={setSelectedScenario}
+                            />
                         </div>
                     </div>
                 </analytics.Form>
