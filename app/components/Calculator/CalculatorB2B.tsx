@@ -24,7 +24,7 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
     const projectDuration = 20;
     const [repartition, setRepartition] = useState([50]);
     const [emission, setEmission] = useState(100);
-    const [startingYear, setStartingYear] = useState(new Date().getFullYear());
+    const [startingYear, setStartingYear] = useState(new Date().getFullYear() + 1);
     const currentYear = new Date().getFullYear();
     const defaultIndex = currentYear - DEFAULT_FIRST_YEAR;
     const [startingIndex, setStartingIndex] = useState(startingYear - currentYear + defaultIndex);
@@ -96,6 +96,7 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                                 style={{ WebkitPaddingEnd: '20px'}} 
                                 name="startingYear" 
                                 placeholder="2023"
+                                value={startingYear}
                                 onChange={(e) => setStartingYear(parseInt(e.target.value))}
                             >
                                 {options.map((value: any, index: number) => {
@@ -145,7 +146,7 @@ export default function CalculatorB2B({carbonPrices, buyPrices}: {carbonPrices: 
                 />
             </div>
             <div className="mt-8 text-2xl text-neutral-100">
-                <span className="text-orange">Save up to ${shortenNumber(totalTailoredCarbonable - totalTailoredCarbonableCurrentYear)} </span> on your project by starting today.
+                <span className="text-orange">Save up to ${shortenNumber(totalTailoredCarbonable - totalTailoredCarbonableCurrentYear)} </span> on your portfolio budget by starting today.
             </div>
             <div className="text-sm text-neutral-300 mt-2">
                 For the same quality and quantity of carbon credits.

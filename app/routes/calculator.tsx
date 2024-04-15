@@ -74,9 +74,6 @@ export default function Calculator() {
                 />
               </div>
             </div>
-            <div className="w-11/12 mx-auto mt-6 text-neutral-200 text-center">
-              We offer <b>risk rating A</b> opportunities through recognized certifiers
-            </div>
         </div>
       )
 }
